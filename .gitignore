@@ -1,0 +1,18 @@
+# Temporary and cache files
+*.pyc
+__pycache__/
+.DS_Store
+
+# Large binary files
+*.vmdk
+*.qcow2
+*.iso
+
+# Dynamically generated files
+*.log
+project-files/dynamips/
+project-files/tmp/
+
+# Personal settings
+gns3_server.conf
+gns3_gui.conf
