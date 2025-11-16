@@ -1,0 +1,665 @@
+! !! RR1
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.19.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.01.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.19.60
+network 16.04.01.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR2
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.01.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.02.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.01.60
+network 16.04.02.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR3
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.02.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.03.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.02.60
+network 16.04.03.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR4
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.03.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.04.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.03.60
+network 16.04.04.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR5
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.04.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.05.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.04.60
+network 16.04.05.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR6
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.05.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.06.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.05.60
+network 16.04.06.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR7
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.06.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.07.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.06.60
+network 16.04.07.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR8
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.07.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.08.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.07.60
+network 16.04.08.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR9
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.08.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.09.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.08.60
+network 16.04.09.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR10
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.09.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.10.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.09.60
+network 16.04.10.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR11
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.10.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.11.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.10.60
+network 16.04.11.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR12
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.11.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.12.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.11.60
+network 16.04.12.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR13
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.12.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.13.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.12.60
+network 16.04.13.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR14
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.13.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.14.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.13.60
+network 16.04.14.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR15
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.14.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.15.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.14.60
+network 16.04.15.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR16
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.15.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.16.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.15.60
+network 16.04.16.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR17
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.16.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.17.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.16.60
+network 16.04.17.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
+
+! !! RR18
+
+enable
+configure terminal
+interface fa 0/0
+ip address 16.04.17.62 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+interface fa 0/1
+ip address 16.04.18.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+version 2
+no auto-summary
+network 16.04.17.60
+network 16.04.18.60
+passive-interface default
+no passive-interface fa 0/0
+no passive-interface fa 0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+exit
+
+wr
+
