@@ -1,0 +1,71 @@
+Nov 16 19:46:52.552 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 19:46:52.552 HYPERVISOR: Started on IP = localhost, TCP port = 50881.
+Nov 16 19:46:53.002 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 19:46:53.002 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
+Nov 16 19:46:53.002 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
+Nov 16 19:46:53.002 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\9209ca76-61f5-4692-a551-6cef038218df 
+Nov 16 19:46:53.002 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\9209ca76-61f5-4692-a551-6cef038218df
+Nov 16 19:46:53.002 HYPERVISOR: exec_cmd: vm create RR10 24 c3745 
+Nov 16 19:46:53.002 VM: VM RR10 created.
+Nov 16 19:46:53.018 HYPERVISOR: exec_cmd: vm set_con_tcp_port RR10 5023 
+Nov 16 19:46:53.018 HYPERVISOR: exec_cmd: c3745 get_mac_addr RR10 
+Nov 16 19:46:53.022 HYPERVISOR: exec_cmd: vm set_disk0 RR10 0 
+Nov 16 19:46:53.022 HYPERVISOR: exec_cmd: vm set_exec_area RR10 64 
+Nov 16 19:46:53.024 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.024 HYPERVISOR: exec_cmd: vm set_idle_pc RR10 0x60aa1da0 
+Nov 16 19:46:53.024 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:46:53.024 HYPERVISOR: exec_cmd: c3745 set_mac_addr RR10 c418.f07c.0000 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm set_nvram RR10 256 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm set_ram RR10 256 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm slot_add_binding RR10 1 0 NM-1FE-TX 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm slot_add_binding RR10 2 0 NM-1FE-TX 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm slot_add_binding RR10 3 0 NM-1FE-TX 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.034 HYPERVISOR: exec_cmd: vm slot_add_binding RR10 4 0 NM-1FE-TX 
+Nov 16 19:46:53.049 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.049 HYPERVISOR: exec_cmd: vm slot_add_binding RR10 0 16 WIC-2T 
+Nov 16 19:46:53.053 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.053 HYPERVISOR: exec_cmd: vm slot_add_binding RR10 0 32 WIC-2T 
+Nov 16 19:46:53.053 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:46:53.053 HYPERVISOR: exec_cmd: vm slot_add_binding RR10 0 48 WIC-2T 
+Nov 16 19:47:47.206 HYPERVISOR: exec_cmd: nio create_udp udp-8c9edb8c-06c6-49f4-9bf0-618ced233538 10222 127.0.0.1 10223 
+Nov 16 19:47:48.376 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR10 0 0 udp-8c9edb8c-06c6-49f4-9bf0-618ced233538 
+Nov 16 19:47:48.376 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:47:48.531 HYPERVISOR: exec_cmd: nio create_udp udp-b71c0cb4-17f8-4483-a025-b243fc527ceb 10226 127.0.0.1 10227 
+Nov 16 19:47:48.531 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR10 0 1 udp-b71c0cb4-17f8-4483-a025-b243fc527ceb 
+Nov 16 19:47:48.547 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:48:19.237 HYPERVISOR: exec_cmd: vm set_ghost_status RR10 2 
+Nov 16 19:48:19.239 HYPERVISOR: exec_cmd: vm set_ghost_file RR10 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 19:48:19.239 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:48:19.241 HYPERVISOR: exec_cmd: vm set_config RR10 configs\i24_startup-config.cfg 
+Nov 16 19:48:19.241 HYPERVISOR: exec_cmd: vm start RR10 
+Nov 16 19:52:18.997 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:52:18.997 HYPERVISOR: exec_cmd: vm stop RR10 
+Nov 16 19:52:19.160 VM: VM RR10 shutdown.
+Nov 16 19:52:19.160 HYPERVISOR: exec_cmd: vm extract_config RR10 
+Nov 16 19:54:08.019 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:17.080 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:29.083 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:56:55.149 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:57:03.403 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:57:04.967 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:57:40.110 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:57:45.479 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:57:46.784 HYPERVISOR: exec_cmd: vm set_ios RR10 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:59:48.078 HYPERVISOR: exec_cmd: vm set_ghost_status RR10 2 
+Nov 16 19:59:48.080 HYPERVISOR: exec_cmd: vm set_ghost_file RR10 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 19:59:48.080 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 19:59:48.082 HYPERVISOR: exec_cmd: vm set_config RR10 configs\i24_startup-config.cfg 
+Nov 16 19:59:48.082 HYPERVISOR: exec_cmd: vm start RR10 
+Nov 16 20:07:38.561 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 20:07:38.562 HYPERVISOR: exec_cmd: vm stop RR10 
+Nov 16 20:07:38.778 VM: VM RR10 shutdown.
+Nov 16 20:07:38.779 HYPERVISOR: exec_cmd: vm extract_config RR10 
+Nov 16 20:39:21.085 HYPERVISOR: exec_cmd: vm set_ghost_status RR10 2 
+Nov 16 20:39:21.085 HYPERVISOR: exec_cmd: vm set_ghost_file RR10 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 20:39:21.085 HYPERVISOR: exec_cmd: vm get_status RR10 
+Nov 16 20:39:21.087 HYPERVISOR: exec_cmd: vm set_config RR10 configs\i24_startup-config.cfg 
+Nov 16 20:39:21.087 HYPERVISOR: exec_cmd: vm start RR10 

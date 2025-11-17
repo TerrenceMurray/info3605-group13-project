@@ -1,0 +1,24 @@
+Nov 16 19:47:03.713 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 19:47:03.713 HYPERVISOR: Started on IP = localhost, TCP port = 50932.
+Nov 16 19:47:04.162 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 19:47:04.162 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
+Nov 16 19:47:04.162 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
+Nov 16 19:47:04.162 HYPERVISOR: exec_cmd: ethsw create SA-SW31 
+Nov 16 19:47:27.998 HYPERVISOR: exec_cmd: nio create_udp udp-056791b6-588a-4a73-9925-f844d1b35cc9 10102 127.0.0.1 10103 
+Nov 16 19:47:27.998 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW31 udp-056791b6-588a-4a73-9925-f844d1b35cc9 
+Nov 16 19:47:28.014 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-056791b6-588a-4a73-9925-f844d1b35cc9 1 
+Nov 16 19:47:28.174 HYPERVISOR: exec_cmd: nio create_udp udp-92762c73-0a2b-4181-863c-3f55a8652d9d 10104 127.0.0.1 10105 
+Nov 16 19:47:28.174 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW31 udp-92762c73-0a2b-4181-863c-3f55a8652d9d 
+Nov 16 19:47:28.206 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-92762c73-0a2b-4181-863c-3f55a8652d9d 1 
+Nov 16 19:47:28.557 HYPERVISOR: exec_cmd: nio create_udp udp-f2856062-35e7-4e6c-a2f3-a9b251e96481 10110 127.0.0.1 10111 
+Nov 16 19:47:28.557 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW31 udp-f2856062-35e7-4e6c-a2f3-a9b251e96481 
+Nov 16 19:47:28.588 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f2856062-35e7-4e6c-a2f3-a9b251e96481 1 
+Nov 16 19:54:11.753 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-056791b6-588a-4a73-9925-f844d1b35cc9 1 
+Nov 16 19:54:11.871 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-92762c73-0a2b-4181-863c-3f55a8652d9d 1 
+Nov 16 19:54:12.087 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f2856062-35e7-4e6c-a2f3-a9b251e96481 1 
+Nov 16 19:54:29.091 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-056791b6-588a-4a73-9925-f844d1b35cc9 1 
+Nov 16 19:54:29.131 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-92762c73-0a2b-4181-863c-3f55a8652d9d 1 
+Nov 16 19:54:29.470 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f2856062-35e7-4e6c-a2f3-a9b251e96481 1 
+Nov 16 19:54:49.654 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-056791b6-588a-4a73-9925-f844d1b35cc9 1 
+Nov 16 19:54:49.708 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-92762c73-0a2b-4181-863c-3f55a8652d9d 1 
+Nov 16 19:54:50.077 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f2856062-35e7-4e6c-a2f3-a9b251e96481 1 

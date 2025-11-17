@@ -1,0 +1,91 @@
+Nov 16 19:46:59.791 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 19:46:59.791 HYPERVISOR: Started on IP = localhost, TCP port = 50914.
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
+Nov 16 19:47:00.247 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\73325ef6-3de9-4841-a050-3001650bc222 
+Nov 16 19:47:00.247 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\73325ef6-3de9-4841-a050-3001650bc222
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: vm create R35 35 c3745 
+Nov 16 19:47:00.247 VM: VM R35 created.
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: vm set_con_tcp_port R35 5034 
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: c3745 get_mac_addr R35 
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: vm set_disk0 R35 0 
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: vm set_exec_area R35 64 
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.247 HYPERVISOR: exec_cmd: vm set_idle_pc R35 0x60aa1da0 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: c3745 set_mac_addr R35 c423.f4b4.0000 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm set_nvram R35 256 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm set_ram R35 256 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm slot_add_binding R35 1 0 NM-1FE-TX 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm slot_add_binding R35 2 0 NM-1FE-TX 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.263 HYPERVISOR: exec_cmd: vm slot_add_binding R35 3 0 NM-1FE-TX 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm slot_add_binding R35 4 0 NM-1FE-TX 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm slot_add_binding R35 0 16 WIC-2T 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm slot_add_binding R35 0 32 WIC-2T 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:00.279 HYPERVISOR: exec_cmd: vm slot_add_binding R35 0 48 WIC-2T 
+Nov 16 19:47:23.304 HYPERVISOR: exec_cmd: nio create_udp udp-43ad9d89-e1e0-4079-839a-db2eab87bb70 10082 127.0.0.1 10083 
+Nov 16 19:47:24.295 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R35 0 1 udp-43ad9d89-e1e0-4079-839a-db2eab87bb70 
+Nov 16 19:47:24.295 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:24.438 HYPERVISOR: exec_cmd: nio create_udp udp-df6dbcf2-2ef1-4130-985c-ff3fcbd2ccff 10086 127.0.0.1 10087 
+Nov 16 19:47:24.454 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R35 1 0 udp-df6dbcf2-2ef1-4130-985c-ff3fcbd2ccff 
+Nov 16 19:47:24.454 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:47:33.975 HYPERVISOR: exec_cmd: nio create_udp udp-326e8341-1333-41f3-899f-c233671c3122 10150 127.0.0.1 10151 
+Nov 16 19:47:33.975 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R35 2 0 udp-326e8341-1333-41f3-899f-c233671c3122 
+Nov 16 19:47:33.975 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:48:21.024 HYPERVISOR: exec_cmd: vm set_ghost_status R35 2 
+Nov 16 19:48:21.026 HYPERVISOR: exec_cmd: vm set_ghost_file R35 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 19:48:21.026 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:48:21.027 HYPERVISOR: exec_cmd: vm set_config R35 configs\i35_startup-config.cfg 
+Nov 16 19:48:21.027 HYPERVISOR: exec_cmd: vm start R35 
+Nov 16 19:49:53.742 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:49:57.748 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:49:58.451 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:50:16.542 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:50:20.251 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:50:23.675 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:51:37.842 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:52:19.718 HYPERVISOR: exec_cmd: vm get_status R35 
+Nov 16 19:52:19.718 HYPERVISOR: exec_cmd: vm stop R35 
+Nov 16 19:52:19.943 VM: VM R35 shutdown.
+Nov 16 19:52:19.958 HYPERVISOR: exec_cmd: vm extract_config R35 
+Nov 16 19:52:33.081 HYPERVISOR: exec_cmd: vm set_ios R35 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:52:33.081 HYPERVISOR: exec_cmd: vm rename R35 R3ER155 
+Nov 16 19:52:33.252 HYPERVISOR: exec_cmd: vm set_ios R3ER155 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:52:36.716 HYPERVISOR: exec_cmd: vm set_ios R3ER155 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:52:36.716 HYPERVISOR: exec_cmd: vm rename R3ER155 ER15 
+Nov 16 19:52:36.908 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:53:58.364 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:03.684 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:04.080 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:07.154 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:25.445 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:37.447 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:56:48.859 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:56:52.623 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:56:53.108 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:57:48.988 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:58:54.021 HYPERVISOR: exec_cmd: vm set_ios ER15 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:59:50.733 HYPERVISOR: exec_cmd: vm set_ghost_status ER15 2 
+Nov 16 19:59:50.733 HYPERVISOR: exec_cmd: vm set_ghost_file ER15 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 19:59:50.735 HYPERVISOR: exec_cmd: vm get_status ER15 
+Nov 16 19:59:50.735 HYPERVISOR: exec_cmd: vm set_config ER15 configs\i35_startup-config.cfg 
+Nov 16 19:59:50.737 HYPERVISOR: exec_cmd: vm start ER15 
+Nov 16 20:07:39.458 HYPERVISOR: exec_cmd: vm get_status ER15 
+Nov 16 20:07:39.459 HYPERVISOR: exec_cmd: vm stop ER15 
+Nov 16 20:07:39.658 VM: VM ER15 shutdown.
+Nov 16 20:07:39.660 HYPERVISOR: exec_cmd: vm extract_config ER15 
+Nov 16 20:39:26.037 HYPERVISOR: exec_cmd: vm set_ghost_status ER15 2 
+Nov 16 20:39:26.039 HYPERVISOR: exec_cmd: vm set_ghost_file ER15 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 20:39:26.041 HYPERVISOR: exec_cmd: vm get_status ER15 
+Nov 16 20:39:26.041 HYPERVISOR: exec_cmd: vm set_config ER15 configs\i35_startup-config.cfg 
+Nov 16 20:39:26.041 HYPERVISOR: exec_cmd: vm start ER15 
+Nov 16 21:00:56.929 HYPERVISOR: exec_cmd: vm extract_config ER15 
+Nov 16 21:00:56.947 HYPERVISOR: exec_cmd: vm extract_config ER15 

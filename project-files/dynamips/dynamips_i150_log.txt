@@ -1,0 +1,80 @@
+Nov 16 19:46:42.683 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 19:46:42.699 HYPERVISOR: Started on IP = localhost, TCP port = 50836.
+Nov 16 19:46:43.068 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 19:46:43.068 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
+Nov 16 19:46:43.068 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
+Nov 16 19:46:43.068 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\43983f1c-32c6-4f35-98dc-5ef76872511b 
+Nov 16 19:46:43.068 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\43983f1c-32c6-4f35-98dc-5ef76872511b
+Nov 16 19:46:43.068 HYPERVISOR: exec_cmd: vm create ER7 9 c3745 
+Nov 16 19:46:43.077 VM: VM ER7 created.
+Nov 16 19:46:43.077 HYPERVISOR: exec_cmd: vm set_con_tcp_port ER7 5008 
+Nov 16 19:46:43.077 HYPERVISOR: exec_cmd: c3745 get_mac_addr ER7 
+Nov 16 19:46:43.081 HYPERVISOR: exec_cmd: vm set_disk0 ER7 0 
+Nov 16 19:46:43.081 HYPERVISOR: exec_cmd: vm set_exec_area ER7 64 
+Nov 16 19:46:43.083 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.083 HYPERVISOR: exec_cmd: vm set_idle_pc ER7 0x60aa1da0 
+Nov 16 19:46:43.083 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:46:43.083 HYPERVISOR: exec_cmd: c3745 set_mac_addr ER7 c409.87a4.0000 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm set_nvram ER7 256 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm set_ram ER7 256 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm slot_add_binding ER7 1 0 NM-1FE-TX 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm slot_add_binding ER7 2 0 NM-1FE-TX 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm slot_add_binding ER7 3 0 NM-1FE-TX 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm slot_add_binding ER7 4 0 NM-1FE-TX 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm slot_add_binding ER7 0 16 WIC-2T 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm slot_add_binding ER7 0 32 WIC-2T 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:46:43.088 HYPERVISOR: exec_cmd: vm slot_add_binding ER7 0 48 WIC-2T 
+Nov 16 19:47:14.379 HYPERVISOR: exec_cmd: nio create_udp udp-d5f2ad38-89d5-4f82-b2e6-b57904d0355f 10034 127.0.0.1 10035 
+Nov 16 19:47:15.291 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER7 0 1 udp-d5f2ad38-89d5-4f82-b2e6-b57904d0355f 
+Nov 16 19:47:15.291 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:47:15.434 HYPERVISOR: exec_cmd: nio create_udp udp-57bf5223-2b2b-4f4f-bedb-de5c8b12ca81 10038 127.0.0.1 10039 
+Nov 16 19:47:15.442 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER7 1 0 udp-57bf5223-2b2b-4f4f-bedb-de5c8b12ca81 
+Nov 16 19:47:15.442 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:48:17.470 HYPERVISOR: exec_cmd: vm set_ghost_status ER7 2 
+Nov 16 19:48:17.470 HYPERVISOR: exec_cmd: vm set_ghost_file ER7 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 19:48:17.470 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:48:17.486 HYPERVISOR: exec_cmd: vm set_config ER7 configs\i9_startup-config.cfg 
+Nov 16 19:48:17.486 HYPERVISOR: exec_cmd: vm start ER7 
+Nov 16 19:49:52.490 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:49:55.281 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:49:55.869 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:50:18.536 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:50:22.667 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:50:23.172 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:50:48.612 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:52:17.999 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:52:17.999 HYPERVISOR: exec_cmd: vm stop ER7 
+Nov 16 19:52:18.172 VM: VM ER7 shutdown.
+Nov 16 19:52:18.172 HYPERVISOR: exec_cmd: vm extract_config ER7 
+Nov 16 19:53:56.518 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:00.469 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:01.072 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:06.642 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:23.462 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:54:35.511 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:56:47.080 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:56:49.897 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:56:50.470 HYPERVISOR: exec_cmd: vm set_ios ER7 C:/Users/mterr/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 19:59:46.354 HYPERVISOR: exec_cmd: vm set_ghost_status ER7 2 
+Nov 16 19:59:46.356 HYPERVISOR: exec_cmd: vm set_ghost_file ER7 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 19:59:46.356 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 19:59:46.357 HYPERVISOR: exec_cmd: vm set_config ER7 configs\i9_startup-config.cfg 
+Nov 16 19:59:46.357 HYPERVISOR: exec_cmd: vm start ER7 
+Nov 16 20:07:37.253 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 20:07:37.253 HYPERVISOR: exec_cmd: vm stop ER7 
+Nov 16 20:07:37.486 VM: VM ER7 shutdown.
+Nov 16 20:07:37.487 HYPERVISOR: exec_cmd: vm extract_config ER7 
+Nov 16 20:39:19.357 HYPERVISOR: exec_cmd: vm set_ghost_status ER7 2 
+Nov 16 20:39:19.357 HYPERVISOR: exec_cmd: vm set_ghost_file ER7 C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 20:39:19.362 HYPERVISOR: exec_cmd: vm get_status ER7 
+Nov 16 20:39:19.362 HYPERVISOR: exec_cmd: vm set_config ER7 configs\i9_startup-config.cfg 
+Nov 16 20:39:19.362 HYPERVISOR: exec_cmd: vm start ER7 
+Nov 16 20:50:20.045 HYPERVISOR: exec_cmd: vm extract_config ER7 
+Nov 16 20:50:20.060 HYPERVISOR: exec_cmd: vm extract_config ER7 

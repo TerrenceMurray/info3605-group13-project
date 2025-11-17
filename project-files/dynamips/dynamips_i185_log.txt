@@ -1,0 +1,43 @@
+Nov 16 19:47:05.584 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 19:47:05.584 HYPERVISOR: Started on IP = localhost, TCP port = 50944.
+Nov 16 19:47:06.049 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 19:47:06.049 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
+Nov 16 19:47:06.049 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
+Nov 16 19:47:06.049 HYPERVISOR: exec_cmd: ethsw create SA-SW104 
+Nov 16 19:47:33.604 HYPERVISOR: exec_cmd: nio create_udp udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 10137 127.0.0.1 10136 
+Nov 16 19:47:33.604 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 
+Nov 16 19:47:33.626 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 1 
+Nov 16 19:47:34.573 HYPERVISOR: exec_cmd: nio create_udp udp-538c661e-c302-4169-b364-bdbb8f1f902b 10156 127.0.0.1 10157 
+Nov 16 19:47:34.573 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-538c661e-c302-4169-b364-bdbb8f1f902b 
+Nov 16 19:47:34.576 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-538c661e-c302-4169-b364-bdbb8f1f902b 1 
+Nov 16 19:47:34.766 HYPERVISOR: exec_cmd: nio create_udp udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 10159 127.0.0.1 10158 
+Nov 16 19:47:34.766 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 
+Nov 16 19:47:34.798 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 1 
+Nov 16 19:47:35.204 HYPERVISOR: exec_cmd: nio create_udp udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 10163 127.0.0.1 10162 
+Nov 16 19:47:35.204 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 
+Nov 16 19:47:35.210 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 1 
+Nov 16 19:53:46.637 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-538c661e-c302-4169-b364-bdbb8f1f902b 1 
+Nov 16 19:53:46.637 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 1 
+Nov 16 19:53:46.637 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 1 
+Nov 16 19:53:46.647 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 1 
+Nov 16 19:54:08.976 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-538c661e-c302-4169-b364-bdbb8f1f902b 1 
+Nov 16 19:54:08.993 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 1 
+Nov 16 19:54:09.265 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 1 
+Nov 16 19:54:09.265 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 1 
+Nov 16 19:54:32.524 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-538c661e-c302-4169-b364-bdbb8f1f902b 1 
+Nov 16 19:54:32.558 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 1 
+Nov 16 19:54:32.930 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 1 
+Nov 16 19:54:33.315 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 1 
+Nov 16 19:54:37.081 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-538c661e-c302-4169-b364-bdbb8f1f902b 1 
+Nov 16 19:54:37.114 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 1 
+Nov 16 19:54:37.114 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 1 
+Nov 16 19:54:37.132 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 1 
+Nov 16 19:59:26.303 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-538c661e-c302-4169-b364-bdbb8f1f902b 1 
+Nov 16 19:59:26.318 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-7ba0ed64-0c79-42af-998d-66dd6becde7a 1 
+Nov 16 19:59:26.318 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-49aef904-d531-4b5e-82d2-c421f4a6abd0 1 
+Nov 16 19:59:26.318 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 1 
+Nov 16 21:28:28.554 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW104 udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 
+Nov 16 21:28:28.554 HYPERVISOR: exec_cmd: nio delete udp-df26d4a5-5899-4f93-882d-c33f60dfcbc0 
+Nov 16 21:28:41.215 HYPERVISOR: exec_cmd: nio create_udp udp-58bf9297-02b8-405f-b5ec-c912140e58be 10137 127.0.0.1 10136 
+Nov 16 21:28:41.215 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-58bf9297-02b8-405f-b5ec-c912140e58be 
+Nov 16 21:28:41.215 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-58bf9297-02b8-405f-b5ec-c912140e58be 1 
