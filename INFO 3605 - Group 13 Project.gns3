@@ -565,6 +565,7 @@
             {
                 "filters": {},
                 "link_id": "aac53e52-2ae6-4bad-b03a-e0586b00592e",
+                "link_id": "aac53e52-2ae6-4bad-b03a-e0586b00592e",
                 "link_style": {},
                 "nodes": [
                     {
@@ -575,7 +576,12 @@
                             "text": "e0",
                             "x": -15,
                             "y": 39
+                            "text": "e0",
+                            "x": -15,
+                            "y": 39
                         },
+                        "node_id": "9ed50bdb-0447-41a6-83cf-def187a4a506",
+                        "port_number": 0
                         "node_id": "9ed50bdb-0447-41a6-83cf-def187a4a506",
                         "port_number": 0
                     },
@@ -587,7 +593,11 @@
                             "text": "e0",
                             "x": 68,
                             "y": -9
+                            "text": "e0",
+                            "x": 68,
+                            "y": -9
                         },
+                        "node_id": "1d4b21c5-5bf2-4d2b-8d3c-02856fbfde0c",
                         "node_id": "1d4b21c5-5bf2-4d2b-8d3c-02856fbfde0c",
                         "port_number": 0
                     }
@@ -596,6 +606,7 @@
             },
             {
                 "filters": {},
+                "link_id": "8a3a3349-a44c-4518-b9e6-71e93ea48beb",
                 "link_id": "8a3a3349-a44c-4518-b9e6-71e93ea48beb",
                 "link_style": {},
                 "nodes": [
@@ -607,7 +618,11 @@
                             "text": "e1",
                             "x": 76,
                             "y": 50
+                            "text": "e1",
+                            "x": 76,
+                            "y": 50
                         },
+                        "node_id": "9ed50bdb-0447-41a6-83cf-def187a4a506",
                         "node_id": "9ed50bdb-0447-41a6-83cf-def187a4a506",
                         "port_number": 1
                     },
@@ -619,7 +634,11 @@
                             "text": "e0",
                             "x": -21,
                             "y": -8
+                            "text": "e0",
+                            "x": -21,
+                            "y": -8
                         },
+                        "node_id": "7f9b8390-f9d3-4351-bfb5-10943c3005b1",
                         "node_id": "7f9b8390-f9d3-4351-bfb5-10943c3005b1",
                         "port_number": 0
                     }
@@ -629,9 +648,11 @@
             {
                 "filters": {},
                 "link_id": "03cedae7-5e1d-41c0-a4d4-7f9dca933ba1",
+                "link_id": "03cedae7-5e1d-41c0-a4d4-7f9dca933ba1",
                 "link_style": {},
                 "nodes": [
                     {
+                        "adapter_number": 1,
                         "adapter_number": 1,
                         "label": {
                             "rotation": 0,
@@ -639,7 +660,12 @@
                             "text": "f1/0",
                             "x": 5,
                             "y": 52
+                            "text": "f1/0",
+                            "x": 5,
+                            "y": 52
                         },
+                        "node_id": "a950b0a0-a2cc-4d70-b3e2-b6477b3f4d72",
+                        "port_number": 0
                         "node_id": "a950b0a0-a2cc-4d70-b3e2-b6477b3f4d72",
                         "port_number": 0
                     },
@@ -651,7 +677,11 @@
                             "text": "e0",
                             "x": 44,
                             "y": -34
+                            "text": "e0",
+                            "x": 44,
+                            "y": -34
                         },
+                        "node_id": "a5c1819f-0b6e-4903-931b-cd9314b9b421",
                         "node_id": "a5c1819f-0b6e-4903-931b-cd9314b9b421",
                         "port_number": 0
                     }
@@ -660,6 +690,7 @@
             },
             {
                 "filters": {},
+                "link_id": "0ddc1c20-eb2e-468e-b570-b957691d8fee",
                 "link_id": "0ddc1c20-eb2e-468e-b570-b957691d8fee",
                 "link_style": {},
                 "nodes": [
@@ -671,7 +702,12 @@
                             "text": "e2",
                             "x": -11,
                             "y": -32
+                            "text": "e2",
+                            "x": -11,
+                            "y": -32
                         },
+                        "node_id": "9ed50bdb-0447-41a6-83cf-def187a4a506",
+                        "port_number": 2
                         "node_id": "9ed50bdb-0447-41a6-83cf-def187a4a506",
                         "port_number": 2
                     },
@@ -683,7 +719,12 @@
                             "text": "f0/0",
                             "x": 64,
                             "y": 64
+                            "text": "f0/0",
+                            "x": 64,
+                            "y": 64
                         },
+                        "node_id": "3bdf8f60-6175-4e28-9a30-aac760d80878",
+                        "port_number": 0
                         "node_id": "3bdf8f60-6175-4e28-9a30-aac760d80878",
                         "port_number": 0
                     }
@@ -692,6 +733,7 @@
             },
             {
                 "filters": {},
+                "link_id": "875bac31-2ca7-4dfd-b138-fdd371a2f2e4",
                 "link_id": "875bac31-2ca7-4dfd-b138-fdd371a2f2e4",
                 "link_style": {},
                 "nodes": [
@@ -703,7 +745,12 @@
                             "text": "e0",
                             "x": 44,
                             "y": 66
+                            "text": "e0",
+                            "x": 44,
+                            "y": 66
                         },
+                        "node_id": "b4e443b1-4a6c-4fbc-ac63-424624e9745c",
+                        "port_number": 0
                         "node_id": "b4e443b1-4a6c-4fbc-ac63-424624e9745c",
                         "port_number": 0
                     },
@@ -715,7 +762,10 @@
                             "text": "f0/0",
                             "x": 5,
                             "y": -38
+                            "x": 5,
+                            "y": -38
                         },
+                        "node_id": "09746ddc-f2cc-4f90-8c0d-46a959511a61",
                         "node_id": "09746ddc-f2cc-4f90-8c0d-46a959511a61",
                         "port_number": 0
                     }
@@ -724,6 +774,7 @@
             },
             {
                 "filters": {},
+                "link_id": "a5d0f2f7-f322-4272-92c3-1da26f9bc567",
                 "link_id": "a5d0f2f7-f322-4272-92c3-1da26f9bc567",
                 "link_style": {},
                 "nodes": [
@@ -735,7 +786,10 @@
                             "text": "f0/1",
                             "x": 83,
                             "y": 28
+                            "x": 83,
+                            "y": 28
                         },
+                        "node_id": "09746ddc-f2cc-4f90-8c0d-46a959511a61",
                         "node_id": "09746ddc-f2cc-4f90-8c0d-46a959511a61",
                         "port_number": 1
                     },
@@ -747,7 +801,10 @@
                             "text": "f0/0",
                             "x": -17,
                             "y": 26
+                            "x": -17,
+                            "y": 26
                         },
+                        "node_id": "cd7a4aef-fb16-4218-96f9-b226a946da50",
                         "node_id": "cd7a4aef-fb16-4218-96f9-b226a946da50",
                         "port_number": 0
                     }
@@ -756,6 +813,7 @@
             },
             {
                 "filters": {},
+                "link_id": "15a4b7b5-aa66-4a2d-baf8-4fbc5593e237",
                 "link_id": "15a4b7b5-aa66-4a2d-baf8-4fbc5593e237",
                 "link_style": {},
                 "nodes": [
@@ -767,7 +825,10 @@
                             "text": "f0/1",
                             "x": 38,
                             "y": 72
+                            "x": 38,
+                            "y": 72
                         },
+                        "node_id": "cd7a4aef-fb16-4218-96f9-b226a946da50",
                         "node_id": "cd7a4aef-fb16-4218-96f9-b226a946da50",
                         "port_number": 1
                     },
@@ -779,7 +840,10 @@
                             "text": "f0/0",
                             "x": 8,
                             "y": -38
+                            "x": 8,
+                            "y": -38
                         },
+                        "node_id": "66fe1993-ff2c-47e8-9e81-53b026dd190c",
                         "node_id": "66fe1993-ff2c-47e8-9e81-53b026dd190c",
                         "port_number": 0
                     }
@@ -788,6 +852,7 @@
             },
             {
                 "filters": {},
+                "link_id": "75193e79-09dc-424f-9d10-da55d68a344f",
                 "link_id": "75193e79-09dc-424f-9d10-da55d68a344f",
                 "link_style": {},
                 "nodes": [
@@ -799,7 +864,10 @@
                             "text": "f0/1",
                             "x": -17,
                             "y": 27
+                            "x": -17,
+                            "y": 27
                         },
+                        "node_id": "66fe1993-ff2c-47e8-9e81-53b026dd190c",
                         "node_id": "66fe1993-ff2c-47e8-9e81-53b026dd190c",
                         "port_number": 1
                     },
@@ -811,7 +879,12 @@
                             "text": "f0/1",
                             "x": 83,
                             "y": 17
+                            "text": "f0/1",
+                            "x": 83,
+                            "y": 17
                         },
+                        "node_id": "3bdf8f60-6175-4e28-9a30-aac760d80878",
+                        "port_number": 1
                         "node_id": "3bdf8f60-6175-4e28-9a30-aac760d80878",
                         "port_number": 1
                     }
@@ -857,6 +930,7 @@
                 "nodes": [
                     {
                         "adapter_number": 1,
+                        "adapter_number": 1,
                         "label": {
                             "rotation": 0,
                             "style": "font-size: 10; font-style: Verdana",
@@ -888,7 +962,7 @@
                 "link_style": {},
                 "nodes": [
                     {
-                        "adapter_number": 0,
+                        "adapter_number": 1,
                         "label": {
                             "rotation": 0,
                             "style": "font-size: 10; font-style: Verdana",
@@ -900,7 +974,7 @@
                         "port_number": 1
                     },
                     {
-                        "adapter_number": 0,
+                        "adapter_number": 2,
                         "label": {
                             "rotation": 0,
                             "style": "font-size: 10; font-style: Verdana",
@@ -1177,6 +1251,7 @@
                 "nodes": [
                     {
                         "adapter_number": 0,
+                        "adapter_number": 0,
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
@@ -1224,6 +1299,7 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
                             "x": 72,
                             "y": 23
@@ -1256,6 +1332,7 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
                             "x": -3,
                             "y": 5
@@ -1276,6 +1353,7 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
                             "x": 70,
                             "y": 35
@@ -1287,6 +1365,7 @@
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
                             "x": -4,
@@ -1308,6 +1387,7 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
                             "x": -6,
                             "y": 21
@@ -1319,6 +1399,7 @@
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
                             "x": 72,
@@ -1339,6 +1420,7 @@
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
                             "x": 70,
@@ -1372,6 +1454,7 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
                             "x": 71,
                             "y": 34
@@ -1401,6 +1484,7 @@
                 "nodes": [
                     {
                         "adapter_number": 0,
+                        "adapter_number": 0,
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
@@ -1412,6 +1496,7 @@
                         "port_number": 1
                     },
                     {
+                        "adapter_number": 0,
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
@@ -1433,6 +1518,7 @@
                 "nodes": [
                     {
                         "adapter_number": 0,
+                        "adapter_number": 0,
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
@@ -1444,6 +1530,7 @@
                         "port_number": 1
                     },
                     {
+                        "adapter_number": 0,
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
@@ -1685,6 +1772,7 @@
             {
                 "filters": {},
                 "link_id": "002bc7e6-f76c-49c2-b9fb-59d44d23c08e",
+                "link_id": "002bc7e6-f76c-49c2-b9fb-59d44d23c08e",
                 "link_style": {},
                 "nodes": [
                     {
@@ -1692,7 +1780,10 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
+                            "x": 29,
+                            "y": 61
                             "x": 29,
                             "y": 61
                         },
@@ -1704,7 +1795,10 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "e0",
+                            "x": 39,
+                            "y": -23
                             "x": 39,
                             "y": -23
                         },
@@ -1716,6 +1810,7 @@
             },
             {
                 "filters": {},
+                "link_id": "9c9892b4-8e70-4e79-8fd2-b5bc6b2a0b69",
                 "link_id": "9c9892b4-8e70-4e79-8fd2-b5bc6b2a0b69",
                 "link_style": {},
                 "nodes": [
@@ -1794,6 +1889,8 @@
                     "text": "ER1",
                     "x": 17,
                     "y": -25
+                    "x": 17,
+                    "y": -25
                 },
                 "locked": false,
                 "name": "ER1",
@@ -1837,6 +1934,8 @@
                 "width": 66,
                 "x": 325,
                 "y": -439,
+                "x": 325,
+                "y": -439,
                 "z": 1
             },
             {
@@ -1851,6 +1950,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER2",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -1896,6 +1997,8 @@
                 "width": 66,
                 "x": 458,
                 "y": -394,
+                "x": 458,
+                "y": -394,
                 "z": 1
             },
             {
@@ -1910,6 +2013,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR1",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -1955,6 +2059,8 @@
                 "width": 66,
                 "x": -615,
                 "y": -444,
+                "x": -615,
+                "y": -444,
                 "z": 1
             },
             {
@@ -1969,6 +2075,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER3",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -2014,6 +2122,8 @@
                 "width": 66,
                 "x": 599,
                 "y": -332,
+                "x": 599,
+                "y": -332,
                 "z": 1
             },
             {
@@ -2028,6 +2138,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER4",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -2073,6 +2185,8 @@
                 "width": 66,
                 "x": 288,
                 "y": -337,
+                "x": 288,
+                "y": -337,
                 "z": 1
             },
             {
@@ -2087,6 +2201,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER5",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -2132,6 +2248,8 @@
                 "width": 66,
                 "x": 422,
                 "y": -279,
+                "x": 422,
+                "y": -279,
                 "z": 1
             },
             {
@@ -2146,6 +2264,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER6",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -2191,6 +2311,8 @@
                 "width": 66,
                 "x": 567,
                 "y": -224,
+                "x": 567,
+                "y": -224,
                 "z": 1
             },
             {
@@ -2205,6 +2327,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR2",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -2250,6 +2373,8 @@
                 "width": 66,
                 "x": -472,
                 "y": -382,
+                "x": -472,
+                "y": -382,
                 "z": 1
             },
             {
@@ -2264,6 +2389,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER7",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -2309,6 +2436,8 @@
                 "width": 66,
                 "x": 255,
                 "y": -217,
+                "x": 255,
+                "y": -217,
                 "z": 1
             },
             {
@@ -2323,6 +2452,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER8",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -2368,6 +2499,8 @@
                 "width": 66,
                 "x": 388,
                 "y": -164,
+                "x": 388,
+                "y": -164,
                 "z": 1
             },
             {
@@ -2382,6 +2515,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER9",
+                    "x": 17,
+                    "y": -25
                     "x": 17,
                     "y": -25
                 },
@@ -2427,6 +2562,8 @@
                 "width": 66,
                 "x": 529,
                 "y": -114,
+                "x": 529,
+                "y": -114,
                 "z": 1
             },
             {
@@ -2441,6 +2578,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER10",
+                    "x": 13,
+                    "y": -25
                     "x": 13,
                     "y": -25
                 },
@@ -2486,6 +2625,8 @@
                 "width": 66,
                 "x": 681,
                 "y": -70,
+                "x": 681,
+                "y": -70,
                 "z": 1
             },
             {
@@ -2500,6 +2641,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER11",
+                    "x": 13,
+                    "y": -25
                     "x": 13,
                     "y": -25
                 },
@@ -2545,6 +2688,8 @@
                 "width": 66,
                 "x": 241,
                 "y": -89,
+                "x": 241,
+                "y": -89,
                 "z": 1
             },
             {
@@ -2559,6 +2704,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER12",
+                    "x": 13,
+                    "y": -25
                     "x": 13,
                     "y": -25
                 },
@@ -2604,6 +2751,8 @@
                 "width": 66,
                 "x": 369,
                 "y": -40,
+                "x": 369,
+                "y": -40,
                 "z": 1
             },
             {
@@ -2618,6 +2767,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER13",
+                    "x": 13,
+                    "y": -25
                     "x": 13,
                     "y": -25
                 },
@@ -2663,6 +2814,8 @@
                 "width": 66,
                 "x": 507,
                 "y": 11,
+                "x": 507,
+                "y": 11,
                 "z": 1
             },
             {
@@ -2679,8 +2832,12 @@
                     "text": "ER14",
                     "x": 12,
                     "y": -25
+                    "text": "ER14",
+                    "x": 12,
+                    "y": -25
                 },
                 "locked": false,
+                "name": "ER14",
                 "name": "ER14",
                 "node_id": "1d25ed3b-8bca-47f9-8993-7df0fcd6cbaf",
                 "node_type": "dynamips",
@@ -2722,6 +2879,8 @@
                 "width": 66,
                 "x": 649,
                 "y": 72,
+                "x": 649,
+                "y": 72,
                 "z": 1
             },
             {
@@ -2736,6 +2895,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR3",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -2781,6 +2941,8 @@
                 "width": 66,
                 "x": -339,
                 "y": -319,
+                "x": -339,
+                "y": -319,
                 "z": 1
             },
             {
@@ -2795,6 +2957,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR4",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -2840,6 +3003,8 @@
                 "width": 66,
                 "x": -655,
                 "y": -341,
+                "x": -655,
+                "y": -341,
                 "z": 1
             },
             {
@@ -2854,6 +3019,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR5",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -2899,6 +3065,8 @@
                 "width": 66,
                 "x": -517,
                 "y": -283,
+                "x": -517,
+                "y": -283,
                 "z": 1
             },
             {
@@ -2913,6 +3081,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR6",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -2958,6 +3127,8 @@
                 "width": 66,
                 "x": -379,
                 "y": -223,
+                "x": -379,
+                "y": -223,
                 "z": 1
             },
             {
@@ -2972,6 +3143,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR7",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -3017,6 +3189,8 @@
                 "width": 66,
                 "x": -688,
                 "y": -224,
+                "x": -688,
+                "y": -224,
                 "z": 1
             },
             {
@@ -3031,6 +3205,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR8",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -3076,6 +3251,8 @@
                 "width": 66,
                 "x": -555,
                 "y": -171,
+                "x": -555,
+                "y": -171,
                 "z": 1
             },
             {
@@ -3090,6 +3267,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR9",
+                    "x": 16,
                     "x": 16,
                     "y": -25
                 },
@@ -3135,6 +3313,8 @@
                 "width": 66,
                 "x": -409,
                 "y": -125,
+                "x": -409,
+                "y": -125,
                 "z": 1
             },
             {
@@ -3149,6 +3329,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR10",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3194,6 +3375,8 @@
                 "width": 66,
                 "x": -263,
                 "y": -80,
+                "x": -263,
+                "y": -80,
                 "z": 1
             },
             {
@@ -3208,6 +3391,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR11",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3253,6 +3437,8 @@
                 "width": 66,
                 "x": -695,
                 "y": -88,
+                "x": -695,
+                "y": -88,
                 "z": 1
             },
             {
@@ -3267,6 +3453,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR12",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3312,6 +3499,8 @@
                 "width": 66,
                 "x": -562,
                 "y": -35,
+                "x": -562,
+                "y": -35,
                 "z": 1
             },
             {
@@ -3326,6 +3515,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR13",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3371,6 +3561,8 @@
                 "width": 66,
                 "x": -427,
                 "y": 20,
+                "x": -427,
+                "y": 20,
                 "z": 1
             },
             {
@@ -3385,6 +3577,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR14",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3430,6 +3623,8 @@
                 "width": 66,
                 "x": -280,
                 "y": 67,
+                "x": -280,
+                "y": 67,
                 "z": 1
             },
             {
@@ -3444,6 +3639,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR15",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3489,6 +3685,8 @@
                 "width": 66,
                 "x": -645,
                 "y": 65,
+                "x": -645,
+                "y": 65,
                 "z": 1
             },
             {
@@ -3503,6 +3701,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR16",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3548,6 +3747,8 @@
                 "width": 66,
                 "x": -504,
                 "y": 111,
+                "x": -504,
+                "y": 111,
                 "z": 1
             },
             {
@@ -3562,6 +3763,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR17",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3607,6 +3809,8 @@
                 "width": 66,
                 "x": -362,
                 "y": 161,
+                "x": -362,
+                "y": 161,
                 "z": 1
             },
             {
@@ -3621,6 +3825,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "RR18",
+                    "x": 12,
                     "x": 12,
                     "y": -25
                 },
@@ -3666,6 +3871,8 @@
                 "width": 66,
                 "x": -521,
                 "y": 243,
+                "x": -521,
+                "y": 243,
                 "z": 1
             },
             {
@@ -3680,6 +3887,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "OR1",
+                    "x": 16,
+                    "y": -25
                     "x": 16,
                     "y": -25
                 },
@@ -3725,6 +3934,8 @@
                 "width": 66,
                 "x": -112,
                 "y": -169,
+                "x": -112,
+                "y": -169,
                 "z": 1
             },
             {
@@ -3739,6 +3950,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "OR4",
+                    "x": 16,
+                    "y": -25
                     "x": 16,
                     "y": -25
                 },
@@ -3784,6 +3997,8 @@
                 "width": 66,
                 "x": -115,
                 "y": -10,
+                "x": -115,
+                "y": -10,
                 "z": 1
             },
             {
@@ -3799,9 +4014,12 @@
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER15",
                     "x": 12,
+                    "text": "ER15",
+                    "x": 12,
                     "y": -25
                 },
                 "locked": false,
+                "name": "ER15",
                 "name": "ER15",
                 "node_id": "73325ef6-3de9-4841-a050-3001650bc222",
                 "node_type": "dynamips",
@@ -3843,6 +4061,8 @@
                 "width": 66,
                 "x": 235,
                 "y": 26,
+                "x": 235,
+                "y": 26,
                 "z": 1
             },
             {
@@ -3858,9 +4078,12 @@
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER16",
                     "x": 12,
+                    "text": "ER16",
+                    "x": 12,
                     "y": -25
                 },
                 "locked": false,
+                "name": "ER16",
                 "name": "ER16",
                 "node_id": "f9ea7fde-3cea-48de-9998-7f142386e340",
                 "node_type": "dynamips",
@@ -3902,6 +4125,8 @@
                 "width": 66,
                 "x": 367,
                 "y": 96,
+                "x": 367,
+                "y": 96,
                 "z": 1
             },
             {
@@ -3917,9 +4142,12 @@
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER17",
                     "x": 12,
+                    "text": "ER17",
+                    "x": 12,
                     "y": -25
                 },
                 "locked": false,
+                "name": "ER17",
                 "name": "ER17",
                 "node_id": "2c3834d5-5622-479c-b5da-aad067d7325f",
                 "node_type": "dynamips",
@@ -3961,6 +4189,8 @@
                 "width": 66,
                 "x": 491,
                 "y": 164,
+                "x": 491,
+                "y": 164,
                 "z": 1
             },
             {
@@ -3975,6 +4205,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "OR2",
+                    "x": 16,
+                    "y": -25
                     "x": 16,
                     "y": -25
                 },
@@ -4020,6 +4252,8 @@
                 "width": 66,
                 "x": 40,
                 "y": -162,
+                "x": 40,
+                "y": -162,
                 "z": 1
             },
             {
@@ -4034,6 +4268,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "OR3",
+                    "x": 16,
+                    "y": -25
                     "x": 16,
                     "y": -25
                 },
@@ -4079,6 +4315,8 @@
                 "width": 66,
                 "x": 38,
                 "y": -9,
+                "x": 38,
+                "y": -9,
                 "z": 1
             },
             {
@@ -4094,9 +4332,12 @@
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "ER18",
                     "x": 12,
+                    "text": "ER18",
+                    "x": 12,
                     "y": -25
                 },
                 "locked": false,
+                "name": "ER18",
                 "name": "ER18",
                 "node_id": "a950b0a0-a2cc-4d70-b3e2-b6477b3f4d72",
                 "node_type": "dynamips",
@@ -4138,6 +4379,8 @@
                 "width": 66,
                 "x": 397,
                 "y": 236,
+                "x": 397,
+                "y": 236,
                 "z": 1
             },
             {
@@ -4152,6 +4395,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-SW31",
+                    "x": 1,
+                    "y": -25
                     "x": 1,
                     "y": -25
                 },
@@ -4218,6 +4463,8 @@
                 "width": 72,
                 "x": -96,
                 "y": 123,
+                "x": -96,
+                "y": 123,
                 "z": 1
             },
             {
@@ -4234,6 +4481,8 @@
                     "text": "SA-PC312",
                     "x": -3,
                     "y": -25
+                    "x": -3,
+                    "y": -25
                 },
                 "locked": false,
                 "name": "SA-PC312",
@@ -4245,6 +4494,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
+                "x": -10,
+                "y": 249,
                 "x": -10,
                 "y": 249,
                 "z": 1
@@ -4263,6 +4514,8 @@
                     "text": "SA-PC311",
                     "x": -3,
                     "y": -25
+                    "x": -3,
+                    "y": -25
                 },
                 "locked": false,
                 "name": "SA-PC311",
@@ -4274,6 +4527,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
+                "x": -170,
+                "y": 248,
                 "x": -170,
                 "y": 248,
                 "z": 1
@@ -4290,6 +4545,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-SW101",
+                    "x": -3,
+                    "y": -25
                     "x": -3,
                     "y": -25
                 },
@@ -4356,6 +4613,8 @@
                 "width": 72,
                 "x": -99,
                 "y": -448,
+                "x": -99,
+                "y": -448,
                 "z": 1
             },
             {
@@ -4370,6 +4629,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-SW102",
+                    "x": -3,
+                    "y": -25
                     "x": -3,
                     "y": -25
                 },
@@ -4436,6 +4697,8 @@
                 "width": 72,
                 "x": 63,
                 "y": -445,
+                "x": 63,
+                "y": -445,
                 "z": 1
             },
             {
@@ -4450,6 +4713,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-SW104",
+                    "x": -3,
+                    "y": -25
                     "x": -3,
                     "y": -25
                 },
@@ -4516,6 +4781,8 @@
                 "width": 72,
                 "x": 51,
                 "y": -278,
+                "x": 51,
+                "y": -278,
                 "z": 1
             },
             {
@@ -4530,6 +4797,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-SW103",
+                    "x": -3,
+                    "y": -25
                     "x": -3,
                     "y": -25
                 },
@@ -4596,6 +4865,8 @@
                 "width": 72,
                 "x": -109,
                 "y": -283,
+                "x": -109,
+                "y": -283,
                 "z": 1
             },
             {
@@ -4611,9 +4882,12 @@
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-SW21",
                     "x": 1,
+                    "text": "SA-SW21",
+                    "x": 1,
                     "y": -25
                 },
                 "locked": false,
+                "name": "SA-SW21",
                 "name": "SA-SW21",
                 "node_id": "a5c1819f-0b6e-4903-931b-cd9314b9b421",
                 "node_type": "ethernet_switch",
@@ -4676,6 +4950,8 @@
                 "width": 72,
                 "x": 390,
                 "y": 349,
+                "x": 390,
+                "y": 349,
                 "z": 1
             },
             {
@@ -4691,9 +4967,12 @@
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-PC21",
                     "x": 0,
+                    "text": "SA-PC21",
+                    "x": 0,
                     "y": -25
                 },
                 "locked": false,
+                "name": "SA-PC21",
                 "name": "SA-PC21",
                 "node_id": "a43c4430-d9e5-4e2a-bdfe-889953b1cf54",
                 "node_type": "vpcs",
@@ -4703,6 +4982,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
+                "x": 393,
+                "y": 451,
                 "x": 393,
                 "y": 451,
                 "z": 1
@@ -4719,6 +5000,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-SW11",
+                    "x": 1,
                     "x": 1,
                     "y": -25
                 },
@@ -4799,6 +5081,7 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "SA-PC-11",
+                    "x": -2,
                     "x": -2,
                     "y": -25
                 },
