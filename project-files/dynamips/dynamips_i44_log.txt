@@ -1,18 +1,18 @@
-Nov 16 22:32:27.694 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Nov 16 22:32:27.694 HYPERVISOR: Started on IP = localhost, TCP port = 11594.
-Nov 16 22:32:28.183 HYPERVISOR: exec_cmd: hypervisor version 
-Nov 16 22:32:28.183 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
-Nov 16 22:32:28.183 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
-Nov 16 22:32:28.183 HYPERVISOR: exec_cmd: ethsw create SA-SW104 
-Nov 16 22:32:58.164 HYPERVISOR: exec_cmd: nio create_udp udp-4b8bbc53-f27b-4506-85aa-e84aa1004bb6 10137 127.0.0.1 10136 
-Nov 16 22:32:58.165 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-4b8bbc53-f27b-4506-85aa-e84aa1004bb6 
-Nov 16 22:32:58.192 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-4b8bbc53-f27b-4506-85aa-e84aa1004bb6 1 
-Nov 16 22:33:00.502 HYPERVISOR: exec_cmd: nio create_udp udp-20181dcf-c663-4fa8-b683-fc67da721220 10156 127.0.0.1 10157 
-Nov 16 22:33:00.502 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-20181dcf-c663-4fa8-b683-fc67da721220 
-Nov 16 22:33:00.510 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-20181dcf-c663-4fa8-b683-fc67da721220 1 
-Nov 16 22:33:01.096 HYPERVISOR: exec_cmd: nio create_udp udp-18cdab85-e926-4995-adb2-c77d5390b0a8 10159 127.0.0.1 10158 
-Nov 16 22:33:01.096 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-18cdab85-e926-4995-adb2-c77d5390b0a8 
-Nov 16 22:33:01.101 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-18cdab85-e926-4995-adb2-c77d5390b0a8 1 
-Nov 16 22:33:01.856 HYPERVISOR: exec_cmd: nio create_udp udp-00becc52-f3da-4c3c-a64a-8a32d91537e2 10163 127.0.0.1 10162 
-Nov 16 22:33:01.871 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-00becc52-f3da-4c3c-a64a-8a32d91537e2 
-Nov 16 22:33:01.901 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-00becc52-f3da-4c3c-a64a-8a32d91537e2 1 
+Nov 17 00:39:16.274 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 17 00:39:16.274 HYPERVISOR: Started on IP = localhost, TCP port = 24301.
+Nov 17 00:39:16.754 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 17 00:39:16.754 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 17 00:39:16.754 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 17 00:39:16.754 HYPERVISOR: exec_cmd: ethsw create SA-SW104 
+Nov 17 00:39:28.391 HYPERVISOR: exec_cmd: nio create_udp udp-199c99a3-1c34-4113-a04c-2c6f5d8e2bbb 10137 127.0.0.1 10136 
+Nov 17 00:39:28.393 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-199c99a3-1c34-4113-a04c-2c6f5d8e2bbb 
+Nov 17 00:39:28.407 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-199c99a3-1c34-4113-a04c-2c6f5d8e2bbb 1 
+Nov 17 00:39:28.927 HYPERVISOR: exec_cmd: nio create_udp udp-cd1557a7-3443-4b9e-9863-86708a832aa6 10156 127.0.0.1 10157 
+Nov 17 00:39:28.927 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-cd1557a7-3443-4b9e-9863-86708a832aa6 
+Nov 17 00:39:28.947 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-cd1557a7-3443-4b9e-9863-86708a832aa6 1 
+Nov 17 00:39:29.058 HYPERVISOR: exec_cmd: nio create_udp udp-1acecfe0-a18d-44ca-a832-f860ace7b93b 10159 127.0.0.1 10158 
+Nov 17 00:39:29.058 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-1acecfe0-a18d-44ca-a832-f860ace7b93b 
+Nov 17 00:39:29.074 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-1acecfe0-a18d-44ca-a832-f860ace7b93b 1 
+Nov 17 00:39:29.282 HYPERVISOR: exec_cmd: nio create_udp udp-89fa4d95-b25b-455d-8099-a318fe298706 10163 127.0.0.1 10162 
+Nov 17 00:39:29.282 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-89fa4d95-b25b-455d-8099-a318fe298706 
+Nov 17 00:39:29.298 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-89fa4d95-b25b-455d-8099-a318fe298706 1 
