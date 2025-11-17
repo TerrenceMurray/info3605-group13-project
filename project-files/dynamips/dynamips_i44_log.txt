@@ -1,18 +1,30 @@
-Nov 17 00:39:16.274 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Nov 17 00:39:16.274 HYPERVISOR: Started on IP = localhost, TCP port = 24301.
-Nov 17 00:39:16.754 HYPERVISOR: exec_cmd: hypervisor version 
-Nov 17 00:39:16.754 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
-Nov 17 00:39:16.754 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
-Nov 17 00:39:16.754 HYPERVISOR: exec_cmd: ethsw create SA-SW104 
-Nov 17 00:39:28.391 HYPERVISOR: exec_cmd: nio create_udp udp-199c99a3-1c34-4113-a04c-2c6f5d8e2bbb 10137 127.0.0.1 10136 
-Nov 17 00:39:28.393 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-199c99a3-1c34-4113-a04c-2c6f5d8e2bbb 
-Nov 17 00:39:28.407 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-199c99a3-1c34-4113-a04c-2c6f5d8e2bbb 1 
-Nov 17 00:39:28.927 HYPERVISOR: exec_cmd: nio create_udp udp-cd1557a7-3443-4b9e-9863-86708a832aa6 10156 127.0.0.1 10157 
-Nov 17 00:39:28.927 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-cd1557a7-3443-4b9e-9863-86708a832aa6 
-Nov 17 00:39:28.947 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-cd1557a7-3443-4b9e-9863-86708a832aa6 1 
-Nov 17 00:39:29.058 HYPERVISOR: exec_cmd: nio create_udp udp-1acecfe0-a18d-44ca-a832-f860ace7b93b 10159 127.0.0.1 10158 
-Nov 17 00:39:29.058 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-1acecfe0-a18d-44ca-a832-f860ace7b93b 
-Nov 17 00:39:29.074 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-1acecfe0-a18d-44ca-a832-f860ace7b93b 1 
-Nov 17 00:39:29.282 HYPERVISOR: exec_cmd: nio create_udp udp-89fa4d95-b25b-455d-8099-a318fe298706 10163 127.0.0.1 10162 
-Nov 17 00:39:29.282 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-89fa4d95-b25b-455d-8099-a318fe298706 
-Nov 17 00:39:29.298 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-89fa4d95-b25b-455d-8099-a318fe298706 1 
+Nov 17 15:12:44.463 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 17 15:12:44.464 HYPERVISOR: Started on IP = localhost, TCP port = 54231.
+Nov 17 15:12:44.954 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 17 15:12:44.956 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
+Nov 17 15:12:44.957 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
+Nov 17 15:12:44.957 HYPERVISOR: exec_cmd: ethsw create SA-SW104 
+Nov 17 15:13:09.787 HYPERVISOR: exec_cmd: nio create_udp udp-0a1396ef-31d2-452c-947d-e9b99f379048 20152 127.0.0.1 20153 
+Nov 17 15:13:09.788 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-0a1396ef-31d2-452c-947d-e9b99f379048 
+Nov 17 15:13:09.796 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-0a1396ef-31d2-452c-947d-e9b99f379048 1 
+Nov 17 15:13:10.024 HYPERVISOR: exec_cmd: nio create_udp udp-fb7aa557-282c-45c5-ab11-14de87d1bd36 20155 127.0.0.1 20154 
+Nov 17 15:13:10.024 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-fb7aa557-282c-45c5-ab11-14de87d1bd36 
+Nov 17 15:13:10.042 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-fb7aa557-282c-45c5-ab11-14de87d1bd36 1 
+Nov 17 15:13:10.463 HYPERVISOR: exec_cmd: nio create_udp udp-1e514e32-2cd6-4a96-be61-a4b42bc5ab8c 20159 127.0.0.1 20158 
+Nov 17 15:13:10.464 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-1e514e32-2cd6-4a96-be61-a4b42bc5ab8c 
+Nov 17 15:13:10.475 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-1e514e32-2cd6-4a96-be61-a4b42bc5ab8c 1 
+Nov 17 15:13:35.007 HYPERVISOR: exec_cmd: nio create_udp udp-32983d67-980c-420f-abee-e4b91f430352 20275 127.0.0.1 20274 
+Nov 17 15:13:35.007 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW104 udp-32983d67-980c-420f-abee-e4b91f430352 
+Nov 17 15:13:35.036 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW104 udp-32983d67-980c-420f-abee-e4b91f430352 1 
+Nov 17 15:20:21.872 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW104 udp-0a1396ef-31d2-452c-947d-e9b99f379048 
+Nov 17 15:20:21.883 HYPERVISOR: exec_cmd: nio delete udp-0a1396ef-31d2-452c-947d-e9b99f379048 
+Nov 17 15:20:22.110 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW104 udp-fb7aa557-282c-45c5-ab11-14de87d1bd36 
+Nov 17 15:20:22.136 HYPERVISOR: exec_cmd: nio delete udp-fb7aa557-282c-45c5-ab11-14de87d1bd36 
+Nov 17 15:20:22.362 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW104 udp-1e514e32-2cd6-4a96-be61-a4b42bc5ab8c 
+Nov 17 15:20:22.387 HYPERVISOR: exec_cmd: nio delete udp-1e514e32-2cd6-4a96-be61-a4b42bc5ab8c 
+Nov 17 15:20:22.546 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW104 udp-32983d67-980c-420f-abee-e4b91f430352 
+Nov 17 15:20:22.574 HYPERVISOR: exec_cmd: nio delete udp-32983d67-980c-420f-abee-e4b91f430352 
+Nov 17 15:20:22.728 HYPERVISOR: exec_cmd: ethsw delete SA-SW104 
+Nov 17 15:20:22.731 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 17 15:20:23.181 HYPERVISOR: Stopped.
+Nov 17 15:20:23.181 GENERAL: reset done.
