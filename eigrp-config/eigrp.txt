@@ -1,0 +1,423 @@
+!!===============================================================================
+EIGRP NETWORK - MASTER CONFIGURATION FILE
+All 18 Routers (ER1 through ER18)
+!EIGRP AS: 100
+!===============================================================================
+!
+!===============================================================================
+!ER1 CONFIGURATION
+!===============================================================================
+!
+hostname ER1
+!
+interface FastEthernet0/1
+ description Links SA-SW104 on Eth3
+ ip address 16.03.106.49 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER2 on Fa0/1
+ ip address 16.03.89.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.106.48 0.0.0.3
+ network 16.03.89.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER2 CONFIGURATION
+!===============================================================================
+!
+hostname ER2
+!
+interface FastEthernet0/1
+ description Links ER1 on Fa1/0
+ ip address 16.03.89.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER3 on Fa0/1
+ ip address 16.03.90.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.89.48 0.0.0.3
+ network 16.03.90.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER3 CONFIGURATION
+!===============================================================================
+!
+hostname ER3
+!
+interface FastEthernet0/1
+ description Links ER2 on Fa1/0
+ ip address 16.03.90.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER4 on Fa0/1
+ ip address 16.03.91.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.90.48 0.0.0.3
+ network 16.03.91.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER4 CONFIGURATION
+!===============================================================================
+!
+hostname ER4
+!
+interface FastEthernet0/1
+ description Links ER3 on Fa1/0
+ ip address 16.03.91.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER5 on Fa0/1
+ ip address 16.03.92.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.91.48 0.0.0.3
+ network 16.03.92.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER5 CONFIGURATION
+!===============================================================================
+!
+hostname ER5
+!
+interface FastEthernet0/1
+ description Links ER4 on Fa1/0
+ ip address 16.03.92.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER6 on Fa0/1
+ ip address 16.03.93.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.92.48 0.0.0.3
+ network 16.03.93.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER6 CONFIGURATION
+!===============================================================================
+!
+hostname ER6
+!
+interface FastEthernet0/1
+ description Links ER5 on Fa1/0
+ ip address 16.03.93.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER7 on Fa0/1
+ ip address 16.03.94.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.93.48 0.0.0.3
+ network 16.03.94.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER7 CONFIGURATION
+!===============================================================================
+!
+hostname ER7
+!
+interface FastEthernet0/1
+ description Links ER6 on Fa1/0
+ ip address 16.03.94.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER8 on Fa0/1
+ ip address 16.03.95.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.94.48 0.0.0.3
+ network 16.03.95.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER8 CONFIGURATION
+!===============================================================================
+!
+hostname ER8
+!
+interface FastEthernet0/1
+ description Links ER7 on Fa1/0
+ ip address 16.03.95.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER9 on Fa0/1
+ ip address 16.03.96.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.95.48 0.0.0.3
+ network 16.03.96.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER9 CONFIGURATION
+!===============================================================================
+!
+hostname ER9
+!
+interface FastEthernet0/1
+ description Links ER8 on Fa1/0
+ ip address 16.03.96.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER10 on Fa0/1
+ ip address 16.03.97.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.96.48 0.0.0.3
+ network 16.03.97.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER10 CONFIGURATION
+!===============================================================================
+!
+hostname ER10
+!
+interface FastEthernet0/1
+ description Links ER9 on Fa1/0
+ ip address 16.03.97.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER11 on Fa0/1
+ ip address 16.03.98.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.97.48 0.0.0.3
+ network 16.03.98.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER11 CONFIGURATION
+!===============================================================================
+!
+hostname ER11
+!
+interface FastEthernet0/1
+ description Links ER10 on Fa1/0
+ ip address 16.03.98.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER12 on Fa0/1
+ ip address 16.03.99.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.98.48 0.0.0.3
+ network 16.03.99.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER12 CONFIGURATION
+!===============================================================================
+!
+hostname ER12
+!
+interface FastEthernet0/1
+ description Links ER11 on Fa1/0
+ ip address 16.03.99.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER13 on Fa0/1
+ ip address 16.03.100.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.99.48 0.0.0.3
+ network 16.03.100.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER13 CONFIGURATION
+!===============================================================================
+!
+hostname ER13
+!
+interface FastEthernet0/1
+ description Links ER12 on Fa1/0
+ ip address 16.03.100.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER14 on Fa0/1
+ ip address 16.03.101.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.100.48 0.0.0.3
+ network 16.03.101.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER14 CONFIGURATION
+!===============================================================================
+!
+hostname ER14
+!
+interface FastEthernet0/1
+ description Links ER13 on Fa1/0
+ ip address 16.03.101.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER15 on Fa0/1
+ ip address 16.03.102.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.101.48 0.0.0.3
+ network 16.03.102.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER15 CONFIGURATION
+!===============================================================================
+!
+hostname ER15
+!
+interface FastEthernet0/1
+ description Links ER14 on Fa1/0
+ ip address 16.03.102.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER16 on Fa0/1
+ ip address 16.03.103.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.102.48 0.0.0.3
+ network 16.03.103.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER16 CONFIGURATION
+!===============================================================================
+!
+hostname ER16
+!
+interface FastEthernet0/1
+ description Links ER15 on Fa1/0
+ ip address 16.03.103.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER17 on Fa0/1
+ ip address 16.03.104.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.103.48 0.0.0.3
+ network 16.03.104.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER17 CONFIGURATION
+!===============================================================================
+!
+hostname ER17
+!
+interface FastEthernet0/1
+ description Links ER16 on Fa1/0
+ ip address 16.03.104.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links ER18 on Fa0/1
+ ip address 16.03.105.49 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.104.48 0.0.0.3
+ network 16.03.105.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!ER18 CONFIGURATION (Tunapuna)
+!===============================================================================
+!
+hostname ER18
+!
+interface FastEthernet0/1
+ description Links ER17 on Fa1/0
+ ip address 16.03.105.50 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Links SA-SW21 on Et0
+ ip address 16.03.106.50 255.255.255.252
+ no shutdown
+!
+router eigrp 100
+ network 16.03.105.48 0.0.0.3
+ network 16.03.106.48 0.0.0.3
+ no auto-summary
+!
+end
+!
+!===============================================================================
+!END OF CONFIGURATION FILE
+!===============================================================================

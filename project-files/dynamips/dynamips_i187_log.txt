@@ -1,0 +1,51 @@
+Nov 16 19:47:06.896 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 19:47:06.896 HYPERVISOR: Started on IP = localhost, TCP port = 50950.
+Nov 16 19:47:07.345 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 19:47:07.345 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
+Nov 16 19:47:07.345 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
+Nov 16 19:47:07.345 HYPERVISOR: exec_cmd: ethsw create Switch6 
+Nov 16 19:47:28.382 HYPERVISOR: exec_cmd: nio create_udp udp-0428df44-a30b-4365-87df-9db439c6d6c0 10107 127.0.0.1 10106 
+Nov 16 19:47:28.382 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 
+Nov 16 19:47:28.413 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:47:35.354 HYPERVISOR: exec_cmd: nio create_udp udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 10165 127.0.0.1 10164 
+Nov 16 19:47:35.354 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 
+Nov 16 19:47:35.388 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:49:54.353 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:49:54.369 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:49:56.177 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:49:56.191 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:49:58.453 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:49:58.460 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:50:17.844 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:50:17.854 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:50:20.279 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:50:20.441 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:50:22.155 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:50:22.180 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:51:55.502 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:51:55.502 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:53:58.370 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:53:58.386 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:54:01.344 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:54:01.356 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:54:04.095 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:54:04.096 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:54:08.833 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:54:08.976 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:54:26.137 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:54:26.164 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:54:35.495 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:54:35.527 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:56:49.017 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:56:49.024 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:56:50.614 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:56:50.757 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:56:53.108 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:56:53.135 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:57:23.830 HYPERVISOR: exec_cmd: ethsw rename Switch6 SA-SW21 
+Nov 16 19:57:23.830 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW21 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:57:23.830 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW21 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:57:24.021 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW21 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:57:24.021 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW21 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 
+Nov 16 19:58:00.160 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW21 udp-0428df44-a30b-4365-87df-9db439c6d6c0 1 
+Nov 16 19:58:00.160 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW21 udp-966234d5-90e9-4741-a3a7-53d96c9aaedc 1 

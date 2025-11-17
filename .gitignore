@@ -18,3 +18,7 @@ project-files/tmp/
 # Personal settings
 gns3_server.conf
 gns3_gui.conf
+
+# Logs
+*_log.txt
+*_stdout.txt

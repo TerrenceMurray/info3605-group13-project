@@ -2,9 +2,6 @@
 
 enable
 configure terminal
-
-hostname RR1
-
 interface fa 0/0
 ip address 16.04.19.61 255.255.255.252
 no shutdown
@@ -32,7 +29,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -43,9 +39,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR2
-
 interface fa 0/0
 ip address 16.04.01.62 255.255.255.252
 no shutdown
@@ -73,7 +66,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -84,9 +76,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR3
-
 interface fa 0/0
 ip address 16.04.02.62 255.255.255.252
 no shutdown
@@ -114,7 +103,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -125,9 +113,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR4
-
 interface fa 0/0
 ip address 16.04.03.62 255.255.255.252
 no shutdown
@@ -155,7 +140,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -166,9 +150,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR5
-
 interface fa 0/0
 ip address 16.04.04.62 255.255.255.252
 no shutdown
@@ -196,7 +177,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -207,9 +187,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR6
-
 interface fa 0/0
 ip address 16.04.05.62 255.255.255.252
 no shutdown
@@ -237,7 +214,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -248,9 +224,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR7
-
 interface fa 0/0
 ip address 16.04.06.62 255.255.255.252
 no shutdown
@@ -278,7 +251,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -289,9 +261,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR8
-
 interface fa 0/0
 ip address 16.04.07.62 255.255.255.252
 no shutdown
@@ -319,7 +288,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -330,9 +298,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR9
-
 interface fa 0/0
 ip address 16.04.08.62 255.255.255.252
 no shutdown
@@ -360,7 +325,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -371,9 +335,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR10
-
 interface fa 0/0
 ip address 16.04.09.62 255.255.255.252
 no shutdown
@@ -401,7 +362,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -412,9 +372,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR11
-
 interface fa 0/0
 ip address 16.04.10.62 255.255.255.252
 no shutdown
@@ -442,7 +399,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -453,9 +409,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR12
-
 interface fa 0/0
 ip address 16.04.11.62 255.255.255.252
 no shutdown
@@ -483,7 +436,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -494,9 +446,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR13
-
 interface fa 0/0
 ip address 16.04.12.62 255.255.255.252
 no shutdown
@@ -524,7 +473,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -535,9 +483,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR14
-
 interface fa 0/0
 ip address 16.04.13.62 255.255.255.252
 no shutdown
@@ -565,7 +510,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -576,9 +520,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR15
-
 interface fa 0/0
 ip address 16.04.14.62 255.255.255.252
 no shutdown
@@ -606,7 +547,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -617,9 +557,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR16
-
 interface fa 0/0
 ip address 16.04.15.62 255.255.255.252
 no shutdown
@@ -647,7 +584,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -658,9 +594,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR17
-
 interface fa 0/0
 ip address 16.04.16.62 255.255.255.252
 no shutdown
@@ -688,7 +621,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
@@ -699,9 +631,6 @@ wr
 
 enable
 configure terminal
-
-hostname RR18
-
 interface fa 0/0
 ip address 16.04.17.62 255.255.255.252
 no shutdown
@@ -729,7 +658,6 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
-do show ip rip database
 
 exit
 
