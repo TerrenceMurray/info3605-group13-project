@@ -10,8 +10,10 @@ __pycache__/
 
 # Dynamically generated files
 *.log
-project-files/dynamips/
+# project-files/dynamips/
 project-files/tmp/
+
+*.ghost
 
 # Personal settings
 gns3_server.conf

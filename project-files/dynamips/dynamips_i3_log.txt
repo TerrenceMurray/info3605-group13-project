@@ -1,0 +1,61 @@
+Nov 16 22:32:00.889 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 22:32:00.889 HYPERVISOR: Started on IP = localhost, TCP port = 11468.
+Nov 16 22:32:01.375 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 22:32:01.375 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 16 22:32:01.375 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 16 22:32:01.375 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\7e2ab8fa-24a3-4185-b2ea-d6bc1b2f7448 
+Nov 16 22:32:01.375 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\7e2ab8fa-24a3-4185-b2ea-d6bc1b2f7448
+Nov 16 22:32:01.375 HYPERVISOR: exec_cmd: vm create RR1 3 c3745 
+Nov 16 22:32:01.375 VM: VM RR1 created.
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm set_con_tcp_port RR1 5002 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: c3745 get_mac_addr RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm set_disk0 RR1 0 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm set_exec_area RR1 64 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm set_idle_pc RR1 0x60aa1da0 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm set_ios RR1 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: c3745 set_mac_addr RR1 c403.0db4.0000 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm set_nvram RR1 256 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm set_ram RR1 256 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm slot_add_binding RR1 1 0 NM-1FE-TX 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm slot_add_binding RR1 2 0 NM-1FE-TX 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm slot_add_binding RR1 3 0 NM-1FE-TX 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm slot_add_binding RR1 4 0 NM-1FE-TX 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm slot_add_binding RR1 0 16 WIC-2T 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm slot_add_binding RR1 0 32 WIC-2T 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:32:01.391 HYPERVISOR: exec_cmd: vm slot_add_binding RR1 0 48 WIC-2T 
+Nov 16 22:33:02.923 HYPERVISOR: exec_cmd: nio create_udp udp-797402a4-afb6-484f-aac0-79d6a2e805d3 10168 127.0.0.1 10169 
+Nov 16 22:33:05.510 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR1 0 0 udp-797402a4-afb6-484f-aac0-79d6a2e805d3 
+Nov 16 22:33:05.514 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:33:05.679 HYPERVISOR: exec_cmd: nio create_udp udp-2f80ee3f-49f4-4642-a0ca-6e8e6acf0c65 10172 127.0.0.1 10173 
+Nov 16 22:33:05.681 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR1 0 1 udp-2f80ee3f-49f4-4642-a0ca-6e8e6acf0c65 
+Nov 16 22:33:05.681 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:33:54.023 HYPERVISOR: exec_cmd: vm create Ghost 0 c3745 
+Nov 16 22:33:54.032 VM: VM Ghost created.
+Nov 16 22:33:54.034 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 22:33:54.034 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Nov 16 22:33:54.034 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 22:33:54.034 HYPERVISOR: exec_cmd: vm set_ram Ghost 256 
+Nov 16 22:33:54.034 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Nov 16 22:33:54.034 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Nov 16 22:33:54.034 HYPERVISOR: exec_cmd: vm start Ghost 
+Nov 16 22:33:54.345 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Nov 16 22:33:54.347 HYPERVISOR: exec_cmd: vm stop Ghost 
+Nov 16 22:33:54.477 VM: VM Ghost shutdown.
+Nov 16 22:33:54.483 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Nov 16 22:33:54.483 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Nov 16 22:33:54.483 VM: VM Ghost destroyed.
+Nov 16 22:33:54.483 HYPERVISOR: exec_cmd: vm set_ghost_status RR1 2 
+Nov 16 22:33:54.483 HYPERVISOR: exec_cmd: vm set_ghost_file RR1 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 16 22:33:54.488 HYPERVISOR: exec_cmd: vm get_status RR1 
+Nov 16 22:33:54.488 HYPERVISOR: exec_cmd: vm set_config RR1 configs\i3_startup-config.cfg 
+Nov 16 22:33:54.488 HYPERVISOR: exec_cmd: vm start RR1 
+Nov 16 22:43:24.960 HYPERVISOR: exec_cmd: vm extract_config RR1 
+Nov 16 22:43:24.972 HYPERVISOR: exec_cmd: vm extract_config RR1 

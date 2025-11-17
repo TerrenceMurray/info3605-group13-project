@@ -1,0 +1,39 @@
+Nov 16 22:32:07.325 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 22:32:07.325 HYPERVISOR: Started on IP = localhost, TCP port = 11498.
+Nov 16 22:32:07.810 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 22:32:07.810 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 16 22:32:07.810 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 16 22:32:07.812 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\8811500e-05ad-4f2d-bd83-5b29529c4aaf 
+Nov 16 22:32:07.812 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\8811500e-05ad-4f2d-bd83-5b29529c4aaf
+Nov 16 22:32:07.812 HYPERVISOR: exec_cmd: vm create ER11 13 c3745 
+Nov 16 22:32:07.817 VM: VM ER11 created.
+Nov 16 22:32:07.817 HYPERVISOR: exec_cmd: vm set_con_tcp_port ER11 5012 
+Nov 16 22:32:07.817 HYPERVISOR: exec_cmd: c3745 get_mac_addr ER11 
+Nov 16 22:32:07.819 HYPERVISOR: exec_cmd: vm set_disk0 ER11 0 
+Nov 16 22:32:07.820 HYPERVISOR: exec_cmd: vm set_exec_area ER11 64 
+Nov 16 22:32:07.821 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.821 HYPERVISOR: exec_cmd: vm set_idle_pc ER11 0x60aa1da0 
+Nov 16 22:32:07.822 HYPERVISOR: exec_cmd: vm set_ios ER11 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 22:32:07.824 HYPERVISOR: exec_cmd: c3745 set_mac_addr ER11 c40d.9ba4.0000 
+Nov 16 22:32:07.824 HYPERVISOR: exec_cmd: vm set_nvram ER11 256 
+Nov 16 22:32:07.826 HYPERVISOR: exec_cmd: vm set_ram ER11 256 
+Nov 16 22:32:07.826 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.826 HYPERVISOR: exec_cmd: vm slot_add_binding ER11 1 0 NM-1FE-TX 
+Nov 16 22:32:07.828 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.828 HYPERVISOR: exec_cmd: vm slot_add_binding ER11 2 0 NM-1FE-TX 
+Nov 16 22:32:07.828 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.830 HYPERVISOR: exec_cmd: vm slot_add_binding ER11 3 0 NM-1FE-TX 
+Nov 16 22:32:07.830 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.830 HYPERVISOR: exec_cmd: vm slot_add_binding ER11 4 0 NM-1FE-TX 
+Nov 16 22:32:07.832 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.832 HYPERVISOR: exec_cmd: vm slot_add_binding ER11 0 16 WIC-2T 
+Nov 16 22:32:07.833 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.833 HYPERVISOR: exec_cmd: vm slot_add_binding ER11 0 32 WIC-2T 
+Nov 16 22:32:07.835 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:07.835 HYPERVISOR: exec_cmd: vm slot_add_binding ER11 0 48 WIC-2T 
+Nov 16 22:32:35.711 HYPERVISOR: exec_cmd: nio create_udp udp-7e84a638-7186-42cf-8fe5-c82a687cbe7d 10058 127.0.0.1 10059 
+Nov 16 22:32:36.591 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER11 0 1 udp-7e84a638-7186-42cf-8fe5-c82a687cbe7d 
+Nov 16 22:32:36.591 HYPERVISOR: exec_cmd: vm get_status ER11 
+Nov 16 22:32:36.742 HYPERVISOR: exec_cmd: nio create_udp udp-2310afc2-5f0f-4710-b29a-de28580ffbf2 10062 127.0.0.1 10063 
+Nov 16 22:32:36.742 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER11 1 0 udp-2310afc2-5f0f-4710-b29a-de28580ffbf2 
+Nov 16 22:32:36.742 HYPERVISOR: exec_cmd: vm get_status ER11 

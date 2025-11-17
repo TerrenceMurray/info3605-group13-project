@@ -1,0 +1,42 @@
+Nov 16 22:32:24.400 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 16 22:32:24.400 HYPERVISOR: Started on IP = localhost, TCP port = 11576.
+Nov 16 22:32:24.893 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 16 22:32:24.893 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 16 22:32:24.893 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 16 22:32:24.893 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\66fe1993-ff2c-47e8-9e81-53b026dd190c 
+Nov 16 22:32:24.893 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\66fe1993-ff2c-47e8-9e81-53b026dd190c
+Nov 16 22:32:24.893 HYPERVISOR: exec_cmd: vm create OR3 39 c3745 
+Nov 16 22:32:24.893 VM: VM OR3 created.
+Nov 16 22:32:24.893 HYPERVISOR: exec_cmd: vm set_con_tcp_port OR3 5038 
+Nov 16 22:32:24.904 HYPERVISOR: exec_cmd: c3745 get_mac_addr OR3 
+Nov 16 22:32:24.904 HYPERVISOR: exec_cmd: vm set_disk0 OR3 0 
+Nov 16 22:32:24.906 HYPERVISOR: exec_cmd: vm set_exec_area OR3 64 
+Nov 16 22:32:24.906 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.906 HYPERVISOR: exec_cmd: vm set_idle_pc OR3 0x60aa1da0 
+Nov 16 22:32:24.906 HYPERVISOR: exec_cmd: vm set_ios OR3 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 16 22:32:24.906 HYPERVISOR: exec_cmd: c3745 set_mac_addr OR3 c427.06c8.0000 
+Nov 16 22:32:24.914 HYPERVISOR: exec_cmd: vm set_nvram OR3 256 
+Nov 16 22:32:24.914 HYPERVISOR: exec_cmd: vm set_ram OR3 256 
+Nov 16 22:32:24.914 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.914 HYPERVISOR: exec_cmd: vm slot_add_binding OR3 1 0 NM-1FE-TX 
+Nov 16 22:32:24.914 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.914 HYPERVISOR: exec_cmd: vm slot_add_binding OR3 2 0 NM-1FE-TX 
+Nov 16 22:32:24.914 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm slot_add_binding OR3 3 0 NM-1FE-TX 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm slot_add_binding OR3 4 0 NM-1FE-TX 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm slot_add_binding OR3 0 16 WIC-2T 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm slot_add_binding OR3 0 32 WIC-2T 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:24.920 HYPERVISOR: exec_cmd: vm slot_add_binding OR3 0 48 WIC-2T 
+Nov 16 22:32:54.997 HYPERVISOR: exec_cmd: nio create_udp udp-a2655383-b0b3-48bd-b31d-f353d4225994 10128 127.0.0.1 10129 
+Nov 16 22:32:57.184 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OR3 0 0 udp-a2655383-b0b3-48bd-b31d-f353d4225994 
+Nov 16 22:32:57.184 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:57.651 HYPERVISOR: exec_cmd: nio create_udp udp-b9bb2e0d-ea9c-4b7f-8e85-a33d65a7663e 10132 127.0.0.1 10133 
+Nov 16 22:32:57.664 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OR3 0 1 udp-b9bb2e0d-ea9c-4b7f-8e85-a33d65a7663e 
+Nov 16 22:32:57.668 HYPERVISOR: exec_cmd: vm get_status OR3 
+Nov 16 22:32:58.971 HYPERVISOR: exec_cmd: nio create_udp udp-a531a88b-9369-4103-9f8e-1a3f58ac4bcc 10148 127.0.0.1 10149 
+Nov 16 22:32:58.971 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OR3 1 0 udp-a531a88b-9369-4103-9f8e-1a3f58ac4bcc 
+Nov 16 22:32:58.971 HYPERVISOR: exec_cmd: vm get_status OR3 
