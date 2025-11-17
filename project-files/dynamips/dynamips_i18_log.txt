@@ -1,0 +1,41 @@
+Nov 17 00:38:59.869 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 17 00:38:59.869 HYPERVISOR: Started on IP = localhost, TCP port = 24221.
+Nov 17 00:39:00.335 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 17 00:39:00.335 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 17 00:39:00.335 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 17 00:39:00.335 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\9e5461e4-801e-4adc-94ba-6f80d3a61d3b 
+Nov 17 00:39:00.349 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\9e5461e4-801e-4adc-94ba-6f80d3a61d3b
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm create RR4 18 c3745 
+Nov 17 00:39:00.349 VM: VM RR4 created.
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm set_con_tcp_port RR4 5017 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: c3745 get_mac_addr RR4 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm set_disk0 RR4 0 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm set_exec_area RR4 64 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm set_idle_pc RR4 0x60aa1da0 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm set_ios RR4 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: c3745 set_mac_addr RR4 c412.957c.0000 
+Nov 17 00:39:00.349 HYPERVISOR: exec_cmd: vm set_nvram RR4 256 
+Nov 17 00:39:00.365 HYPERVISOR: exec_cmd: vm set_ram RR4 256 
+Nov 17 00:39:00.367 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.367 HYPERVISOR: exec_cmd: vm slot_add_binding RR4 1 0 NM-1FE-TX 
+Nov 17 00:39:00.367 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.367 HYPERVISOR: exec_cmd: vm slot_add_binding RR4 2 0 NM-1FE-TX 
+Nov 17 00:39:00.369 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.369 HYPERVISOR: exec_cmd: vm slot_add_binding RR4 3 0 NM-1FE-TX 
+Nov 17 00:39:00.369 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.369 HYPERVISOR: exec_cmd: vm slot_add_binding RR4 4 0 NM-1FE-TX 
+Nov 17 00:39:00.371 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.371 HYPERVISOR: exec_cmd: vm slot_add_binding RR4 0 16 WIC-2T 
+Nov 17 00:39:00.371 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.371 HYPERVISOR: exec_cmd: vm slot_add_binding RR4 0 32 WIC-2T 
+Nov 17 00:39:00.371 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:00.371 HYPERVISOR: exec_cmd: vm slot_add_binding RR4 0 48 WIC-2T 
+Nov 17 00:39:31.884 HYPERVISOR: exec_cmd: nio create_udp udp-cdd7ef7c-6773-41e2-8774-2689f07b29f2 10186 127.0.0.1 10187 
+Nov 17 00:39:32.251 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR4 0 0 udp-cdd7ef7c-6773-41e2-8774-2689f07b29f2 
+Nov 17 00:39:32.251 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:39:32.363 HYPERVISOR: exec_cmd: nio create_udp udp-c5bc8ccc-828e-4030-afcf-98985d625ddb 10190 127.0.0.1 10191 
+Nov 17 00:39:32.363 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR4 0 1 udp-c5bc8ccc-828e-4030-afcf-98985d625ddb 
+Nov 17 00:39:32.363 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:40:43.212 HYPERVISOR: exec_cmd: vm get_status RR4 
+Nov 17 00:40:43.212 HYPERVISOR: exec_cmd: vm extract_config RR4 
