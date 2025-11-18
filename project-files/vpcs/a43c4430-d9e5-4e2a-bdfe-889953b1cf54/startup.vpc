@@ -1,9 +1,2 @@
-# This the configuration for SA-PC21
-#
-# Uncomment the following line to enable DHCP
-# dhcp
-# or the line below to manually setup an IP address and subnet mask
-# ip 192.168.1.1 255.0.0.0
-#
-
 set pcname SA-PC21
+ip 192.168.59.2 192.168.59.1 24

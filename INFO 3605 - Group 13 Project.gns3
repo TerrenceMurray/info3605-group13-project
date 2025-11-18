@@ -889,7 +889,6 @@
                 "nodes": [
                     {
                         "adapter_number": 0,
-                        "adapter_number": 0,
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
@@ -901,7 +900,6 @@
                         "port_number": 1
                     },
                     {
-                        "adapter_number": 0,
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
@@ -4496,7 +4494,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5046,
+                "console": 5047,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -4555,7 +4553,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5041,
+                "console": 5048,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -4614,7 +4612,7 @@
             },
             {
                 "compute_id": "local",
-                "console": 5047,
+                "console": 5049,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
