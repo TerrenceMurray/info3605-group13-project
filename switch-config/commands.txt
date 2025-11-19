@@ -1,32 +1,72 @@
-! !!SA-SW31
+! !! SA-SW31
 enable
+!
+vlan database
+vlan 321
+vlan 311
+exit
+!
 configure terminal
 !
-hostname SA-SW31
-!
-! All ports will be in default VLAN 1
-! Just configure the ports as access ports
-!
-! Port to OR4
-interface fastEthernet 0/0
-description Link to OR4 Gi0/0
-switchport mode access
-no shutdown
+interface FastEthernet1/0
+ description SA-PC311
+ no shutdown
+ duplex auto
+ speed auto
+ switchport mode access
+ switchport access vlan 311
 exit
 !
-! Port to SA-PC311
-interface fastEthernet 0/1
-description SA-PC311
-switchport mode access
-no shutdown
-exit
-!
-! Port to SA-PC312
-interface fastEthernet 1/0
-description SA-PC312
-switchport mode access
-no shutdown
+interface FastEthernet1/1
+ description SA-PC321
+ no shutdown
+ duplex auto
+ speed auto
+ switchport mode access
+ switchport access vlan 321
 exit
 !
 end
-write memory
+wr
+
+! !! SA-SW11
+enable
+configure terminal
+!
+interface FastEthernet1/0
+ description RR18
+ no shutdown
+ duplex auto
+ speed auto
+exit
+!
+interface FastEthernet1/1
+ description SA-PC11
+ no shutdown
+ duplex auto
+ speed auto
+exit
+!
+end
+wr
+
+! !! SA-SW21
+enable
+configure terminal
+!
+interface FastEthernet1/0
+ description ER18
+ no shutdown
+ duplex auto
+ speed auto
+exit
+!
+interface FastEthernet1/1
+ description SA-PC21
+ no shutdown
+ duplex auto
+ speed auto
+exit
+!
+end
+wr
