@@ -726,106 +726,64 @@ wr
 
 
 ! !! RR18
-
-enable
-configure terminal
-
 hostname RR18
-
-interface fa 0/0
-ip address 16.04.17.62 255.255.255.252
-no shutdown
-exit
-
-do show ip interface brief
-
-interface fa 0/1
-ip address 16.04.18.61 255.255.255.252
-no shutdown
-exit
-
-do show ip interface brief
-
-router rip
-version 2
-no auto-summary
-network 16.04.17.60
-network 16.04.18.60
-passive-interface default
-no passive-interface fa 0/0
-no passive-interface fa 0/1
-exit
-
-do show ip interface brief
-do show ip route
-do show ip protocols
-do show ip rip database
-
-exit
-
-wr
-
-enable
-configure terminal
-
+!
+interface FastEthernet0/0
+ description Links RR17 on Fa0/1
+ ip address 16.04.17.62 255.255.255.252
+ no shutdown
+!
+interface FastEthernet0/1
+ description Links SA-SW11 on Et0
+ ip address 16.03.60.18 255.255.255.0
+ no shutdown
+!
 interface Loopback0
-ip address 16.04.21.63 255.255.255.255
-no shutdown
-exit
-
+ ip address 16.04.21.63 255.255.255.255
+ no shutdown
+!
 router rip
-network 16.0.0.0
-no passive-interface Loopback0
-exit
-
-!!! DNS
-
+ version 2
+ network 16.04.17.60
+ network 16.03.60.0
+ network 16.0.0.0
+ no auto-summary
+ passive-interface default
+ no passive-interface FastEthernet0/0
+ no passive-interface FastEthernet0/1
+ no passive-interface Loopback0
+!
 ip dns server
 ip domain-lookup
 ip name-server 16.04.21.63
-
-ip host SA-PC11 192.168.03.2
-ip host SA-PC21 192.168.59.2
-ip host SA-PC311 192.168.16.2
-ip host SA-PC321 192.168.16.3
-
-!!! NTP
-
+!
+ip host SA-PC11 16.03.60.11
+ip host SA-PC21 16.03.61.21
+ip host SA-PC311 16.03.59.36
+ip host SA-PC321 16.03.59.37
+!
 ntp master 1
 ntp source Loopback0
-
-do show ntp status
-do show clock detail
-
-
-!!! DHCP
-
+!
 service dhcp
-
-ip dhcp excluded-address 192.168.03.1 192.168.03.100
-ip dhcp pool St-Augustine
-network 192.168.03.0 255.255.255.0
-default-router 192.168.03.1
-dns-server 16.04.21.63
-exit
-
-ip dhcp excluded-address 192.168.59.1 192.168.59.100
-ip dhcp pool Tunapuna
-network 192.168.59.0 255.255.255.0
-default-router 192.168.59.1
-dns-server 16.04.21.63
-exit
-
-ip dhcp excluded-address 192.168.16.1 192.168.16.100
-ip dhcp pool SA-31
-network 192.168.16.0 255.255.255.0
-default-router 192.168.16.1
-dns-server 16.04.21.63
-exit
-
-do show ip dhcp pool
-
-exit
-
+!
+ip dhcp excluded-address 16.03.60.1 16.03.60.100
+ip dhcp pool SA-PC11-Pool
+ network 16.03.60.0 255.255.255.0
+ default-router 16.03.60.18
+ dns-server 16.04.21.63
+!
+ip dhcp excluded-address 16.03.61.1 16.03.61.100
+ip dhcp pool SA-PC21-Pool
+ network 16.03.61.0 255.255.255.0
+ default-router 16.03.61.18
+ dns-server 16.04.21.63
+!
+ip dhcp excluded-address 16.03.59.1 16.03.59.100
+ip dhcp pool SA-PC31-Pool
+ network 16.03.59.0 255.255.255.0
+ default-router 16.03.59.4
+ dns-server 16.04.21.63
+!
+end
 wr
-
