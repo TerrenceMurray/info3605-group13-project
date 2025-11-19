@@ -408,12 +408,12 @@ interface FastEthernet0/1
 !
 interface FastEthernet1/0
  description Links SA-SW21 on Et0
- ip address 16.03.106.50 255.255.255.252
+ ip address 16.03.61.18 255.255.255.0
  no shutdown
 !
 router eigrp 100
  network 16.03.105.48 0.0.0.3
- network 16.03.106.48 0.0.0.3
+ network 16.03.61.0 0.0.0.255
  no auto-summary
 !
 end

@@ -22,3 +22,4 @@ gns3_gui.conf
 # Logs
 *_log.txt
 *_stdout.txt
+dynamips_*

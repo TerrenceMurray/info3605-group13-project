@@ -1,0 +1,32 @@
+! !!SA-SW31
+enable
+configure terminal
+!
+hostname SA-SW31
+!
+! All ports will be in default VLAN 1
+! Just configure the ports as access ports
+!
+! Port to OR4
+interface fastEthernet 0/0
+description Link to OR4 Gi0/0
+switchport mode access
+no shutdown
+exit
+!
+! Port to SA-PC311
+interface fastEthernet 0/1
+description SA-PC311
+switchport mode access
+no shutdown
+exit
+!
+! Port to SA-PC312
+interface fastEthernet 1/0
+description SA-PC312
+switchport mode access
+no shutdown
+exit
+!
+end
+write memory
