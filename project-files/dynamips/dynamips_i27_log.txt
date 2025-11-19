@@ -1,0 +1,64 @@
+Nov 18 22:54:58.812 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 18 22:54:58.814 HYPERVISOR: Started on IP = localhost, TCP port = 47742.
+Nov 18 22:54:59.272 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 18 22:54:59.274 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 18 22:54:59.274 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 18 22:54:59.275 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\9b89e239-bb74-4ab3-8a1f-aaa3146dfb66 
+Nov 18 22:54:59.277 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\9b89e239-bb74-4ab3-8a1f-aaa3146dfb66
+Nov 18 22:54:59.277 HYPERVISOR: exec_cmd: vm create RR13 27 c3745 
+Nov 18 22:54:59.280 VM: VM RR13 created.
+Nov 18 22:54:59.282 HYPERVISOR: exec_cmd: vm set_con_tcp_port RR13 5026 
+Nov 18 22:54:59.283 HYPERVISOR: exec_cmd: c3745 get_mac_addr RR13 
+Nov 18 22:54:59.284 HYPERVISOR: exec_cmd: vm set_disk0 RR13 0 
+Nov 18 22:54:59.285 HYPERVISOR: exec_cmd: vm set_exec_area RR13 64 
+Nov 18 22:54:59.286 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.286 HYPERVISOR: exec_cmd: vm set_idle_pc RR13 0x60aa1da0 
+Nov 18 22:54:59.289 HYPERVISOR: exec_cmd: vm set_ios RR13 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 18 22:54:59.290 HYPERVISOR: exec_cmd: c3745 set_mac_addr RR13 c41b.d0e8.0000 
+Nov 18 22:54:59.291 HYPERVISOR: exec_cmd: vm set_nvram RR13 256 
+Nov 18 22:54:59.292 HYPERVISOR: exec_cmd: vm set_ram RR13 256 
+Nov 18 22:54:59.293 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.293 HYPERVISOR: exec_cmd: vm slot_add_binding RR13 1 0 NM-1FE-TX 
+Nov 18 22:54:59.294 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.295 HYPERVISOR: exec_cmd: vm slot_add_binding RR13 2 0 NM-1FE-TX 
+Nov 18 22:54:59.296 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.296 HYPERVISOR: exec_cmd: vm slot_add_binding RR13 3 0 NM-1FE-TX 
+Nov 18 22:54:59.298 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.298 HYPERVISOR: exec_cmd: vm slot_add_binding RR13 4 0 NM-1FE-TX 
+Nov 18 22:54:59.299 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.300 HYPERVISOR: exec_cmd: vm slot_add_binding RR13 0 16 WIC-2T 
+Nov 18 22:54:59.301 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.301 HYPERVISOR: exec_cmd: vm slot_add_binding RR13 0 32 WIC-2T 
+Nov 18 22:54:59.302 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:54:59.303 HYPERVISOR: exec_cmd: vm slot_add_binding RR13 0 48 WIC-2T 
+Nov 18 22:55:59.022 HYPERVISOR: exec_cmd: nio create_udp udp-014f6ee1-855b-4e24-8daa-78f38f0a7250 10202 127.0.0.1 10203 
+Nov 18 22:56:00.396 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR13 0 0 udp-014f6ee1-855b-4e24-8daa-78f38f0a7250 
+Nov 18 22:56:00.396 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 22:56:00.630 HYPERVISOR: exec_cmd: nio create_udp udp-d6e7f131-4465-416a-adb0-893c0ab90c1b 10206 127.0.0.1 10207 
+Nov 18 22:56:00.646 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR13 0 1 udp-d6e7f131-4465-416a-adb0-893c0ab90c1b 
+Nov 18 22:56:00.646 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 23:46:04.795 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 23:46:04.795 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 18 23:49:20.007 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 23:49:20.007 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 18 23:52:26.065 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 23:52:26.065 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 18 23:52:43.467 HYPERVISOR: exec_cmd: vm set_ghost_status RR13 2 
+Nov 18 23:52:43.467 HYPERVISOR: exec_cmd: vm set_ghost_file RR13 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 18 23:52:43.467 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 23:52:43.467 HYPERVISOR: exec_cmd: vm set_config RR13 configs\i27_startup-config.cfg 
+Nov 18 23:52:43.467 HYPERVISOR: exec_cmd: vm start RR13 
+Nov 18 23:54:43.789 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 18 23:54:43.795 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 18 23:55:22.977 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 23:55:22.977 HYPERVISOR: exec_cmd: vm stop RR13 
+Nov 18 23:55:23.152 VM: VM RR13 shutdown.
+Nov 18 23:55:23.153 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 18 23:58:24.856 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 18 23:58:24.856 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 19 00:01:37.141 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 19 00:01:37.143 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 19 00:05:12.858 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 19 00:05:12.858 HYPERVISOR: exec_cmd: vm extract_config RR13 
+Nov 19 00:08:48.610 HYPERVISOR: exec_cmd: vm get_status RR13 
+Nov 19 00:08:48.610 HYPERVISOR: exec_cmd: vm extract_config RR13 

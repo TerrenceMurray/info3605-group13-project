@@ -2,6 +2,9 @@
 
 enable
 configure terminal
+
+hostname RR1
+
 interface fa 0/0
 ip address 16.04.19.61 255.255.255.252
 no shutdown
@@ -29,6 +32,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -39,6 +43,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR2
+
 interface fa 0/0
 ip address 16.04.01.62 255.255.255.252
 no shutdown
@@ -66,6 +73,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -76,6 +84,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR3
+
 interface fa 0/0
 ip address 16.04.02.62 255.255.255.252
 no shutdown
@@ -103,8 +114,30 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
+
+wr
+
+enable
+configure terminal
+
+interface fa 1/0
+ip address 16.04.20.61 255.255.255.252
+no shutdown
+exit
+
+do show ip interface brief
+
+router rip
+network 16.04.20.60
+no passive-interface fa 1/0
+exit
+
+do show ip route
+do show ip protocols
+do show ip rip database
 
 wr
 
@@ -113,6 +146,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR4
+
 interface fa 0/0
 ip address 16.04.03.62 255.255.255.252
 no shutdown
@@ -140,6 +176,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -150,6 +187,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR5
+
 interface fa 0/0
 ip address 16.04.04.62 255.255.255.252
 no shutdown
@@ -177,6 +217,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -187,6 +228,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR6
+
 interface fa 0/0
 ip address 16.04.05.62 255.255.255.252
 no shutdown
@@ -214,6 +258,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -224,6 +269,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR7
+
 interface fa 0/0
 ip address 16.04.06.62 255.255.255.252
 no shutdown
@@ -251,6 +299,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -261,6 +310,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR8
+
 interface fa 0/0
 ip address 16.04.07.62 255.255.255.252
 no shutdown
@@ -288,6 +340,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -298,6 +351,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR9
+
 interface fa 0/0
 ip address 16.04.08.62 255.255.255.252
 no shutdown
@@ -325,6 +381,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -335,6 +392,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR10
+
 interface fa 0/0
 ip address 16.04.09.62 255.255.255.252
 no shutdown
@@ -362,6 +422,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -372,6 +433,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR11
+
 interface fa 0/0
 ip address 16.04.10.62 255.255.255.252
 no shutdown
@@ -399,6 +463,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -409,6 +474,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR12
+
 interface fa 0/0
 ip address 16.04.11.62 255.255.255.252
 no shutdown
@@ -436,6 +504,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -446,6 +515,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR13
+
 interface fa 0/0
 ip address 16.04.12.62 255.255.255.252
 no shutdown
@@ -473,6 +545,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -483,6 +556,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR14
+
 interface fa 0/0
 ip address 16.04.13.62 255.255.255.252
 no shutdown
@@ -510,6 +586,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -520,6 +597,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR15
+
 interface fa 0/0
 ip address 16.04.14.62 255.255.255.252
 no shutdown
@@ -547,6 +627,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -557,6 +638,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR16
+
 interface fa 0/0
 ip address 16.04.15.62 255.255.255.252
 no shutdown
@@ -584,6 +668,7 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
 
 exit
 
@@ -594,6 +679,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR17
+
 interface fa 0/0
 ip address 16.04.16.62 255.255.255.252
 no shutdown
@@ -621,6 +709,16 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
+
+exit
+
+wr
+
+enable
+configure terminal
+
+ntp server 16.04.21.63
 
 exit
 
@@ -631,6 +729,9 @@ wr
 
 enable
 configure terminal
+
+hostname RR18
+
 interface fa 0/0
 ip address 16.04.17.62 255.255.255.252
 no shutdown
@@ -658,6 +759,71 @@ exit
 do show ip interface brief
 do show ip route
 do show ip protocols
+do show ip rip database
+
+exit
+
+wr
+
+enable
+configure terminal
+
+interface Loopback0
+ip address 16.04.21.63 255.255.255.255
+no shutdown
+exit
+
+router rip
+network 16.0.0.0
+no passive-interface Loopback0
+exit
+
+!!! DNS
+
+ip dns server
+ip domain-lookup
+ip name-server 16.04.21.63
+
+ip host SA-PC11 192.168.03.2
+ip host SA-PC21 192.168.59.2
+ip host SA-PC311 192.168.16.2
+ip host SA-PC321 192.168.16.3
+
+!!! NTP
+
+ntp master 1
+ntp source Loopback0
+
+do show ntp status
+do show clock detail
+
+
+!!! DHCP
+
+service dhcp
+
+ip dhcp excluded-address 192.168.03.1 192.168.03.100
+ip dhcp pool St-Augustine
+network 192.168.03.0 255.255.255.0
+default-router 192.168.03.1
+dns-server 16.04.21.63
+exit
+
+ip dhcp excluded-address 192.168.59.1 192.168.59.100
+ip dhcp pool Tunapuna
+network 192.168.59.0 255.255.255.0
+default-router 192.168.59.1
+dns-server 16.04.21.63
+exit
+
+ip dhcp excluded-address 192.168.16.1 192.168.16.100
+ip dhcp pool SA-31
+network 192.168.16.0 255.255.255.0
+default-router 192.168.16.1
+dns-server 16.04.21.63
+exit
+
+do show ip dhcp pool
 
 exit
 

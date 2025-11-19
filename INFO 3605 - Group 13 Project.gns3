@@ -1513,8 +1513,8 @@
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f1/1",
-                            "x": -14,
-                            "y": 24
+                            "x": -33,
+                            "y": 38
                         },
                         "node_id": "a37d6bdf-2111-4e21-9cc2-fac17feabd19",
                         "port_number": 1
@@ -1565,8 +1565,8 @@
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
-                            "x": 32,
-                            "y": 61
+                            "x": 35,
+                            "y": 45
                         },
                         "node_id": "e6658a7c-319b-49fc-86c0-f45e55b27ba8",
                         "port_number": 1
@@ -1577,7 +1577,7 @@
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
-                            "x": 26,
+                            "x": 55,
                             "y": -16
                         },
                         "node_id": "dcdafd33-5219-479d-8141-e26d980b879f",
@@ -1774,6 +1774,38 @@
                         },
                         "node_id": "a43c4430-d9e5-4e2a-bdfe-889953b1cf54",
                         "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "49850389-6691-49d2-8812-c7cf5d7a7172",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 1,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "f1/0",
+                            "x": 72,
+                            "y": 25
+                        },
+                        "node_id": "d1f885df-2dbe-4a2a-b6b9-ee4015cccf47",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 1,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "f1/2",
+                            "x": -14,
+                            "y": 20
+                        },
+                        "node_id": "b4254c4c-292f-4e57-be88-7c7f457c10e0",
+                        "port_number": 2
                     }
                 ],
                 "suspend": false
@@ -4674,5 +4706,5 @@
     "type": "topology",
     "variables": null,
     "version": "2.2.54",
-    "zoom": 59
+    "zoom": 83
 }

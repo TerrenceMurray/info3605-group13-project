@@ -1,0 +1,64 @@
+Nov 18 22:55:04.933 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 18 22:55:04.935 HYPERVISOR: Started on IP = localhost, TCP port = 47769.
+Nov 18 22:55:05.399 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 18 22:55:05.406 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 18 22:55:05.406 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 18 22:55:05.407 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\f9ea7fde-3cea-48de-9998-7f142386e340 
+Nov 18 22:55:05.409 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\f9ea7fde-3cea-48de-9998-7f142386e340
+Nov 18 22:55:05.409 HYPERVISOR: exec_cmd: vm create ER16 36 c3745 
+Nov 18 22:55:05.414 VM: VM ER16 created.
+Nov 18 22:55:05.415 HYPERVISOR: exec_cmd: vm set_con_tcp_port ER16 5035 
+Nov 18 22:55:05.415 HYPERVISOR: exec_cmd: c3745 get_mac_addr ER16 
+Nov 18 22:55:05.417 HYPERVISOR: exec_cmd: vm set_disk0 ER16 0 
+Nov 18 22:55:05.418 HYPERVISOR: exec_cmd: vm set_exec_area ER16 64 
+Nov 18 22:55:05.420 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.420 HYPERVISOR: exec_cmd: vm set_idle_pc ER16 0x60aa1da0 
+Nov 18 22:55:05.423 HYPERVISOR: exec_cmd: vm set_ios ER16 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 18 22:55:05.424 HYPERVISOR: exec_cmd: c3745 set_mac_addr ER16 c424.8a28.0000 
+Nov 18 22:55:05.425 HYPERVISOR: exec_cmd: vm set_nvram ER16 256 
+Nov 18 22:55:05.427 HYPERVISOR: exec_cmd: vm set_ram ER16 256 
+Nov 18 22:55:05.428 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.428 HYPERVISOR: exec_cmd: vm slot_add_binding ER16 1 0 NM-1FE-TX 
+Nov 18 22:55:05.429 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.430 HYPERVISOR: exec_cmd: vm slot_add_binding ER16 2 0 NM-1FE-TX 
+Nov 18 22:55:05.431 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.431 HYPERVISOR: exec_cmd: vm slot_add_binding ER16 3 0 NM-1FE-TX 
+Nov 18 22:55:05.433 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.433 HYPERVISOR: exec_cmd: vm slot_add_binding ER16 4 0 NM-1FE-TX 
+Nov 18 22:55:05.434 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.434 HYPERVISOR: exec_cmd: vm slot_add_binding ER16 0 16 WIC-2T 
+Nov 18 22:55:05.436 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.437 HYPERVISOR: exec_cmd: vm slot_add_binding ER16 0 32 WIC-2T 
+Nov 18 22:55:05.438 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:05.438 HYPERVISOR: exec_cmd: vm slot_add_binding ER16 0 48 WIC-2T 
+Nov 18 22:55:31.565 HYPERVISOR: exec_cmd: nio create_udp udp-699048aa-7b20-4e6e-b296-215fed980fce 10088 127.0.0.1 10089 
+Nov 18 22:55:32.590 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER16 0 1 udp-699048aa-7b20-4e6e-b296-215fed980fce 
+Nov 18 22:55:32.591 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 22:55:32.829 HYPERVISOR: exec_cmd: nio create_udp udp-b5fcb391-4585-450a-98b3-a5ba9df49fb9 10092 127.0.0.1 10093 
+Nov 18 22:55:32.836 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER16 1 0 udp-b5fcb391-4585-450a-98b3-a5ba9df49fb9 
+Nov 18 22:55:32.837 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 23:46:05.005 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 23:46:05.010 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 18 23:49:20.038 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 23:49:20.038 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 18 23:52:26.098 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 23:52:26.098 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 18 23:55:23.185 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 23:55:23.187 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 18 23:55:44.391 HYPERVISOR: exec_cmd: vm set_ghost_status ER16 2 
+Nov 18 23:55:44.391 HYPERVISOR: exec_cmd: vm set_ghost_file ER16 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 18 23:55:44.391 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 23:55:44.391 HYPERVISOR: exec_cmd: vm set_config ER16 configs\i36_startup-config.cfg 
+Nov 18 23:55:44.391 HYPERVISOR: exec_cmd: vm start ER16 
+Nov 18 23:57:44.733 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 18 23:57:44.741 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 18 23:58:24.888 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 18 23:58:24.888 HYPERVISOR: exec_cmd: vm stop ER16 
+Nov 18 23:58:25.065 VM: VM ER16 shutdown.
+Nov 18 23:58:25.065 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 19 00:01:37.165 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 19 00:01:37.165 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 19 00:05:12.873 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 19 00:05:12.873 HYPERVISOR: exec_cmd: vm extract_config ER16 
+Nov 19 00:08:48.642 HYPERVISOR: exec_cmd: vm get_status ER16 
+Nov 19 00:08:48.642 HYPERVISOR: exec_cmd: vm extract_config ER16 

@@ -1,0 +1,62 @@
+Nov 18 22:54:54.053 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 18 22:54:54.054 HYPERVISOR: Started on IP = localhost, TCP port = 6576.
+Nov 18 22:54:54.533 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 18 22:54:54.534 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 18 22:54:54.534 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 18 22:54:54.535 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\99906d17-8e0c-421d-aa4a-0b74c09e6f09 
+Nov 18 22:54:54.537 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\99906d17-8e0c-421d-aa4a-0b74c09e6f09
+Nov 18 22:54:54.537 HYPERVISOR: exec_cmd: vm create RR6 20 c3745 
+Nov 18 22:54:54.541 VM: VM RR6 created.
+Nov 18 22:54:54.543 HYPERVISOR: exec_cmd: vm set_con_tcp_port RR6 5019 
+Nov 18 22:54:54.543 HYPERVISOR: exec_cmd: c3745 get_mac_addr RR6 
+Nov 18 22:54:54.545 HYPERVISOR: exec_cmd: vm set_disk0 RR6 0 
+Nov 18 22:54:54.546 HYPERVISOR: exec_cmd: vm set_exec_area RR6 64 
+Nov 18 22:54:54.548 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.548 HYPERVISOR: exec_cmd: vm set_idle_pc RR6 0x60aa1da0 
+Nov 18 22:54:54.552 HYPERVISOR: exec_cmd: vm set_ios RR6 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 18 22:54:54.553 HYPERVISOR: exec_cmd: c3745 set_mac_addr RR6 c414.0a64.0000 
+Nov 18 22:54:54.554 HYPERVISOR: exec_cmd: vm set_nvram RR6 256 
+Nov 18 22:54:54.556 HYPERVISOR: exec_cmd: vm set_ram RR6 256 
+Nov 18 22:54:54.557 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.558 HYPERVISOR: exec_cmd: vm slot_add_binding RR6 1 0 NM-1FE-TX 
+Nov 18 22:54:54.559 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.560 HYPERVISOR: exec_cmd: vm slot_add_binding RR6 2 0 NM-1FE-TX 
+Nov 18 22:54:54.561 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.562 HYPERVISOR: exec_cmd: vm slot_add_binding RR6 3 0 NM-1FE-TX 
+Nov 18 22:54:54.563 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.563 HYPERVISOR: exec_cmd: vm slot_add_binding RR6 4 0 NM-1FE-TX 
+Nov 18 22:54:54.565 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.565 HYPERVISOR: exec_cmd: vm slot_add_binding RR6 0 16 WIC-2T 
+Nov 18 22:54:54.567 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.567 HYPERVISOR: exec_cmd: vm slot_add_binding RR6 0 32 WIC-2T 
+Nov 18 22:54:54.568 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:54:54.569 HYPERVISOR: exec_cmd: vm slot_add_binding RR6 0 48 WIC-2T 
+Nov 18 22:55:48.190 HYPERVISOR: exec_cmd: nio create_udp udp-d70a698f-b856-43e9-ad44-26dda5691d48 10160 127.0.0.1 10161 
+Nov 18 22:55:49.440 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR6 0 0 udp-d70a698f-b856-43e9-ad44-26dda5691d48 
+Nov 18 22:55:49.441 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 22:55:49.671 HYPERVISOR: exec_cmd: nio create_udp udp-a2d8e32b-b0de-40c6-b934-46b91130863b 10164 127.0.0.1 10165 
+Nov 18 22:55:49.677 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RR6 0 1 udp-a2d8e32b-b0de-40c6-b934-46b91130863b 
+Nov 18 22:55:49.679 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 23:46:04.779 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 23:46:04.779 HYPERVISOR: exec_cmd: vm extract_config RR6 
+Nov 18 23:46:20.467 HYPERVISOR: exec_cmd: vm set_ghost_status RR6 2 
+Nov 18 23:46:20.467 HYPERVISOR: exec_cmd: vm set_ghost_file RR6 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 18 23:46:20.467 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 23:46:20.467 HYPERVISOR: exec_cmd: vm set_config RR6 configs\i20_startup-config.cfg 
+Nov 18 23:46:20.467 HYPERVISOR: exec_cmd: vm start RR6 
+Nov 18 23:49:19.959 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 23:49:19.959 HYPERVISOR: exec_cmd: vm stop RR6 
+Nov 18 23:49:20.118 VM: VM RR6 shutdown.
+Nov 18 23:49:20.118 HYPERVISOR: exec_cmd: vm extract_config RR6 
+Nov 18 23:52:25.882 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 23:52:25.887 HYPERVISOR: exec_cmd: vm extract_config RR6 
+Nov 18 23:55:22.960 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 23:55:22.961 HYPERVISOR: exec_cmd: vm extract_config RR6 
+Nov 18 23:58:24.841 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 18 23:58:24.841 HYPERVISOR: exec_cmd: vm extract_config RR6 
+Nov 19 00:01:37.118 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 19 00:01:37.118 HYPERVISOR: exec_cmd: vm extract_config RR6 
+Nov 19 00:05:12.826 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 19 00:05:12.826 HYPERVISOR: exec_cmd: vm extract_config RR6 
+Nov 19 00:08:48.583 HYPERVISOR: exec_cmd: vm get_status RR6 
+Nov 19 00:08:48.583 HYPERVISOR: exec_cmd: vm extract_config RR6 

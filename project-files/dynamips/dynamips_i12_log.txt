@@ -1,0 +1,72 @@
+Nov 18 22:54:48.746 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 18 22:54:48.748 HYPERVISOR: Started on IP = localhost, TCP port = 6550.
+Nov 18 22:54:49.222 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 18 22:54:49.223 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 18 22:54:49.224 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 18 22:54:49.224 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\197bf8b6-12a4-449e-9f23-ada960930b07 
+Nov 18 22:54:49.226 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\197bf8b6-12a4-449e-9f23-ada960930b07
+Nov 18 22:54:49.227 HYPERVISOR: exec_cmd: vm create ER10 12 c3745 
+Nov 18 22:54:49.229 VM: VM ER10 created.
+Nov 18 22:54:49.230 HYPERVISOR: exec_cmd: vm set_con_tcp_port ER10 5011 
+Nov 18 22:54:49.230 HYPERVISOR: exec_cmd: c3745 get_mac_addr ER10 
+Nov 18 22:54:49.231 HYPERVISOR: exec_cmd: vm set_disk0 ER10 0 
+Nov 18 22:54:49.232 HYPERVISOR: exec_cmd: vm set_exec_area ER10 64 
+Nov 18 22:54:49.233 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.233 HYPERVISOR: exec_cmd: vm set_idle_pc ER10 0x60aa1da0 
+Nov 18 22:54:49.235 HYPERVISOR: exec_cmd: vm set_ios ER10 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 18 22:54:49.236 HYPERVISOR: exec_cmd: c3745 set_mac_addr ER10 c40c.de58.0000 
+Nov 18 22:54:49.238 HYPERVISOR: exec_cmd: vm set_nvram ER10 256 
+Nov 18 22:54:49.239 HYPERVISOR: exec_cmd: vm set_ram ER10 256 
+Nov 18 22:54:49.239 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.240 HYPERVISOR: exec_cmd: vm slot_add_binding ER10 1 0 NM-1FE-TX 
+Nov 18 22:54:49.240 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.241 HYPERVISOR: exec_cmd: vm slot_add_binding ER10 2 0 NM-1FE-TX 
+Nov 18 22:54:49.242 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.242 HYPERVISOR: exec_cmd: vm slot_add_binding ER10 3 0 NM-1FE-TX 
+Nov 18 22:54:49.243 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.243 HYPERVISOR: exec_cmd: vm slot_add_binding ER10 4 0 NM-1FE-TX 
+Nov 18 22:54:49.244 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.244 HYPERVISOR: exec_cmd: vm slot_add_binding ER10 0 16 WIC-2T 
+Nov 18 22:54:49.245 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.245 HYPERVISOR: exec_cmd: vm slot_add_binding ER10 0 32 WIC-2T 
+Nov 18 22:54:49.246 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:54:49.246 HYPERVISOR: exec_cmd: vm slot_add_binding ER10 0 48 WIC-2T 
+Nov 18 22:55:23.700 HYPERVISOR: exec_cmd: nio create_udp udp-f382b530-a9a7-4bf1-83e0-f233a6fbf83a 10052 127.0.0.1 10053 
+Nov 18 22:55:24.711 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER10 0 1 udp-f382b530-a9a7-4bf1-83e0-f233a6fbf83a 
+Nov 18 22:55:24.712 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 22:55:24.949 HYPERVISOR: exec_cmd: nio create_udp udp-fb0c3ed4-4b10-4108-807f-c36107233d7c 10056 127.0.0.1 10057 
+Nov 18 22:55:24.955 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ER10 1 0 udp-fb0c3ed4-4b10-4108-807f-c36107233d7c 
+Nov 18 22:55:24.956 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 23:46:04.763 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 23:46:04.763 HYPERVISOR: exec_cmd: vm extract_config ER10 
+Nov 18 23:49:19.768 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 23:49:19.768 HYPERVISOR: exec_cmd: vm extract_config ER10 
+Nov 18 23:52:25.855 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 23:52:25.855 HYPERVISOR: exec_cmd: vm extract_config ER10 
+Nov 18 23:55:22.942 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 23:55:22.942 HYPERVISOR: exec_cmd: vm extract_config ER10 
+Nov 18 23:58:24.824 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 18 23:58:24.824 HYPERVISOR: exec_cmd: vm extract_config ER10 
+Nov 19 00:01:37.103 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 19 00:01:37.103 HYPERVISOR: exec_cmd: vm extract_config ER10 
+Nov 19 00:01:54.755 HYPERVISOR: exec_cmd: vm set_ghost_status ER10 2 
+Nov 19 00:01:54.755 HYPERVISOR: exec_cmd: vm set_ghost_file ER10 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 19 00:01:54.755 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 19 00:01:54.755 HYPERVISOR: exec_cmd: vm set_config ER10 configs\i12_startup-config.cfg 
+Nov 19 00:01:54.755 HYPERVISOR: exec_cmd: vm start ER10 
+Nov 19 00:05:12.804 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 19 00:05:12.804 HYPERVISOR: exec_cmd: vm stop ER10 
+Nov 19 00:05:12.966 VM: VM ER10 shutdown.
+Nov 19 00:05:12.966 HYPERVISOR: exec_cmd: vm extract_config ER10 
+Nov 19 00:06:01.416 HYPERVISOR: exec_cmd: vm set_ghost_status ER10 2 
+Nov 19 00:06:01.416 HYPERVISOR: exec_cmd: vm set_ghost_file ER10 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 19 00:06:01.416 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 19 00:06:01.416 HYPERVISOR: exec_cmd: vm set_config ER10 configs\i12_startup-config.cfg 
+Nov 19 00:06:01.416 HYPERVISOR: exec_cmd: vm start ER10 
+Nov 19 00:06:08.733 HYPERVISOR: exec_cmd: vm set_ghost_status ER10 2 
+Nov 19 00:06:08.733 HYPERVISOR: exec_cmd: vm set_ghost_file ER10 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 19 00:06:08.748 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 19 00:08:48.372 HYPERVISOR: exec_cmd: vm get_status ER10 
+Nov 19 00:08:48.372 HYPERVISOR: exec_cmd: vm stop ER10 
+Nov 19 00:08:48.547 VM: VM ER10 shutdown.
+Nov 19 00:08:48.547 HYPERVISOR: exec_cmd: vm extract_config ER10 
