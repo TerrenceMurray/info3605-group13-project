@@ -1,0 +1,78 @@
+Nov 18 22:55:02.879 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 18 22:55:02.881 HYPERVISOR: Started on IP = localhost, TCP port = 47760.
+Nov 18 22:55:03.336 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 18 22:55:03.337 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 18 22:55:03.338 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 18 22:55:03.338 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\09746ddc-f2cc-4f90-8c0d-46a959511a61 
+Nov 18 22:55:03.341 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\09746ddc-f2cc-4f90-8c0d-46a959511a61
+Nov 18 22:55:03.342 HYPERVISOR: exec_cmd: vm create OR1 33 c3745 
+Nov 18 22:55:03.345 VM: VM OR1 created.
+Nov 18 22:55:03.346 HYPERVISOR: exec_cmd: vm set_con_tcp_port OR1 5032 
+Nov 18 22:55:03.346 HYPERVISOR: exec_cmd: c3745 get_mac_addr OR1 
+Nov 18 22:55:03.347 HYPERVISOR: exec_cmd: vm set_disk0 OR1 0 
+Nov 18 22:55:03.349 HYPERVISOR: exec_cmd: vm set_exec_area OR1 64 
+Nov 18 22:55:03.350 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.350 HYPERVISOR: exec_cmd: vm set_idle_pc OR1 0x60aa1da0 
+Nov 18 22:55:03.352 HYPERVISOR: exec_cmd: vm set_ios OR1 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 18 22:55:03.354 HYPERVISOR: exec_cmd: c3745 set_mac_addr OR1 c421.fd70.0000 
+Nov 18 22:55:03.355 HYPERVISOR: exec_cmd: vm set_nvram OR1 256 
+Nov 18 22:55:03.356 HYPERVISOR: exec_cmd: vm set_ram OR1 256 
+Nov 18 22:55:03.357 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.358 HYPERVISOR: exec_cmd: vm slot_add_binding OR1 1 0 NM-1FE-TX 
+Nov 18 22:55:03.359 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.360 HYPERVISOR: exec_cmd: vm slot_add_binding OR1 2 0 NM-1FE-TX 
+Nov 18 22:55:03.361 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.361 HYPERVISOR: exec_cmd: vm slot_add_binding OR1 3 0 NM-1FE-TX 
+Nov 18 22:55:03.362 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.362 HYPERVISOR: exec_cmd: vm slot_add_binding OR1 4 0 NM-1FE-TX 
+Nov 18 22:55:03.364 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.364 HYPERVISOR: exec_cmd: vm slot_add_binding OR1 0 16 WIC-2T 
+Nov 18 22:55:03.365 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.365 HYPERVISOR: exec_cmd: vm slot_add_binding OR1 0 32 WIC-2T 
+Nov 18 22:55:03.367 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:03.367 HYPERVISOR: exec_cmd: vm slot_add_binding OR1 0 48 WIC-2T 
+Nov 18 22:55:35.358 HYPERVISOR: exec_cmd: nio create_udp udp-38588db2-88cc-4a2f-9769-290e43ac4198 10104 127.0.0.1 10105 
+Nov 18 22:55:36.431 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OR1 0 1 udp-38588db2-88cc-4a2f-9769-290e43ac4198 
+Nov 18 22:55:36.433 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:55:40.666 HYPERVISOR: exec_cmd: nio create_udp udp-76d973aa-59d2-46d7-98b3-f04d1542fcb3 10124 127.0.0.1 10125 
+Nov 18 22:55:40.674 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OR1 1 0 udp-76d973aa-59d2-46d7-98b3-f04d1542fcb3 
+Nov 18 22:55:40.675 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 22:56:20.569 HYPERVISOR: exec_cmd: nio create_udp udp-e2c75073-1640-41a2-8461-420577905f16 10286 127.0.0.1 10287 
+Nov 18 22:56:20.573 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OR1 0 0 udp-e2c75073-1640-41a2-8461-420577905f16 
+Nov 18 22:56:20.574 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:39:26.411 HYPERVISOR: exec_cmd: vm set_ghost_status OR1 2 
+Nov 18 23:39:26.413 HYPERVISOR: exec_cmd: vm set_ghost_file OR1 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 18 23:39:26.413 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:39:26.413 HYPERVISOR: exec_cmd: vm set_config OR1 configs\i33_startup-config.cfg 
+Nov 18 23:39:26.413 HYPERVISOR: exec_cmd: vm start OR1 
+Nov 18 23:39:47.774 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:39:47.774 HYPERVISOR: exec_cmd: vm stop OR1 
+Nov 18 23:39:47.947 VM: VM OR1 shutdown.
+Nov 18 23:39:47.947 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:40:09.939 HYPERVISOR: exec_cmd: vm set_ghost_status OR1 2 
+Nov 18 23:40:09.944 HYPERVISOR: exec_cmd: vm set_ghost_file OR1 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 18 23:40:09.944 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:40:09.944 HYPERVISOR: exec_cmd: vm set_config OR1 configs\i33_startup-config.cfg 
+Nov 18 23:40:09.944 HYPERVISOR: exec_cmd: vm start OR1 
+Nov 18 23:41:10.279 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:41:10.285 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:42:12.638 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:42:12.638 HYPERVISOR: exec_cmd: vm stop OR1 
+Nov 18 23:42:12.839 VM: VM OR1 shutdown.
+Nov 18 23:42:12.839 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:46:04.996 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:46:04.998 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:49:20.023 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:49:20.023 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:52:26.078 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:52:26.078 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:55:23.178 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:55:23.180 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 18 23:58:24.872 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 18 23:58:24.872 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 19 00:01:37.157 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 19 00:01:37.159 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 19 00:05:12.873 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 19 00:05:12.873 HYPERVISOR: exec_cmd: vm extract_config OR1 
+Nov 19 00:08:48.626 HYPERVISOR: exec_cmd: vm get_status OR1 
+Nov 19 00:08:48.642 HYPERVISOR: exec_cmd: vm extract_config OR1 

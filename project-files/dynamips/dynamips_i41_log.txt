@@ -1,28 +1,70 @@
-Nov 17 15:12:42.658 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Nov 17 15:12:42.660 HYPERVISOR: Started on IP = localhost, TCP port = 54220.
-Nov 17 15:12:43.125 HYPERVISOR: exec_cmd: hypervisor version 
-Nov 17 15:12:43.127 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips 
-Nov 17 15:12:43.127 GENERAL: working_dir=C:\Users\mterr\GNS3\projects\6c5c93e5-0f34-42a1-8119-40be15a77503\project-files\dynamips
-Nov 17 15:12:43.128 HYPERVISOR: exec_cmd: ethsw create SA-SW31 
-Nov 17 15:13:03.570 HYPERVISOR: exec_cmd: nio create_udp udp-f4cd01a7-af9f-4fac-875f-8cd5f4eebc47 20102 127.0.0.1 20103 
-Nov 17 15:13:03.571 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW31 udp-f4cd01a7-af9f-4fac-875f-8cd5f4eebc47 
-Nov 17 15:13:03.605 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f4cd01a7-af9f-4fac-875f-8cd5f4eebc47 1 
-Nov 17 15:13:03.752 HYPERVISOR: exec_cmd: nio create_udp udp-1afe4901-58d4-470f-a5e2-e72246cfa8f1 20104 127.0.0.1 20105 
-Nov 17 15:13:03.752 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW31 udp-1afe4901-58d4-470f-a5e2-e72246cfa8f1 
-Nov 17 15:13:03.758 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-1afe4901-58d4-470f-a5e2-e72246cfa8f1 1 
-Nov 17 15:13:04.097 HYPERVISOR: exec_cmd: nio create_udp udp-f0c60cc5-a49c-4368-a44b-092fd79dbb69 20110 127.0.0.1 20111 
-Nov 17 15:13:04.097 HYPERVISOR: exec_cmd: ethsw add_nio SA-SW31 udp-f0c60cc5-a49c-4368-a44b-092fd79dbb69 
-Nov 17 15:13:04.130 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f0c60cc5-a49c-4368-a44b-092fd79dbb69 1 
-Nov 17 17:09:03.516 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f4cd01a7-af9f-4fac-875f-8cd5f4eebc47 1 
-Nov 17 17:09:03.516 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-1afe4901-58d4-470f-a5e2-e72246cfa8f1 1 
-Nov 17 17:09:03.516 HYPERVISOR: exec_cmd: ethsw set_access_port SA-SW31 udp-f0c60cc5-a49c-4368-a44b-092fd79dbb69 1 
-Nov 17 17:12:50.779 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW31 udp-f4cd01a7-af9f-4fac-875f-8cd5f4eebc47 
-Nov 17 17:12:50.795 HYPERVISOR: exec_cmd: nio delete udp-f4cd01a7-af9f-4fac-875f-8cd5f4eebc47 
-Nov 17 17:12:50.970 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW31 udp-1afe4901-58d4-470f-a5e2-e72246cfa8f1 
-Nov 17 17:12:50.986 HYPERVISOR: exec_cmd: nio delete udp-1afe4901-58d4-470f-a5e2-e72246cfa8f1 
-Nov 17 17:12:51.181 HYPERVISOR: exec_cmd: ethsw remove_nio SA-SW31 udp-f0c60cc5-a49c-4368-a44b-092fd79dbb69 
-Nov 17 17:12:51.213 HYPERVISOR: exec_cmd: nio delete udp-f0c60cc5-a49c-4368-a44b-092fd79dbb69 
-Nov 17 17:12:51.398 HYPERVISOR: exec_cmd: ethsw delete SA-SW31 
-Nov 17 17:12:51.398 HYPERVISOR: exec_cmd: hypervisor stop 
-Nov 17 17:12:51.673 HYPERVISOR: Stopped.
-Nov 17 17:12:51.673 GENERAL: reset done.
+Nov 18 22:55:08.516 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 18 22:55:08.532 HYPERVISOR: Started on IP = localhost, TCP port = 47788.
+Nov 18 22:55:08.980 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 18 22:55:08.981 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips 
+Nov 18 22:55:08.981 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips
+Nov 18 22:55:08.982 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\a37d6bdf-2111-4e21-9cc2-fac17feabd19 
+Nov 18 22:55:08.983 GENERAL: working_dir=C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\a37d6bdf-2111-4e21-9cc2-fac17feabd19
+Nov 18 22:55:08.983 HYPERVISOR: exec_cmd: vm create SA-SW101 41 c3745 
+Nov 18 22:55:08.986 VM: VM SA-SW101 created.
+Nov 18 22:55:08.986 HYPERVISOR: exec_cmd: vm set_con_tcp_port SA-SW101 5056 
+Nov 18 22:55:08.986 HYPERVISOR: exec_cmd: c3745 get_mac_addr SA-SW101 
+Nov 18 22:55:08.987 HYPERVISOR: exec_cmd: vm set_disk0 SA-SW101 1 
+Nov 18 22:55:08.988 HYPERVISOR: exec_cmd: vm set_exec_area SA-SW101 64 
+Nov 18 22:55:08.988 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:55:08.988 HYPERVISOR: exec_cmd: vm set_idle_pc SA-SW101 0x60aa1da0 
+Nov 18 22:55:08.990 HYPERVISOR: exec_cmd: vm set_ios SA-SW101 C:/Users/ngrim/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25d.image 
+Nov 18 22:55:08.991 HYPERVISOR: exec_cmd: c3745 set_mac_addr SA-SW101 c429.2934.0000 
+Nov 18 22:55:08.992 HYPERVISOR: exec_cmd: vm set_nvram SA-SW101 256 
+Nov 18 22:55:08.993 HYPERVISOR: exec_cmd: vm set_ram SA-SW101 256 
+Nov 18 22:55:08.995 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:55:08.995 HYPERVISOR: exec_cmd: vm slot_add_binding SA-SW101 1 0 NM-16ESW 
+Nov 18 22:55:08.996 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:55:08.996 HYPERVISOR: exec_cmd: vm slot_add_binding SA-SW101 2 0 NM-16ESW 
+Nov 18 22:55:08.997 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:55:08.997 HYPERVISOR: exec_cmd: vm slot_add_binding SA-SW101 3 0 NM-16ESW 
+Nov 18 22:55:08.998 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:55:08.999 HYPERVISOR: exec_cmd: vm slot_add_binding SA-SW101 4 0 NM-16ESW 
+Nov 18 22:55:09.000 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:55:09.000 HYPERVISOR: exec_cmd: vm slot_add_binding SA-SW101 0 16 WIC-1T 
+Nov 18 22:55:09.001 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:55:09.001 HYPERVISOR: exec_cmd: vm slot_add_binding SA-SW101 0 32 WIC-1T 
+Nov 18 22:56:10.426 HYPERVISOR: exec_cmd: nio create_udp udp-eaeb89f1-9f75-4762-9fe6-386fa55ff96f 10236 127.0.0.1 10237 
+Nov 18 22:56:12.460 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SA-SW101 0 0 udp-eaeb89f1-9f75-4762-9fe6-386fa55ff96f 
+Nov 18 22:56:12.460 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:56:14.724 HYPERVISOR: exec_cmd: nio create_udp udp-7dd40cfb-f769-4da9-991b-5a2bdbf15a51 10244 127.0.0.1 10245 
+Nov 18 22:56:14.740 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SA-SW101 0 1 udp-7dd40cfb-f769-4da9-991b-5a2bdbf15a51 
+Nov 18 22:56:14.740 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:56:19.756 HYPERVISOR: exec_cmd: nio create_udp udp-cb98afbe-ab3a-44de-ad74-a693fb9a7eb9 10266 127.0.0.1 10267 
+Nov 18 22:56:19.756 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SA-SW101 1 0 udp-cb98afbe-ab3a-44de-ad74-a693fb9a7eb9 
+Nov 18 22:56:19.756 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 22:56:20.302 HYPERVISOR: exec_cmd: nio create_udp udp-93640334-a4d7-4122-b9d5-b1153bcdc958 10280 127.0.0.1 10281 
+Nov 18 22:56:20.318 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SA-SW101 1 1 udp-93640334-a4d7-4122-b9d5-b1153bcdc958 
+Nov 18 22:56:20.318 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:35:40.095 HYPERVISOR: exec_cmd: vm set_ghost_status SA-SW101 2 
+Nov 18 23:35:40.095 HYPERVISOR: exec_cmd: vm set_ghost_file SA-SW101 C:\Users\ngrim\Desktop\Github Repos\info3605-group13-project\project-files\dynamips\c3745-adventerprisek9-mz.124-25d.image-256.ghost 
+Nov 18 23:35:40.095 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:35:40.095 HYPERVISOR: exec_cmd: vm set_config SA-SW101 configs\i41_startup-config.cfg 
+Nov 18 23:35:40.095 HYPERVISOR: exec_cmd: vm start SA-SW101 
+Nov 18 23:38:10.445 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 18 23:38:10.449 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 18 23:39:56.752 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:39:56.752 HYPERVISOR: exec_cmd: vm stop SA-SW101 
+Nov 18 23:39:56.976 VM: VM SA-SW101 shutdown.
+Nov 18 23:39:56.976 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 18 23:46:05.026 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:46:05.034 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 18 23:49:20.054 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:49:20.054 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 18 23:52:26.117 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:52:26.117 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 18 23:55:23.206 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:55:23.208 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 18 23:58:25.097 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 18 23:58:25.097 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 19 00:01:37.188 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 19 00:01:37.188 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 19 00:05:12.911 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 19 00:05:12.913 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
+Nov 19 00:08:48.682 HYPERVISOR: exec_cmd: vm get_status SA-SW101 
+Nov 19 00:08:48.682 HYPERVISOR: exec_cmd: vm extract_config SA-SW101 
