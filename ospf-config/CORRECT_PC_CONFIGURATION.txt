@@ -1,0 +1,182 @@
+================================================================================
+CORRECTED PC NETWORK CONFIGURATION
+================================================================================
+
+CRITICAL FIX: VLANs 311 and 321 are now on SEPARATE SUBNETS!
+
+Previously both VLANs were incorrectly configured on the same subnet
+(16.3.59.0/24), which doesn't work for inter-VLAN routing.
+
+================================================================================
+VLAN 311 - PC311 CONFIGURATION
+================================================================================
+
+VLAN: 311
+Subnet: 16.3.59.0/24
+Switch Port: SA-SW31 FastEthernet1/1
+
+PC311 Configuration:
+--------------------
+IP Address:      16.3.59.36
+Subnet Mask:     255.255.255.0
+Default Gateway: 16.3.59.1       <- GATEWAY CHANGED!
+DNS Server:      16.4.21.63
+
+Gateway Interface: OR4 FastEthernet0/0.311
+
+================================================================================
+VLAN 321 - PC321 CONFIGURATION
+================================================================================
+
+VLAN: 321
+Subnet: 16.3.60.0/24              <- NEW SUBNET!
+Switch Port: SA-SW31 FastEthernet1/2
+
+PC321 Configuration:
+--------------------
+IP Address:      16.3.60.37       <- NEW IP IN NEW SUBNET!
+Subnet Mask:     255.255.255.0
+Default Gateway: 16.3.60.1       <- NEW GATEWAY!
+DNS Server:      16.4.21.63
+
+Gateway Interface: OR4 FastEthernet0/0.321
+
+================================================================================
+OR4 ROUTER CONFIGURATION (Router-on-a-Stick)
+================================================================================
+
+interface FastEthernet0/0
+ description Trunk to SA-SW31 Fa1/0 (VLANs 311, 321)
+ no ip address
+ speed 100
+ full-duplex
+ no shutdown
+
+interface FastEthernet0/0.311
+ description VLAN 311 - SA-PC311 Gateway
+ encapsulation dot1Q 311
+ ip address 16.3.59.1 255.255.255.0
+ no shutdown
+
+interface FastEthernet0/0.321
+ description VLAN 321 - SA-PC321 Gateway
+ encapsulation dot1Q 321
+ ip address 16.3.60.1 255.255.255.0
+ no shutdown
+
+router ospf 1
+ router-id 4.4.4.4
+ passive-interface FastEthernet0/0.311
+ passive-interface FastEthernet0/0.321
+ network 16.3.59.0 0.0.0.255 area 0
+ network 16.3.60.0 0.0.0.255 area 0
+ network 16.3.111.0 0.0.0.255 area 0
+ network 16.3.113.0 0.0.0.255 area 0
+
+================================================================================
+MANUAL CONFIGURATION COMMANDS FOR OR4
+================================================================================
+
+If you need to apply this configuration manually without reloading:
+
+enable
+configure terminal
+
+interface FastEthernet0/0
+ no shutdown
+exit
+
+interface FastEthernet0/0.311
+ encapsulation dot1Q 311
+ ip address 16.3.59.1 255.255.255.0
+ no shutdown
+exit
+
+interface FastEthernet0/0.321
+ encapsulation dot1Q 321
+ ip address 16.3.60.1 255.255.255.0
+ no shutdown
+exit
+
+router ospf 1
+ network 16.3.59.0 0.0.0.255 area 0
+ network 16.3.60.0 0.0.0.255 area 0
+ network 16.3.111.0 0.0.0.255 area 0
+ network 16.3.113.0 0.0.0.255 area 0
+exit
+
+end
+write memory
+
+================================================================================
+VERIFICATION COMMANDS
+================================================================================
+
+On OR4:
+-------
+show ip interface brief
+! Should show:
+! FastEthernet0/0.311     16.3.59.1       YES manual up                    up
+! FastEthernet0/0.321     16.3.60.1       YES manual up                    up
+
+show ip route connected
+! Should show both 16.3.59.0/24 and 16.3.60.0/24 as directly connected
+
+ping 16.3.59.1
+ping 16.3.60.1
+
+================================================================================
+TESTING CONNECTIVITY
+================================================================================
+
+Step 1: Configure PCs with new settings
+-----------------------------------------
+PC311:
+- IP: 16.3.59.36
+- Mask: 255.255.255.0
+- Gateway: 16.3.59.1  (CHANGED FROM 16.3.59.4)
+
+PC321:
+- IP: 16.3.60.37  (CHANGED FROM 16.3.59.37)
+- Mask: 255.255.255.0
+- Gateway: 16.3.60.1  (NEW)
+
+Step 2: Test from PCs
+----------------------
+From PC311:
+PC311> ping 16.3.59.1        # Test gateway
+PC311> ping 16.3.60.37       # Test inter-VLAN to PC321
+
+From PC321:
+PC321> ping 16.3.60.1        # Test gateway
+PC321> ping 16.3.59.36       # Test inter-VLAN to PC311
+
+Step 3: Verify routing on OR4
+------------------------------
+OR4# show ip route ospf
+! Should see OSPF routes from other routers
+
+OR4# show ip ospf neighbor
+! Should see neighbors:
+! - OR1 at 16.3.111.2 (via Fa0/1)
+! - OR3 at 16.3.113.2 (via Fa1/0)
+
+================================================================================
+SUMMARY OF CHANGES
+================================================================================
+
+OLD Configuration (WRONG):
+--------------------------
+VLAN 311: 16.3.59.0/24, Gateway: 16.3.59.4, PC: 16.3.59.36
+VLAN 321: 16.3.59.0/24, Gateway: 16.3.59.5, PC: 16.3.59.37
+^ BOTH VLANS IN SAME SUBNET - DOES NOT WORK!
+
+NEW Configuration (CORRECT):
+----------------------------
+VLAN 311: 16.3.59.0/24, Gateway: 16.3.59.1, PC: 16.3.59.36
+VLAN 321: 16.3.60.0/24, Gateway: 16.3.60.1, PC: 16.3.60.37
+^ SEPARATE SUBNETS - PROPER INTER-VLAN ROUTING!
+
+================================================================================
+END OF CONFIGURATION DOCUMENT
+================================================================================

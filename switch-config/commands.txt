@@ -1,72 +1,43 @@
-! !! SA-SW31
+! !! SA-SW31 Configuration (Layer 2 Switch with VLANs)
+
 enable
-!
+
 vlan database
-vlan 321
 vlan 311
+vlan 321
+apply
 exit
-!
-configure terminal
-!
-interface FastEthernet1/0
- description SA-PC311
- no shutdown
- duplex auto
- speed auto
- switchport mode access
- switchport access vlan 311
-exit
-!
-interface FastEthernet1/1
- description SA-PC321
- no shutdown
- duplex auto
- speed auto
- switchport mode access
- switchport access vlan 321
-exit
-!
-end
-wr
 
-! !! SA-SW11
-enable
 configure terminal
-!
-interface FastEthernet1/0
- description RR18
- no shutdown
- duplex auto
- speed auto
-exit
-!
-interface FastEthernet1/1
- description SA-PC11
- no shutdown
- duplex auto
- speed auto
-exit
-!
-end
-wr
 
-! !! SA-SW21
-enable
-configure terminal
-!
+hostname SA-SW31
+
 interface FastEthernet1/0
- description ER18
- no shutdown
- duplex auto
- speed auto
+description Trunk to OR4 Gi0/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport trunk allowed vlan 311,321
+no shutdown
 exit
-!
+
+! Configure access port for SA-PC311 (VLAN 311)
 interface FastEthernet1/1
- description SA-PC21
- no shutdown
- duplex auto
- speed auto
+description SA-PC311
+switchport mode access
+switchport access vlan 311
+no shutdown
 exit
-!
+
+! Configure access port for SA-PC321 (VLAN 321)
+interface FastEthernet1/2
+description SA-PC321
+switchport mode access
+switchport access vlan 321
+no shutdown
+exit
+
+do show vlan-switch brief
+do show interfaces trunk
+
 end
-wr
+write memory
