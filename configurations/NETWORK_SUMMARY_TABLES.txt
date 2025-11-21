@@ -1,0 +1,132 @@
+!!===============================================================================
+!!                        NETWORK CONFIGURATION SUMMARY TABLES
+!!===============================================================================
+
+!!===============================================================================
+!! OSPF ROUTERS (Area 0)
+!!===============================================================================
+!! Protocol: OSPF Process ID 1
+!! Redistribution: OR3 redistributes EIGRP 100 into OSPF, RR3 redistributes RIP into OSPF
+
+Name    Interface       IPv4 Address    Subnet Mask       Network Address   Broadcast Address  Gateway  Comments
+----    ---------       ------------    -----------       ---------------   -----------------  -------  --------
+OR1     Fa0/0           16.4.21.2       255.255.255.0     16.4.21.0         16.4.21.255        -        Links OR2 Fa0/1
+OR1     Fa0/1           16.4.22.1       255.255.255.0     16.4.22.0         16.4.22.255        -        Links SA-SW103 (RIP domain boundary)
+OR1     Fa1/0           16.3.111.2      255.255.255.0     16.3.111.0        16.3.111.255       -        Links OR4 Fa0/1
+
+OR2     Fa0/0           16.3.112.2      255.255.255.0     16.3.112.0        16.3.112.255       -        Links OR3 Fa1/0
+OR2     Fa0/1           16.4.21.1       255.255.255.0     16.4.21.0         16.4.21.255        -        Links OR1 Fa0/0
+
+OR3     Fa0/0           16.3.113.2      255.255.255.0     16.3.113.0        16.3.113.255       -        Links OR4 Fa1/0
+OR3     Fa0/1           16.3.110.1      255.255.255.0     16.3.110.0        16.3.110.255       -        Links ER15 Fa2/0 (EIGRP-OSPF boundary)
+OR3     Fa1/0           16.3.112.1      255.255.255.0     16.3.112.0        16.3.112.255       -        Links OR2 Fa0/0
+
+OR4     Fa0/0           -               -                 -                 -                  -        Trunk to SA-SW31 (VLANs 311, 321)
+OR4     Fa0/0.311       16.3.59.1       255.255.255.0     16.3.59.0         16.3.59.255        -        VLAN 311 Gateway (SA-PC311)
+OR4     Fa0/0.321       16.3.60.1       255.255.255.0     16.3.60.0         16.3.60.255        -        VLAN 321 Gateway (SA-PC321)
+OR4     Fa0/1           16.3.111.1      255.255.255.0     16.3.111.0        16.3.111.255       -        Links OR1 Fa1/0
+OR4     Fa1/0           16.3.113.1      255.255.255.0     16.3.113.0        16.3.113.255       -        Links OR3 Fa0/0
+
+
+!!===============================================================================
+!! EIGRP ROUTERS (AS 100)
+!!===============================================================================
+!! Protocol: EIGRP AS 100
+!! Redistribution: OR3 redistributes OSPF 1 into EIGRP 100
+
+Name    Interface       IPv4 Address    Subnet Mask       Network Address   Broadcast Address  Gateway  Comments
+----    ---------       ------------    -----------       ---------------   -----------------  -------  --------
+ER15    Fa0/1           16.3.102.50     255.255.255.252   16.3.102.48       16.3.102.51        -        Links ER14 Fa1/0
+ER15    Fa1/0           16.3.103.49     255.255.255.252   16.3.103.48       16.3.103.51        -        Links ER16 Fa0/1
+ER15    Fa2/0           16.3.110.2      255.255.255.0     16.3.110.0        16.3.110.255       -        Links OR3 Fa0/1 (OSPF-EIGRP boundary)
+
+ER18    Loopback0       16.4.21.63      255.255.255.255   16.4.21.63        16.4.21.63         -        DNS/NTP Server
+ER18    Fa0/0           16.4.17.62      255.255.255.252   16.4.17.60        16.4.17.63         -        Links RR17 Fa0/1 (RIP domain)
+ER18    Fa0/1           16.3.105.50     255.255.255.252   16.3.105.48       16.3.105.51        -        Links ER17 Fa1/0
+ER18    Fa1/0           16.3.61.18      255.255.255.0     16.3.61.0         16.3.61.255        -        Links SA-SW21 (SA-PC21 Gateway)
+
+!! Note: ER18 runs BOTH EIGRP 100 and RIPv2 for multi-protocol connectivity
+!! EIGRP networks: 16.3.61.0/24, 16.3.105.48/30, 16.3.106.48/30
+!! RIP network: 16.0.0.0 (classful)
+
+
+!!===============================================================================
+!! RIPv2 ROUTERS
+!!===============================================================================
+!! Protocol: RIPv2
+!! Redistribution: RR3 redistributes OSPF 1 into RIP (metric 5)
+!!                 RR3 redistributes RIP into OSPF 1
+
+Name    Interface       IPv4 Address    Subnet Mask       Network Address   Broadcast Address  Gateway  Comments
+----    ---------       ------------    -----------       ---------------   -----------------  -------  --------
+RR3     Fa0/0           16.4.2.62       255.255.255.252   16.4.2.60         16.4.2.63          -        Links RR2 Fa0/1 (RIP chain)
+RR3     Fa0/1           16.4.3.61       255.255.255.252   16.4.3.60         16.4.3.63          -        Links RR4 Fa0/0 (RIP chain)
+RR3     Fa1/0           16.4.20.61      255.255.255.252   16.4.20.60        16.4.20.63         -        Links SA-SW103 (OSPF domain)
+
+RR18    Loopback0       16.4.21.63      255.255.255.255   16.4.21.63        16.4.21.63         -        DNS/NTP Server
+RR18    Fa0/0           16.4.17.62      255.255.255.252   16.4.17.60        16.4.17.63         -        Links RR17 Fa0/1 (RIP chain)
+RR18    Fa0/1           16.3.60.18      255.255.255.0     16.3.60.0         16.3.60.255        -        Links SA-SW11 (SA-PC11 Gateway)
+
+!! RIP Chain Topology (approximate):
+!! RR3 <-> RR2/RR4 <-> RR5 <-> ... <-> RR15 <-> RR16 <-> RR17 <-> RR18
+!! Note: RIP has 15-hop limit - routes may not propagate across full chain
+
+
+!!===============================================================================
+!! PC CONFIGURATION TABLE
+!!===============================================================================
+
+Device Name    Interface/Sub-Interface    VLAN    IPv4 Address    Subnet Mask       Network Address   Broadcast Address  Gateway
+-----------    -----------------------    ----    ------------    -----------       ---------------   -----------------  -------
+SA-PC311       eth0                       311     16.3.59.36      255.255.255.0     16.3.59.0         16.3.59.255        16.3.59.1
+SA-PC321       eth0                       321     16.3.60.37      255.255.255.0     16.3.60.0         16.3.60.255        16.3.60.1
+SA-PC11        eth0                       -       16.3.60.11      255.255.255.0     16.3.60.0         16.3.60.255        16.3.60.18
+SA-PC21        eth0                       -       16.3.61.21      255.255.255.0     16.3.61.0         16.3.61.255        16.3.61.18
+
+
+!!===============================================================================
+!! PC GATEWAY MAPPING
+!!===============================================================================
+
+PC Name       Gateway IP      Gateway Router    Gateway Interface    Routing Domain
+-------       ----------      --------------    -----------------    --------------
+SA-PC311      16.3.59.1       OR4               Fa0/0.311            OSPF Area 0
+SA-PC321      16.3.60.1       OR4               Fa0/0.321            OSPF Area 0
+SA-PC11       16.3.60.18      RR18              Fa0/1                RIPv2
+SA-PC21       16.3.61.18      ER18              Fa1/0                EIGRP 100
+
+
+!!===============================================================================
+!! CURRENT PC STARTUP CONFIGS (from GNS3 VPCS files)
+!!===============================================================================
+
+SA-PC311:  ip 16.3.59.36 16.3.59.4 24    <-- WRONG! Gateway should be 16.3.59.1 (OR4)
+SA-PC321:  ip 16.3.59.37 16.3.59.4 24    <-- WRONG! Gateway should be 16.3.60.1 (OR4), IP should be 16.3.60.37
+SA-PC11:   ip 16.3.60.11 16.3.60.18 24   <-- OK (RR18 gateway)
+SA-PC21:   ip 16.3.61.21 16.3.61.18 24   <-- OK (ER18 gateway)
+
+
+!!===============================================================================
+!! ROUTING DOMAIN BOUNDARIES
+!!===============================================================================
+
+Boundary            Router      From Protocol   To Protocol     Notes
+--------            ------      -------------   -----------     -----
+OSPF <-> EIGRP      OR3         OSPF 1          EIGRP 100       Mutual redistribution
+OSPF <-> RIP        RR3         OSPF 1          RIPv2           Mutual redistribution (metric 5)
+RIP <-> EIGRP       ER18        RIPv2           EIGRP 100       Runs both protocols (no redistribution configured)
+
+
+!!===============================================================================
+!! IDENTIFIED ISSUES
+!!===============================================================================
+
+1. SA-PC311 has wrong gateway (16.3.59.4 instead of 16.3.59.1)
+2. SA-PC321 has wrong IP (16.3.59.37 instead of 16.3.60.37) and wrong gateway (16.3.59.4 instead of 16.3.60.1)
+3. RR18 may not receive redistributed routes from RR3 due to RIP 15-hop limit
+4. SA-PC11 cannot reach OSPF/EIGRP networks because RR18 lacks routes
+
+
+!!===============================================================================
+!! END OF NETWORK SUMMARY TABLES
+!!===============================================================================
