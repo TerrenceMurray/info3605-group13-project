@@ -1,0 +1,222 @@
+================================================================================
+RELOAD ROUTERS AND TEST OSPF - STEP BY STEP COMMANDS
+================================================================================
+
+IMPORTANT: The configuration files have been updated. You must RELOAD the
+routers for changes to take effect!
+
+================================================================================
+STEP 1: RELOAD ALL OSPF ROUTERS
+================================================================================
+
+On each router (OR1, OR2, OR3, OR4), run:
+
+OR1# reload
+OR2# reload
+OR3# reload
+OR4# reload
+
+Wait for all routers to fully boot up before proceeding.
+
+================================================================================
+STEP 2: VERIFY INTERFACES ARE UP ON OR4
+================================================================================
+
+OR4# show ip interface brief
+
+Expected output:
+FastEthernet0/0         unassigned      YES NVRAM  up                    up
+FastEthernet0/0.311     16.3.59.4       YES NVRAM  up                    up  <- SHOULD BE UP
+FastEthernet0/0.321     16.3.59.5       YES NVRAM  up                    up  <- SHOULD BE UP
+FastEthernet0/1         16.3.111.1      YES NVRAM  up                    up
+FastEthernet1/0         16.3.113.1      YES NVRAM  up                    up
+
+If Fa0/0.321 is still "unset", manually configure it:
+
+OR4# configure terminal
+OR4(config)# interface FastEthernet0/0.321
+OR4(config-subif)# encapsulation dot1Q 321
+OR4(config-subif)# ip address 16.3.59.5 255.255.255.0
+OR4(config-subif)# no shutdown
+OR4(config-subif)# end
+OR4# write memory
+
+================================================================================
+STEP 3: CHECK OSPF NEIGHBORS ON OR4
+================================================================================
+
+OR4# show ip ospf neighbor
+
+Expected output should show TWO neighbors:
+- OR1 at 16.3.111.2 (via FastEthernet0/1)
+- OR3 at 16.3.113.2 (via FastEthernet1/0)
+
+Example:
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/  -        00:00:3x    16.3.111.2      FastEthernet0/1
+3.3.3.3           1   FULL/  -        00:00:3x    16.3.113.2      FastEthernet1/0
+
+If NO neighbors appear:
+1. Check if OR1 and OR3 have reloaded with new configs
+2. Verify interfaces are up on both sides
+3. Check OSPF is running: OR4# show ip ospf
+
+================================================================================
+STEP 4: CHECK OSPF NEIGHBORS ON OTHER ROUTERS
+================================================================================
+
+OR1# show ip ospf neighbor
+Expected: OR2 (16.4.21.1) and OR4 (16.3.111.1)
+
+OR2# show ip ospf neighbor
+Expected: OR1 (16.4.21.2) and OR3 (16.3.112.1)
+
+OR3# show ip ospf neighbor
+Expected: OR2 (16.3.112.2) and OR4 (16.3.113.1)
+
+================================================================================
+STEP 5: VERIFY OSPF ROUTES ON OR4
+================================================================================
+
+OR4# show ip route ospf
+
+You should see OSPF routes (marked with "O") for:
+O       16.3.112.0/24 [110/2] via 16.3.113.2, FastEthernet1/0
+O       16.4.21.0/24 [110/2] via 16.3.111.2, FastEthernet0/1
+                      [110/3] via 16.3.113.2, FastEthernet1/0
+O       16.4.22.0/24 [110/3] via 16.3.111.2, FastEthernet0/1
+
+If no OSPF routes appear, check:
+OR4# show ip protocols
+OR4# show ip ospf database
+
+================================================================================
+STEP 6: TEST VLAN CONNECTIVITY FROM OR4
+================================================================================
+
+OR4# ping 16.3.59.4
+Success rate should be 100%
+
+OR4# ping 16.3.59.5
+Success rate should be 100%
+
+If pings fail, check:
+OR4# show vlan-switch brief
+OR4# show interfaces trunk
+OR4# show interfaces FastEthernet0/0
+OR4# show interfaces FastEthernet0/0.311
+OR4# show interfaces FastEthernet0/0.321
+
+================================================================================
+STEP 7: CHECK SWITCH CONFIGURATION
+================================================================================
+
+SA-SW31# show vlan-switch brief
+
+Expected output should show:
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+311  VLAN311_PC311                    active    Fa1/1
+321  VLAN321_PC321                    active    Fa1/2
+
+SA-SW31# show interfaces trunk
+
+Expected output:
+Port        Mode         Encapsulation  Status        Native vlan
+Fa1/0       on           802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa1/0       311,321
+
+If trunk is not working:
+SA-SW31# configure terminal
+SA-SW31(config)# interface FastEthernet1/0
+SA-SW31(config-if)# switchport trunk encapsulation dot1q
+SA-SW31(config-if)# switchport mode trunk
+SA-SW31(config-if)# switchport trunk allowed vlan 311,321
+SA-SW31(config-if)# no shutdown
+SA-SW31(config-if)# end
+SA-SW31# write memory
+
+================================================================================
+STEP 8: TEST PC CONNECTIVITY
+================================================================================
+
+From PC311 (should have IP 16.3.59.36):
+
+PC311> ping 16.3.59.4
+Test: Can PC311 reach its gateway?
+
+PC311> ping 16.3.59.37
+Test: Can PC311 reach PC321? (inter-VLAN routing)
+
+From PC321 (should have IP 16.3.59.37):
+
+PC321> ping 16.3.59.5
+Test: Can PC321 reach its gateway?
+
+PC321> ping 16.3.59.36
+Test: Can PC321 reach PC311? (inter-VLAN routing)
+
+================================================================================
+TROUBLESHOOTING: IF OSPF NEIGHBORS DON'T FORM
+================================================================================
+
+1. Verify network statements include the interfaces:
+
+OR1# show running-config | section ospf
+Expected:
+router ospf 1
+ router-id 1.1.1.1
+ network 16.3.111.0 0.0.0.255 area 0
+ network 16.4.21.0 0.0.0.255 area 0
+ network 16.4.22.0 0.0.0.255 area 0
+
+2. Check for subnet mismatches:
+
+OR1 Fa1/0: 16.3.111.2
+OR4 Fa0/1: 16.3.111.1  <- MUST be same subnet!
+
+OR1# show ip interface FastEthernet1/0 | include Internet
+OR4# show ip interface FastEthernet0/1 | include Internet
+
+3. Verify interfaces are not passive:
+
+OR4# show ip ospf interface
+
+FastEthernet0/1 and FastEthernet1/0 should NOT be passive.
+FastEthernet0/0.311 and FastEthernet0/0.321 SHOULD be passive (no OSPF to PCs).
+
+4. Check OSPF process is running:
+
+OR4# show ip protocols
+Should show "Routing Protocol is ospf 1"
+
+================================================================================
+TROUBLESHOOTING: IF PCs CANNOT REACH GATEWAY
+================================================================================
+
+1. Verify PC IP configuration:
+   PC311: IP 16.3.59.36, Mask 255.255.255.0, Gateway 16.3.59.4
+   PC321: IP 16.3.59.37, Mask 255.255.255.0, Gateway 16.3.59.5
+
+2. Check switch port assignment:
+   SA-SW31# show vlan-switch brief
+   PC311 port should be in VLAN 311
+   PC321 port should be in VLAN 321
+
+3. Verify trunk between switch and router:
+   SA-SW31# show interfaces trunk
+   Fa1/0 should be trunking VLANs 311,321
+
+4. Test from router:
+   OR4# ping 16.3.59.36
+   OR4# ping 16.3.59.37
+
+5. Check ARP:
+   OR4# show arp | include 16.3.59
+   Should show entries for PC IPs if they're online
+
+================================================================================
+END OF TROUBLESHOOTING GUIDE
+================================================================================

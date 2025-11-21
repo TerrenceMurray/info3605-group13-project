@@ -1,0 +1,54 @@
+================================================================================
+OR4 MANUAL CONFIGURATION FIX - PASTE THESE COMMANDS
+================================================================================
+
+Copy and paste the commands below into OR4 console to fix the VLAN 321
+interface immediately:
+
+--------------------------------------------------------------------------------
+
+enable
+configure terminal
+
+! Fix VLAN 321 subinterface
+interface FastEthernet0/0
+ no shutdown
+exit
+
+interface FastEthernet0/0.321
+ encapsulation dot1Q 321
+ ip address 16.3.59.5 255.255.255.0
+ no shutdown
+exit
+
+! Ensure VLAN 311 is also up
+interface FastEthernet0/0.311
+ no shutdown
+exit
+
+! Verify OSPF is advertising the VLAN subnet
+router ospf 1
+ network 16.3.59.0 0.0.0.255 area 0
+ network 16.3.111.0 0.0.0.255 area 0
+ network 16.3.113.0 0.0.0.255 area 0
+ passive-interface FastEthernet0/0.311
+ passive-interface FastEthernet0/0.321
+exit
+
+end
+write memory
+
+! Now verify the interfaces
+show ip interface brief
+
+! Expected output:
+! FastEthernet0/0.311     16.3.59.4       YES NVRAM  up                    up
+! FastEthernet0/0.321     16.3.59.5       YES NVRAM  up                    up
+
+! Check OSPF neighbors
+show ip ospf neighbor
+
+! If you see neighbors with OR1 and OR3, OSPF is working!
+! If not, the other routers need to be reloaded with updated configs.
+
+--------------------------------------------------------------------------------

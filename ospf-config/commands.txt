@@ -1,0 +1,592 @@
+!!===============================================================================
+!! CORRECTED OSPF DOMAIN CONFIGURATION WITH REDISTRIBUTION
+!! Group 13: Unreachable - INFO 3605 Group Project
+!! Platform: Cisco 3745 Router (FastEthernet interfaces)
+!!===============================================================================
+!! OSPF Domain: OR1, OR2, OR3, OR4
+!! OSPF Process ID: 1
+!! Area: 0 (Backbone Area)
+!! 
+!! Interface Type: FastEthernet (NOT GigabitEthernet)
+!! 
+!! Redistribution Points:
+!! - OR1: Receives redistributed routes from RIP (via RR3/SA-SW103)
+!! - OR3: Redistributes with EIGRP (via ER15)
+!! - OR4: Provides inter-VLAN routing for VLANs 311 and 321
+!!===============================================================================
+
+
+!!===============================================================================
+!! OR1 CONFIGURATION
+!! Connects to: OR2, OR4, SA-SW103 (RIP domain via RR3)
+!!===============================================================================
+
+enable
+configure terminal
+
+hostname OR1
+
+! Interface to OR2
+interface FastEthernet0/0
+ description Links OR2 Fa0/1
+ ip address 16.04.20.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! Interface to SA-SW103 (receives RIP routes via RR3)
+interface FastEthernet0/1
+ description Links SA-SW103 (RIP domain boundary)
+ ip address 16.04.22.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! Interface to OR4
+interface FastEthernet1/0
+ description Links OR4 Fa0/1
+ ip address 16.04.23.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! OSPF Configuration
+router ospf 1
+ router-id 1.1.1.1
+ ! Advertise directly connected networks
+ network 16.04.20.0 0.0.0.255 area 0
+ network 16.04.22.0 0.0.0.255 area 0
+ network 16.04.23.0 0.0.0.255 area 0
+ ! Passive interface toward switch (no OSPF hellos needed)
+ passive-interface FastEthernet0/1
+exit
+
+! Verification commands
+do show ip interface brief
+do show ip route
+do show ip ospf neighbor
+do show ip ospf interface brief
+do show ip protocols
+
+end
+write memory
+
+
+!!===============================================================================
+!! OR2 CONFIGURATION
+!! Connects to: OR1, OR3
+!!===============================================================================
+
+enable
+configure terminal
+
+hostname OR2
+
+! Interface to OR3
+interface FastEthernet0/0
+ description Links OR3 Fa1/0
+ ip address 16.04.20.2 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! Interface to OR1
+interface FastEthernet0/1
+ description Links OR1 Fa0/0
+ ip address 16.04.21.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! OSPF Configuration
+router ospf 1
+ router-id 2.2.2.2
+ ! Advertise directly connected networks
+ network 16.04.20.0 0.0.0.255 area 0
+ network 16.04.21.0 0.0.0.255 area 0
+exit
+
+! Verification commands
+do show ip interface brief
+do show ip route
+do show ip ospf neighbor
+do show ip ospf interface brief
+do show ip protocols
+
+end
+write memory
+
+
+!!===============================================================================
+!! OR3 CONFIGURATION - CRITICAL REDISTRIBUTION POINT
+!! Connects to: OR2, OR4, ER15 (EIGRP domain)
+!! Redistributes between OSPF and EIGRP
+!!===============================================================================
+
+enable
+configure terminal
+
+hostname OR3
+
+! Interface to OR4
+interface FastEthernet0/0
+ description Links OR4 Fa1/0
+ ip address 16.04.21.2 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! Interface to ER15 (EIGRP domain boundary)
+interface FastEthernet0/1
+ description Links ER15 Fa2/0 (EIGRP-OSPF boundary)
+ ip address 16.03.110.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! Interface to OR2
+interface FastEthernet1/0
+ description Links OR2 Fa0/0
+ ip address 16.03.112.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! EIGRP Configuration (for redistribution with OSPF)
+router eigrp 100
+ ! Redistribute OSPF into EIGRP
+ redistribute ospf 1 metric 10000 100 255 1 1500
+ network 16.03.110.0 0.0.0.255
+ no auto-summary
+ passive-interface FastEthernet0/0
+ passive-interface FastEthernet1/0
+exit
+
+! OSPF Configuration
+router ospf 1
+ router-id 3.3.3.3
+ ! Redistribute EIGRP into OSPF
+ redistribute eigrp 100 subnets
+ ! Advertise directly connected OSPF networks
+ network 16.04.21.0 0.0.0.255 area 0
+ network 16.03.112.0 0.0.0.255 area 0
+ ! Don't send OSPF hellos on EIGRP interface
+ passive-interface FastEthernet0/1
+exit
+
+! Verification commands
+do show ip interface brief
+do show ip route
+do show ip ospf neighbor
+do show ip ospf interface brief
+do show ip eigrp neighbors
+do show ip eigrp interfaces
+do show ip protocols
+
+end
+write memory
+
+
+!!===============================================================================
+!! OR4 CONFIGURATION - INTER-VLAN ROUTING
+!! Connects to: OR1, OR3, SA-SW31 (VLANs 311, 321)
+!! Provides router-on-a-stick for VLANs
+!!===============================================================================
+
+enable
+configure terminal
+
+hostname OR4
+
+! Trunk interface to SA-SW31 (no IP on physical interface)
+interface FastEthernet0/0
+ description Trunk to SA-SW31 Fa1/0 (VLANs 311, 321)
+ no ip address
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! Subinterface for VLAN 311 (SA-PC311)
+interface FastEthernet0/0.311
+ description VLAN 311 - SA-PC311 Gateway
+ encapsulation dot1Q 311
+ ip address 16.03.59.4 255.255.255.0
+ no shutdown
+exit
+
+! Subinterface for VLAN 321 (SA-PC321)
+interface FastEthernet0/0.321
+ description VLAN 321 - SA-PC321 Gateway
+ encapsulation dot1Q 321
+ ip address 16.03.59.5 255.255.255.0
+ no shutdown
+exit
+
+! Interface to OR1
+interface FastEthernet0/1
+ description Links OR1 Fa1/0
+ ip address 16.03.111.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! Interface to OR3
+interface FastEthernet1/0
+ description Links OR3 Fa0/0
+ ip address 16.03.113.1 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! OSPF Configuration
+router ospf 1
+ router-id 4.4.4.4
+ ! Advertise all networks including VLAN subnets
+ network 16.03.59.0 0.0.0.255 area 0
+ network 16.03.111.0 0.0.0.255 area 0
+ network 16.03.113.0 0.0.0.255 area 0
+ ! Make VLAN interfaces passive (no OSPF to end devices)
+ passive-interface FastEthernet0/0.311
+ passive-interface FastEthernet0/0.321
+exit
+
+! Verification commands
+do show ip interface brief
+do show ip route
+do show ip ospf neighbor
+do show ip ospf interface brief
+do show ip protocols
+
+end
+write memory
+
+
+!!===============================================================================
+!! SA-SW103 CONFIGURATION (Layer 2 Switch - connects RIP and OSPF domains)
+!! Connects: RR3 (RIP) and OR1 (OSPF)
+!!===============================================================================
+
+enable
+configure terminal
+
+hostname SA-SW103
+
+! No special VLAN configuration needed - just basic L2 switching
+
+interface FastEthernet1/2
+ description Links RR3 Fa1/0
+ switchport mode access
+ no shutdown
+exit
+
+interface FastEthernet1/3
+ description Links OR1 Fa0/1
+ switchport mode access
+ no shutdown
+exit
+
+end
+write memory
+
+
+!!===============================================================================
+!! SA-SW31 CONFIGURATION (Layer 2 Switch with VLANs)
+!! VLANs: 311 (SA-PC311), 321 (SA-PC321)
+!! Trunk to OR4 for inter-VLAN routing
+!!===============================================================================
+
+enable
+
+! Create VLANs
+vlan database
+ vlan 311 name VLAN311_PC311
+ vlan 321 name VLAN321_PC321
+ apply
+exit
+
+configure terminal
+
+hostname SA-SW31
+
+! Trunk port to OR4 (carries VLANs 311 and 321)
+interface FastEthernet1/0
+ description Trunk to OR4 Fa0/0
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan 311,321
+ no shutdown
+exit
+
+! Access port for SA-PC311 (VLAN 311)
+interface FastEthernet1/1
+ description SA-PC311 Access Port
+ switchport mode access
+ switchport access vlan 311
+ spanning-tree portfast
+ no shutdown
+exit
+
+! Access port for SA-PC321 (VLAN 321)
+interface FastEthernet1/2
+ description SA-PC321 Access Port
+ switchport mode access
+ switchport access vlan 321
+ spanning-tree portfast
+ no shutdown
+exit
+
+! Verification commands
+do show vlan-switch brief
+do show interfaces trunk
+do show spanning-tree brief
+
+end
+write memory
+
+
+!!===============================================================================
+!! ER15 CONFIGURATION UPDATE (EIGRP side of OR3 connection)
+!! This router needs to be configured to connect to OR3
+!!===============================================================================
+
+enable
+configure terminal
+
+hostname ER15
+
+interface FastEthernet0/1
+ description Links ER14 on Fa1/0
+ ip address 16.03.102.50 255.255.255.252
+ no shutdown
+exit
+
+interface FastEthernet1/0
+ description Links ER16 on Fa0/1
+ ip address 16.03.103.49 255.255.255.252
+ no shutdown
+exit
+
+! NEW: Interface to OR3 (OSPF boundary)
+interface FastEthernet2/0
+ description Links OR3 Fa0/1 (OSPF-EIGRP boundary)
+ ip address 16.03.110.2 255.255.255.0
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+router eigrp 100
+ network 16.03.102.48 0.0.0.3
+ network 16.03.103.48 0.0.0.3
+ network 16.03.110.0 0.0.0.255
+ no auto-summary
+exit
+
+end
+write memory
+
+
+!!===============================================================================
+!! RR3 CONFIGURATION UPDATE (RIP/OSPF Redistribution Point)
+!! This configuration was already in the RIP config but shown here for completeness
+!!===============================================================================
+
+enable
+configure terminal
+
+hostname RR3
+
+interface FastEthernet0/0
+ description Links RR2 on Fa0/1
+ ip address 16.04.02.62 255.255.255.252
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+interface FastEthernet0/1
+ description Links RR4 on Fa0/0
+ ip address 16.04.03.61 255.255.255.252
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+interface FastEthernet1/0
+ description Links SA-SW103 Fa1/2 (to OSPF domain)
+ ip address 16.04.20.61 255.255.255.252
+ duplex full
+ speed 100
+ no shutdown
+exit
+
+! RIP Configuration
+router rip
+ version 2
+ network 16.04.02.60
+ network 16.04.03.60
+ network 16.04.20.60
+ no auto-summary
+ passive-interface default
+ no passive-interface FastEthernet0/0
+ no passive-interface FastEthernet0/1
+ no passive-interface FastEthernet1/0
+ ! Redistribute OSPF into RIP
+ redistribute ospf 1 metric 5
+exit
+
+! OSPF Configuration
+router ospf 1
+ router-id 100.100.100.3
+ ! Redistribute RIP into OSPF
+ redistribute rip subnets
+ network 16.04.20.60 0.0.0.3 area 0
+ passive-interface FastEthernet0/0
+ passive-interface FastEthernet0/1
+exit
+
+do show ip interface brief
+do show ip route
+do show ip protocols
+
+end
+write memory
+
+
+!!===============================================================================
+!! SA-PC311 CONFIGURATION (VLAN 311)
+!!===============================================================================
+
+! Static IP Configuration on PC
+! IP Address: 16.03.59.36
+! Subnet Mask: 255.255.255.0
+! Default Gateway: 16.03.59.4 (OR4 subinterface Fa0/0.311)
+! DNS Server: 16.04.21.63 (RR18 loopback)
+
+! For testing connectivity:
+! ping 16.03.59.4     (Test gateway - OR4)
+! ping 16.03.59.37    (Test VLAN 321 - SA-PC321, inter-VLAN routing)
+! ping 16.03.60.11    (Test SA-PC11 via OSPF->EIGRP->RIP routing)
+! ping 16.03.61.21    (Test SA-PC21 via OSPF->EIGRP routing)
+
+
+!!===============================================================================
+!! SA-PC321 CONFIGURATION (VLAN 321)
+!!===============================================================================
+
+! Static IP Configuration on PC
+! IP Address: 16.03.59.37
+! Subnet Mask: 255.255.255.0
+! Default Gateway: 16.03.59.5 (OR4 subinterface Fa0/0.321)
+! DNS Server: 16.04.21.63 (RR18 loopback)
+
+! For testing connectivity:
+! ping 16.03.59.5     (Test gateway - OR4)
+! ping 16.03.59.36    (Test VLAN 311 - SA-PC311, inter-VLAN routing)
+! ping 16.03.60.11    (Test SA-PC11 via OSPF->EIGRP->RIP routing)
+! ping 16.03.61.21    (Test SA-PC21 via OSPF->EIGRP routing)
+
+
+!!===============================================================================
+!! INTERFACE SUMMARY FOR OSPF ROUTERS (Cisco 3745)
+!!===============================================================================
+
+Router: OR1
+-----------
+Fa0/0 -> OR2 (16.04.20.1/24) - OSPF
+Fa0/1 -> SA-SW103 (16.04.22.1/24) - OSPF (passive, connects to RIP domain)
+Fa1/0 -> OR4 (16.04.23.1/24) - OSPF
+
+Router: OR2
+-----------
+Fa0/0 -> OR3 (16.04.20.2/24) - OSPF
+Fa0/1 -> OR1 (16.04.21.1/24) - OSPF
+
+Router: OR3 (OSPF-EIGRP Redistribution)
+-----------
+Fa0/0 -> OR4 (16.04.21.2/24) - OSPF
+Fa0/1 -> ER15 (16.03.110.1/24) - EIGRP (connects to EIGRP domain)
+Fa1/0 -> OR2 (16.03.112.1/24) - OSPF
+
+Router: OR4 (Inter-VLAN Routing)
+-----------
+Fa0/0 -> SA-SW31 trunk (no IP) - Physical interface
+Fa0/0.311 -> VLAN 311 gateway (16.03.59.4/24) - OSPF
+Fa0/0.321 -> VLAN 321 gateway (16.03.59.5/24) - OSPF
+Fa0/1 -> OR1 (16.03.111.1/24) - OSPF
+Fa1/0 -> OR3 (16.03.113.1/24) - OSPF
+
+
+!!===============================================================================
+!! OSPF VERIFICATION COMMANDS
+!!===============================================================================
+
+! Run these commands on all OSPF routers:
+
+show ip interface brief
+show ip ospf neighbor
+show ip ospf database
+show ip route ospf
+show ip protocols
+
+! Check redistribution on OR3:
+show ip route eigrp          ! Should see EIGRP routes
+show ip route ospf           ! Should see OSPF routes
+show ip protocols            ! Shows both OSPF and EIGRP processes
+
+! Check redistribution on RR3:
+show ip route rip            ! Should see RIP routes
+show ip route ospf           ! Should see OSPF routes
+show ip protocols            ! Shows both RIP and OSPF processes
+
+! Check OSPF-specific details:
+show ip ospf 1
+show ip ospf border-routers
+show ip ospf database summary
+show ip ospf database router
+
+
+!!===============================================================================
+!! TROUBLESHOOTING TIPS
+!!===============================================================================
+
+1. OSPF Neighbors Not Forming:
+   - Check: show ip ospf neighbor
+   - Verify: Interface up/up status, area numbers match, network statements correct
+   - Check: MTU must match on connected interfaces
+   - Check: Hello/Dead timers must match
+
+2. Routes Not Being Redistributed:
+   - Verify: "subnets" keyword present in OSPF redistribution
+   - Check: show ip protocols (confirms redistribution configured)
+   - Check: show ip route (see if redistributed routes appear)
+   - Verify: No distribute-lists or route-maps blocking routes
+
+3. Inter-VLAN Routing Not Working:
+   - Check: OR4 Fa0/0 is up/up (no shutdown on physical interface)
+   - Check: Subinterfaces are up/up
+   - Verify: SA-SW31 trunk configuration (allowed VLANs)
+   - Check: PCs have correct gateway addresses
+   - Verify: show vlan-switch brief on SA-SW31
+
+4. Connectivity Issues:
+   - Use traceroute to identify where packets stop
+   - Check routing tables on each router along the path
+   - Verify all interfaces are up/up
+   - Check for ACLs blocking traffic
+
+
+!!===============================================================================
+!! END OF CORRECTED OSPF CONFIGURATION
+!!===============================================================================
