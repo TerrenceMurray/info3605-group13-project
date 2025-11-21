@@ -1,0 +1,229 @@
+================================================================================
+OSPF ROUTING VERIFICATION CHECKLIST
+================================================================================
+
+CURRENT STATUS:
+- OSPF adjacencies are FULL between OR1, OR2, OR3, and OR4
+- Router-on-a-stick configured on OR4 with separate VLAN subnets
+- Physical connectivity verified in GNS3
+
+================================================================================
+STEP 1: VERIFY OSPF ROUTING TABLES
+================================================================================
+
+On OR4 (Router-on-a-Stick):
+---------------------------
+OR4# show ip route ospf
+
+Expected OSPF routes:
+- O    16.3.112.0/24 via OR3 (16.3.113.2)
+- O    16.4.21.0/24 via OR1 (16.3.111.2) or OR3->OR2
+- O    16.4.22.0/24 via OR1 (16.3.111.2)
+- O E2 EIGRP routes redistributed from OR3 (16.3.110.0 network)
+
+Directly connected should show:
+- C    16.3.59.0/24 is directly connected, FastEthernet0/0.311
+- C    16.3.60.0/24 is directly connected, FastEthernet0/0.321
+- C    16.3.111.0/24 is directly connected, FastEthernet0/1
+- C    16.3.113.0/24 is directly connected, FastEthernet1/0
+
+On OR1:
+-------
+OR1# show ip route ospf
+
+Expected OSPF routes:
+- O    16.3.59.0/24 via OR4 (16.3.111.1)
+- O    16.3.60.0/24 via OR4 (16.3.111.1)
+- O    16.3.112.0/24 via OR2 or OR4
+- O    16.3.113.0/24 via OR4 (16.3.111.1)
+- O E2 EIGRP routes redistributed from OR3
+
+On OR2:
+-------
+OR2# show ip route ospf
+
+Expected OSPF routes:
+- O    16.3.59.0/24 via OR3->OR4
+- O    16.3.60.0/24 via OR3->OR4
+- O    16.3.111.0/24 via OR1 or OR3->OR4
+- O    16.3.113.0/24 via OR3 (16.3.112.1)
+- O    16.4.22.0/24 via OR1 (16.4.21.2)
+- O E2 EIGRP routes redistributed from OR3
+
+On OR3 (Redistribution Router):
+--------------------------------
+OR3# show ip route ospf
+
+Expected OSPF routes:
+- O    16.3.59.0/24 via OR4 (16.3.113.1)
+- O    16.3.60.0/24 via OR4 (16.3.113.1)
+- O    16.3.111.0/24 via OR4 (16.3.113.1) or OR2->OR1
+- O    16.4.21.0/24 via OR2 (16.3.112.2)
+- O    16.4.22.0/24 via OR2->OR1
+
+Expected EIGRP routes:
+- D EX routes from EIGRP domain (16.3.110.0 network)
+
+OR3# show ip route eigrp
+- Should show redistributed OSPF routes as D EX
+
+================================================================================
+STEP 2: VERIFY REDISTRIBUTION
+================================================================================
+
+On OR3 (OSPF-EIGRP Boundary):
+------------------------------
+OR3# show ip protocols
+
+Should show:
+- OSPF 1 redistributing EIGRP 100
+- EIGRP 100 redistributing OSPF 1
+
+OR3# show ip route | include E2
+- External OSPF routes from EIGRP redistribution
+
+OR3# show ip route | include EX
+- External EIGRP routes from OSPF redistribution
+
+================================================================================
+STEP 3: TEST INTER-VLAN ROUTING
+================================================================================
+
+On PC311 (VLAN 311):
+--------------------
+Configuration should be:
+SA-PC311> show ip
+IP Address:   16.3.59.36
+Subnet Mask:  255.255.255.0
+Gateway:      16.3.59.1
+
+Tests:
+SA-PC311> ping 16.3.59.1
+! Test gateway (should succeed)
+
+SA-PC311> ping 16.3.60.1
+! Test other VLAN gateway (should succeed)
+
+SA-PC311> ping 16.3.60.37
+! Test PC321 in other VLAN (should succeed if PC321 is configured correctly)
+
+On PC321 (VLAN 321):
+--------------------
+Configuration should be:
+SA-PC321> show ip
+IP Address:   16.3.60.37
+Subnet Mask:  255.255.255.0
+Gateway:      16.3.60.1
+
+Tests:
+SA-PC321> ping 16.3.60.1
+! Test gateway (should succeed)
+
+SA-PC321> ping 16.3.59.1
+! Test other VLAN gateway (should succeed)
+
+SA-PC321> ping 16.3.59.36
+! Test PC311 in other VLAN (should succeed if PC311 is configured correctly)
+
+================================================================================
+STEP 4: VERIFY ARP AND MAC LEARNING
+================================================================================
+
+On OR4:
+-------
+OR4# show arp | include 16.3.59
+! Should see PC311 at 16.3.59.36
+
+OR4# show arp | include 16.3.60
+! Should see PC321 at 16.3.60.37
+
+On SA-SW31:
+-----------
+SA-SW31# show mac-address-table
+! Should see:
+! - OR4 MAC on Fa1/0 (trunk)
+! - PC311 MAC on Fa1/1 (VLAN 311)
+! - PC321 MAC on Fa1/2 (VLAN 321)
+
+================================================================================
+STEP 5: END-TO-END CONNECTIVITY TESTS
+================================================================================
+
+From PC311:
+-----------
+SA-PC311> ping 16.4.21.63
+! Test connectivity to DNS/NTP server via OSPF routing
+
+SA-PC311> trace 16.3.60.37
+! Trace route to PC321 (should go via OR4 gateway)
+
+From PC321:
+-----------
+SA-PC321> ping 16.4.21.63
+! Test connectivity to DNS/NTP server via OSPF routing
+
+SA-PC321> trace 16.3.59.36
+! Trace route to PC311 (should go via OR4 gateway)
+
+================================================================================
+TROUBLESHOOTING COMMANDS IF ROUTES ARE MISSING
+================================================================================
+
+Check OSPF neighbor status:
+---------------------------
+Router# show ip ospf neighbor
+! All neighbors should show FULL state
+
+Check OSPF database:
+--------------------
+Router# show ip ospf database
+! Should see LSAs from all routers in area 0
+
+Check specific interface OSPF status:
+-------------------------------------
+Router# show ip ospf interface brief
+! All OSPF interfaces should be UP and in correct area
+
+Verify network statements:
+--------------------------
+Router# show running-config | section router ospf
+! Ensure all networks are properly advertised
+
+Debug OSPF routing (use with caution):
+---------------------------------------
+Router# debug ip ospf events
+Router# debug ip routing
+
+================================================================================
+EXPECTED FINAL STATE
+================================================================================
+
+After all configurations:
+1. All OSPF adjacencies in FULL state
+2. All routers can see VLAN routes (16.3.59.0/24 and 16.3.60.0/24)
+3. PC311 and PC321 can ping each other (inter-VLAN routing works)
+4. All routers can reach all networks via OSPF
+5. Redistribution between OSPF and EIGRP is working on OR3
+6. End-to-end connectivity across entire topology
+
+================================================================================
+SUMMARY OF NETWORK TOPOLOGY
+================================================================================
+
+OSPF Domain (Area 0):
+- OR1 (1.1.1.1): Fa0/0->OR2, Fa1/0->OR4, Fa0/1->RIP domain
+- OR2 (2.2.2.2): Fa0/1->OR1, Fa0/0->OR3
+- OR3 (3.3.3.3): Fa1/0->OR2, Fa0/0->OR4, Fa0/1->EIGRP domain
+- OR4 (4.4.4.4): Fa0/1->OR1, Fa1/0->OR3, Fa0/0->SA-SW31 (trunk)
+
+VLANs on OR4 (Router-on-a-Stick):
+- VLAN 311: 16.3.59.0/24, Gateway 16.3.59.1, PC311 at 16.3.59.36
+- VLAN 321: 16.3.60.0/24, Gateway 16.3.60.1, PC321 at 16.3.60.37
+
+Redistribution Points:
+- OR3: OSPF <-> EIGRP
+- (Check if OR1 has RIP redistribution configured)
+
+================================================================================
+END OF VERIFICATION DOCUMENT
+================================================================================

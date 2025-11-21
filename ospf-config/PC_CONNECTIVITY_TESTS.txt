@@ -1,0 +1,344 @@
+================================================================================
+PC311 AND PC321 CONNECTIVITY TESTING GUIDE
+================================================================================
+
+OBJECTIVE: Verify inter-VLAN routing works between PC311 and PC321
+
+================================================================================
+STEP 1: VERIFY PC CONFIGURATIONS
+================================================================================
+
+On PC311 (VLAN 311):
+--------------------
+SA-PC311> show ip
+
+Expected output:
+NAME        : SA-PC311
+IP/MASK     : 16.3.59.36/24
+GATEWAY     : 16.3.59.1
+DNS         : 16.4.21.63
+MAC         : [hardware MAC address]
+LPORT       : [local port]
+RHOST:PORT  : [remote host:port]
+MTU:        : 1500
+
+If incorrect, configure with:
+SA-PC311> ip 16.3.59.36 255.255.255.0 16.3.59.1
+
+On PC321 (VLAN 321):
+--------------------
+SA-PC321> show ip
+
+Expected output:
+NAME        : SA-PC321
+IP/MASK     : 16.3.60.37/24
+GATEWAY     : 16.3.60.1
+DNS         : 16.4.21.63
+MAC         : [hardware MAC address]
+LPORT       : [local port]
+RHOST:PORT  : [remote host:port]
+MTU:        : 1500
+
+If incorrect, configure with:
+SA-PC321> ip 16.3.60.37 255.255.255.0 16.3.60.1
+
+================================================================================
+STEP 2: TEST GATEWAY CONNECTIVITY
+================================================================================
+
+From PC311:
+-----------
+SA-PC311> ping 16.3.59.1
+
+Expected: Success (. . . . . or !!!!! if using VPCS)
+This tests that PC311 can reach its default gateway (OR4 Fa0/0.311)
+
+Troubleshooting if it fails:
+- Check if OR4 Fa0/0 and Fa0/0.311 are up: OR4# show ip interface brief
+- Verify VLAN 311 on switch: SA-SW31# show vlan-switch brief
+- Check if PC311 is connected to correct switch port (Fa1/1)
+- Verify trunk between switch and router carries VLAN 311
+
+From PC321:
+-----------
+SA-PC321> ping 16.3.60.1
+
+Expected: Success
+This tests that PC321 can reach its default gateway (OR4 Fa0/0.321)
+
+Troubleshooting if it fails:
+- Check if OR4 Fa0/0 and Fa0/0.321 are up: OR4# show ip interface brief
+- Verify VLAN 321 on switch: SA-SW31# show vlan-switch brief
+- Check if PC321 is connected to correct switch port (Fa1/2)
+- Verify trunk between switch and router carries VLAN 321
+
+================================================================================
+STEP 3: TEST INTER-VLAN ROUTING
+================================================================================
+
+From PC311 to PC321:
+--------------------
+SA-PC311> ping 16.3.60.37
+
+Expected: Success
+This tests inter-VLAN routing from VLAN 311 to VLAN 321
+
+Traffic flow:
+1. PC311 (16.3.59.36) sends packet to gateway 16.3.59.1
+2. OR4 receives on Fa0/0.311 (VLAN 311)
+3. OR4 routes to 16.3.60.0/24 network (directly connected on Fa0/0.321)
+4. OR4 sends packet out Fa0/0.321 (VLAN 321)
+5. Packet reaches PC321 (16.3.60.37)
+
+From PC321 to PC311:
+--------------------
+SA-PC321> ping 16.3.59.36
+
+Expected: Success
+This tests inter-VLAN routing from VLAN 321 to VLAN 311
+
+Traffic flow:
+1. PC321 (16.3.60.37) sends packet to gateway 16.3.60.1
+2. OR4 receives on Fa0/0.321 (VLAN 321)
+3. OR4 routes to 16.3.59.0/24 network (directly connected on Fa0/0.311)
+4. OR4 sends packet out Fa0/0.311 (VLAN 311)
+5. Packet reaches PC311 (16.3.59.36)
+
+Troubleshooting if inter-VLAN ping fails:
+------------------------------------------
+
+1. Verify both PCs can ping their own gateways first (Step 2)
+
+2. Check OR4 routing:
+   OR4# show ip route connected
+   ! Should show both 16.3.59.0/24 and 16.3.60.0/24 as directly connected
+
+3. Check ARP on OR4:
+   OR4# show arp | include 16.3.59
+   OR4# show arp | include 16.3.60
+   ! Should see both PC MAC addresses after they've tried to communicate
+
+4. Verify no ACLs blocking traffic:
+   OR4# show ip access-lists
+   OR4# show ip interface Fa0/0.311
+   OR4# show ip interface Fa0/0.321
+
+5. Check MAC address table on switch:
+   SA-SW31# show mac-address-table
+   ! Should see:
+   ! - PC311 MAC on Fa1/1 in VLAN 311
+   ! - PC321 MAC on Fa1/2 in VLAN 321
+   ! - OR4 MAC on Fa1/0 in VLANs 311 and 321
+
+6. If MAC table is wrong:
+   SA-SW31# clear mac-address-table dynamic
+   ! Then retry ping tests
+
+7. Debug on OR4 (use cautiously):
+   OR4# debug ip packet
+   ! Generate ping from PC
+   OR4# undebug all
+   ! Look for packets being received and forwarded
+
+================================================================================
+STEP 4: TEST ROUTING ACROSS OSPF DOMAIN
+================================================================================
+
+From PC311 to OR1:
+------------------
+SA-PC311> ping 16.4.21.2
+
+Expected: Success
+This tests that PC311 can reach OR1 via OSPF routing
+
+Traffic flow:
+1. PC311 -> gateway OR4 (16.3.59.1)
+2. OR4 routes via OSPF to 16.4.21.0/24
+3. OR4 -> OR1 or OR4 -> OR3 -> OR2 -> OR1 (depending on OSPF path)
+4. Reaches OR1 Fa0/0 at 16.4.21.2
+
+From PC321 to OR2:
+------------------
+SA-PC321> ping 16.4.21.1
+
+Expected: Success
+This tests that PC321 can reach OR2 via OSPF routing
+
+From PC311/PC321 to DNS server:
+--------------------------------
+SA-PC311> ping 16.4.21.63
+SA-PC321> ping 16.4.21.63
+
+Expected: Success if DNS/NTP server is up
+This tests routing to the 16.4.21.0/24 network
+
+Troubleshooting OSPF routing issues:
+-------------------------------------
+
+1. Verify OSPF adjacencies on OR4:
+   OR4# show ip ospf neighbor
+   ! Should see neighbors in FULL state:
+   ! - 1.1.1.1 (OR1) via Fa0/1
+   ! - 3.3.3.3 (OR3) via Fa1/0
+
+2. Check OSPF routes on OR4:
+   OR4# show ip route ospf
+   ! Should see routes to other OSPF networks
+
+3. Verify routes to specific destinations:
+   OR4# show ip route 16.4.21.0
+   ! Should show path to 16.4.21.0/24 network
+
+4. Check end-to-end routing:
+   OR4# traceroute 16.4.21.2
+   ! Should show path to OR1
+
+5. Verify OSPF is advertising VLAN networks:
+   OR4# show ip ospf database
+   ! Look for 16.3.59.0 and 16.3.60.0 networks
+
+================================================================================
+STEP 5: TRACE ROUTE TESTS
+================================================================================
+
+From PC311:
+-----------
+SA-PC311> trace 16.3.60.37
+
+Expected output:
+trace to 16.3.60.37, 8 hops max, press Ctrl+C to stop
+ 1   16.3.59.1   [time] ms
+ 2   *16.3.60.37   [time] ms (ICMP type:3, code:3, Destination port unreachable)
+
+Explanation:
+- Hop 1: Gateway (OR4)
+- Hop 2: Destination (PC321)
+
+From PC321:
+-----------
+SA-PC321> trace 16.3.59.36
+
+Expected output:
+trace to 16.3.59.36, 8 hops max, press Ctrl+C to stop
+ 1   16.3.60.1   [time] ms
+ 2   *16.3.59.36   [time] ms (ICMP type:3, code:3, Destination port unreachable)
+
+Trace to remote network (via OSPF):
+------------------------------------
+SA-PC311> trace 16.4.21.2
+
+Expected: Multiple hops through OSPF routers
+ 1   16.3.59.1   (OR4 gateway)
+ 2   16.3.111.2  (OR1) or 16.3.113.2 (OR3 - depending on path)
+ 3   16.4.21.2   (destination)
+
+================================================================================
+STEP 6: VERIFY LAYER 2 OPERATION
+================================================================================
+
+On SA-SW31:
+-----------
+SA-SW31# show vlan-switch brief
+
+Expected output:
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active
+311  VLAN311_PC311                    active    Fa1/1
+321  VLAN321_PC321                    active    Fa1/2
+
+SA-SW31# show interfaces trunk
+
+Expected output:
+Port        Mode         Encapsulation  Status        Native vlan
+Fa1/0       on           802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa1/0       311,321
+
+Port        Vlans allowed and active in management domain
+Fa1/0       311,321
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Fa1/0       311,321
+
+SA-SW31# show mac-address-table
+
+Should show:
+- OR4's MAC address on Fa1/0 in both VLANs 311 and 321
+- PC311's MAC on Fa1/1 in VLAN 311
+- PC321's MAC on Fa1/2 in VLAN 321
+
+================================================================================
+STEP 7: VERIFY ARP RESOLUTION
+================================================================================
+
+On OR4:
+-------
+OR4# show arp
+
+Expected entries:
+Internet  16.3.59.36      [age]   [PC311 MAC]     ARPA   FastEthernet0/0.311
+Internet  16.3.60.37      [age]   [PC321 MAC]     ARPA   FastEthernet0/0.321
+Internet  16.3.111.2      [age]   [OR1 MAC]       ARPA   FastEthernet0/1
+Internet  16.3.113.2      [age]   [OR3 MAC]       ARPA   FastEthernet1/0
+
+If PCs are missing from ARP table:
+- PCs haven't tried to communicate yet
+- OR4 subinterfaces might be down
+- Layer 2 switching problem
+
+On PC311:
+---------
+SA-PC311> show arp
+
+Expected:
+16.3.59.1   [OR4 MAC]   [interface]
+
+On PC321:
+---------
+SA-PC321> show arp
+
+Expected:
+16.3.60.1   [OR4 MAC]   [interface]
+
+================================================================================
+SUCCESS CRITERIA
+================================================================================
+
+All tests should PASS:
+
+[√] PC311 can ping its gateway (16.3.59.1)
+[√] PC321 can ping its gateway (16.3.60.1)
+[√] PC311 can ping PC321 (16.3.60.37)
+[√] PC321 can ping PC311 (16.3.59.36)
+[√] Both PCs can reach OR1 (16.4.21.2) via OSPF
+[√] Both PCs can reach OR2 (16.4.21.1) via OSPF
+[√] Traceroute shows correct path (1 hop for inter-VLAN)
+[√] ARP tables show correct entries
+[√] Switch shows correct VLAN membership
+[√] Switch trunk carries both VLANs 311 and 321
+
+================================================================================
+CONFIGURATION SUMMARY
+================================================================================
+
+Network Design:
+- Router-on-a-stick using OR4 Fa0/0 with 802.1Q trunking
+- VLAN 311: 16.3.59.0/24 (PC311 at .36, gateway at .1)
+- VLAN 321: 16.3.60.0/24 (PC321 at .37, gateway at .1)
+- VLANs created and trunked via SA-SW31
+- OSPF Area 0 distributes VLAN routes to entire OSPF domain
+- Redistribution with EIGRP (via OR3) and RIP (via RR3)
+
+Critical Configuration Points:
+1. Separate subnets for each VLAN (311 and 321)
+2. Subinterfaces on OR4 with correct encapsulation
+3. Trunk configured on SA-SW31 Fa1/0
+4. VLANs created in switch database
+5. OSPF passive interfaces on VLAN subinterfaces
+6. OSPF network statements include both VLAN subnets
+
+================================================================================
+END OF PC CONNECTIVITY TESTING GUIDE
+================================================================================
