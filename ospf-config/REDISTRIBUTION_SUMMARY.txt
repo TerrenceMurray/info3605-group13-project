@@ -1,0 +1,217 @@
+================================================================================
+ROUTE REDISTRIBUTION CONFIGURATION SUMMARY
+================================================================================
+
+This document summarizes all route redistribution points in the network topology.
+
+================================================================================
+ROUTING DOMAINS
+================================================================================
+
+1. OSPF Domain (Area 0):
+   - OR1 (1.1.1.1)
+   - OR2 (2.2.2.2)
+   - OR3 (3.3.3.3) - OSPF/EIGRP boundary
+   - OR4 (4.4.4.4)
+   - RR3 (100.100.100.3) - OSPF/RIP boundary
+
+2. EIGRP Domain (AS 100):
+   - OR3 (boundary router)
+   - ER15 (connected to OR3 Fa0/1 at 16.3.110.0/24)
+
+3. RIP Domain (Version 2):
+   - RR3 (boundary router)
+   - Additional RIP routers (connected to RR3)
+
+================================================================================
+REDISTRIBUTION POINT 1: OR3 (OSPF <-> EIGRP)
+================================================================================
+
+Router: OR3
+Router ID: 3.3.3.3
+File: i39_startup-config.cfg
+
+OSPF Configuration:
+-------------------
+router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes
+ redistribute eigrp 100 subnets          <- EIGRP routes into OSPF
+ passive-interface FastEthernet0/1       <- EIGRP-facing interface
+ network 16.3.112.0 0.0.0.255 area 0     <- To OR2
+ network 16.3.113.0 0.0.0.255 area 0     <- To OR4
+
+EIGRP Configuration:
+--------------------
+router eigrp 100
+ redistribute ospf 1 metric 10000 100 255 1 1500  <- OSPF routes into EIGRP
+ passive-interface FastEthernet0/0      <- OSPF-facing (to OR4)
+ passive-interface FastEthernet1/0      <- OSPF-facing (to OR2)
+ network 16.3.110.0 0.0.0.255           <- EIGRP network (to ER15)
+ no auto-summary
+
+Interfaces:
+-----------
+Fa0/0: 16.3.113.2 -> OR4 Fa1/0 (OSPF)
+Fa1/0: 16.3.112.1 -> OR2 Fa0/0 (OSPF)
+Fa0/1: 16.3.110.1 -> ER15 Fa2/0 (EIGRP)
+
+Expected Behavior:
+------------------
+- OSPF routes (16.3.59.0/24, 16.3.60.0/24, 16.3.111.0/24, 16.4.21.0/24, etc.)
+  should appear in EIGRP domain as "D EX" (external EIGRP routes)
+
+- EIGRP routes from 16.3.110.0 network should appear in OSPF domain as
+  "O E2" (OSPF external type 2 routes)
+
+Verification Commands:
+----------------------
+OR3# show ip route ospf          ! See OSPF-learned routes
+OR3# show ip route eigrp         ! See EIGRP-learned routes
+OR3# show ip route | include E2  ! See EIGRP routes redistributed as OSPF E2
+OR3# show ip protocols            ! Verify redistribution config
+
+On other OSPF routers (OR1, OR2, OR4):
+OR1# show ip route | include E2  ! Should see EIGRP routes as O E2
+
+On EIGRP routers (ER15):
+ER15# show ip route | include EX ! Should see OSPF routes as D EX
+
+================================================================================
+REDISTRIBUTION POINT 2: RR3 (OSPF <-> RIP)
+================================================================================
+
+Router: RR3
+Router ID: 100.100.100.3
+File: i17_startup-config.cfg
+
+OSPF Configuration:
+-------------------
+router ospf 1
+ router-id 100.100.100.3
+ log-adjacency-changes
+ redistribute rip subnets                <- RIP routes into OSPF
+ passive-interface FastEthernet0/0       <- RIP-facing interface
+ passive-interface FastEthernet0/1       <- RIP-facing interface
+ network 16.4.20.60 0.0.0.3 area 0       <- OSPF network
+
+RIP Configuration:
+------------------
+router rip
+ version 2
+ redistribute ospf 1 metric 5            <- OSPF routes into RIP
+ passive-interface default
+ no passive-interface FastEthernet0/0    <- RIP active interfaces
+ no passive-interface FastEthernet0/1
+ no passive-interface FastEthernet1/0
+ network 16.0.0.0
+ no auto-summary
+
+Expected Behavior:
+------------------
+- OSPF routes (16.3.59.0/24, 16.3.60.0/24, 16.3.111.0/24, 16.3.112.0/24, etc.)
+  should appear in RIP domain with metric 5
+
+- RIP routes should appear in OSPF domain as "O E2" (OSPF external type 2)
+
+Verification Commands:
+----------------------
+RR3# show ip route ospf          ! See OSPF-learned routes
+RR3# show ip route rip           ! See RIP-learned routes
+RR3# show ip route | include E2  ! See RIP routes redistributed as OSPF E2
+RR3# show ip protocols            ! Verify redistribution config
+
+On other OSPF routers (OR1, OR2, OR3, OR4):
+OR1# show ip route | include E2  ! Should see RIP routes as O E2
+
+On RIP routers:
+RIP-Router# show ip route rip    ! Should see OSPF routes via RIP
+
+================================================================================
+ROUTE TAG CONSIDERATIONS
+================================================================================
+
+IMPORTANT: Route redistribution can cause routing loops if not configured
+properly. Both OR3 and RR3 are redistributing into OSPF.
+
+Current Configuration Status:
+- No route filtering configured
+- No route tagging to prevent loops
+- No distribute-lists applied
+
+Potential Issue:
+----------------
+If RR3 and OR3 can reach each other via OSPF (they can - both in Area 0),
+there's a potential for suboptimal routing:
+
+1. EIGRP route -> OR3 -> OSPF (as O E2) -> RR3 -> RIP
+2. RIP route -> RR3 -> OSPF (as O E2) -> OR3 -> EIGRP
+
+Both redistributed routes will appear as O E2 in OSPF, so OSPF routers
+might not choose the optimal path.
+
+Recommendation:
+---------------
+If routing issues occur, consider:
+- Setting different OSPF external metric types (E1 vs E2)
+- Using route tags and distribute-lists
+- Adjusting OSPF external metrics
+- Using route maps for more granular control
+
+For now, basic redistribution should work for this topology.
+
+================================================================================
+VERIFICATION CHECKLIST
+================================================================================
+
+1. On OR3 (OSPF-EIGRP boundary):
+   [ ] show ip protocols - verify both redistributions
+   [ ] show ip route ospf - see routes from OSPF domain
+   [ ] show ip route eigrp - see routes from EIGRP domain
+   [ ] show ip route | include E2 - see EIGRP routes as OSPF external
+
+2. On RR3 (OSPF-RIP boundary):
+   [ ] show ip protocols - verify both redistributions
+   [ ] show ip route ospf - see routes from OSPF domain
+   [ ] show ip route rip - see routes from RIP domain
+   [ ] show ip route | include E2 - see RIP routes as OSPF external
+
+3. On pure OSPF routers (OR1, OR2, OR4):
+   [ ] show ip route | include E2 - should see external routes from both
+       EIGRP (via OR3) and RIP (via RR3)
+   [ ] show ip route 16.3.59.0 - verify VLAN 311 route exists
+   [ ] show ip route 16.3.60.0 - verify VLAN 321 route exists
+
+4. On EIGRP routers:
+   [ ] show ip route eigrp - should see OSPF routes as D EX
+
+5. On RIP routers:
+   [ ] show ip route rip - should see OSPF routes via RIP metric 5
+
+6. End-to-end connectivity:
+   [ ] PC311 can ping PC321 (inter-VLAN)
+   [ ] PCs can reach devices in EIGRP domain
+   [ ] PCs can reach devices in RIP domain
+
+================================================================================
+SUMMARY
+================================================================================
+
+Two redistribution points configured:
+
+1. OR3: Bidirectional OSPF <-> EIGRP redistribution
+   - EIGRP metric: 10000 100 255 1 1500
+   - OSPF routes become D EX in EIGRP
+   - EIGRP routes become O E2 in OSPF
+
+2. RR3: Bidirectional OSPF <-> RIP redistribution
+   - RIP metric: 5
+   - OSPF routes propagate into RIP with metric 5
+   - RIP routes become O E2 in OSPF
+
+All routers in OSPF domain should be able to reach all networks across
+all three routing domains (OSPF, EIGRP, RIP) via these redistribution points.
+
+================================================================================
+END OF REDISTRIBUTION SUMMARY
+================================================================================
