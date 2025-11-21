@@ -10,8 +10,14 @@ __pycache__/
 
 # Dynamically generated files
 *.log
-# project-files/dynamips/
 project-files/tmp/
+
+# Dynamips runtime files (auto-generated, only keep configs)
+project-files/dynamips/**/c3745_i*_rom
+project-files/dynamips/**/c3745_i*_rommon_vars
+project-files/dynamips/**/c3745_i*_slot*
+project-files/dynamips/**/c3745_i*_lock
+project-files/dynamips/**/c3745_i*_ssa
 
 *.ghost
 

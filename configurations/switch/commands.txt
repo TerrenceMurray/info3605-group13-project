@@ -1,0 +1,53 @@
+!!===============================================================================
+!! SA-SW31 CONFIGURATION (Layer 2 Switch with VLANs)
+!! VLANs: 311 (SA-PC311), 321 (SA-PC321)
+!! Trunk to OR4 for inter-VLAN routing
+!!===============================================================================
+
+enable
+
+! Create VLANs
+vlan database
+ vlan 311 name VLAN311_PC311
+ vlan 321 name VLAN321_PC321
+ apply
+exit
+
+configure terminal
+
+hostname SA-SW31
+
+! Trunk port to OR4 (carries VLANs 311 and 321)
+interface FastEthernet1/0
+ description Trunk to OR4 Fa0/0
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan 311,321
+ no shutdown
+exit
+
+! Access port for SA-PC311 (VLAN 311)
+interface FastEthernet1/1
+ description SA-PC311 Access Port
+ switchport mode access
+ switchport access vlan 311
+ spanning-tree portfast
+ no shutdown
+exit
+
+! Access port for SA-PC321 (VLAN 321)
+interface FastEthernet1/2
+ description SA-PC321 Access Port
+ switchport mode access
+ switchport access vlan 321
+ spanning-tree portfast
+ no shutdown
+exit
+
+! Verification commands
+do show vlan-switch brief
+do show interfaces trunk
+do show spanning-tree brief
+
+end
+write memory
