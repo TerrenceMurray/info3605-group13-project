@@ -1,2 +1,2 @@
-set pcname SA-PC-11
+set pcname SA-PC11
 ip 16.3.60.11 16.3.60.18 24
