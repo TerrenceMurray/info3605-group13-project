@@ -1284,7 +1284,7 @@
                             "rotation": 0,
                             "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
                             "text": "e0",
-                            "x": 36,
+                            "x": 42,
                             "y": -41
                         },
                         "node_id": "a43c4430-d9e5-4e2a-bdfe-889953b1cf54",
@@ -1784,8 +1784,8 @@
                             "rotation": 0,
                             "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
-                            "x": -26,
-                            "y": 26
+                            "x": -31,
+                            "y": 27
                         },
                         "node_id": "66fe1993-ff2c-47e8-9e81-53b026dd190c",
                         "port_number": 0
@@ -1796,8 +1796,8 @@
                             "rotation": 0,
                             "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
                             "text": "f1/0",
-                            "x": 72,
-                            "y": 22
+                            "x": 70,
+                            "y": 29
                         },
                         "node_id": "3bdf8f60-6175-4e28-9a30-aac760d80878",
                         "port_number": 0
@@ -1846,7 +1846,7 @@
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/0",
                             "x": 42,
                             "y": 52
@@ -1858,7 +1858,7 @@
                         "adapter_number": 1,
                         "label": {
                             "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
                             "text": "f1/0",
                             "x": 57,
                             "y": -27
@@ -1878,10 +1878,10 @@
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
                             "text": "f0/1",
-                            "x": 63,
-                            "y": 41
+                            "x": 57,
+                            "y": 38
                         },
                         "node_id": "66fe1993-ff2c-47e8-9e81-53b026dd190c",
                         "port_number": 1
@@ -1890,10 +1890,10 @@
                         "adapter_number": 2,
                         "label": {
                             "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "style": "font-family: MS Shell Dlg 2;font-size: 10.0;fill: #000000;fill-opacity: 1.0;",
                             "text": "f2/0",
-                            "x": -30,
-                            "y": 18
+                            "x": -40,
+                            "y": 23
                         },
                         "node_id": "73325ef6-3de9-4841-a050-3001650bc222",
                         "port_number": 0
@@ -4201,7 +4201,7 @@
                 "template_id": "f9cfdd4c-7418-426f-8d14-220250759905",
                 "width": 66,
                 "x": 24,
-                "y": -14,
+                "y": -12,
                 "z": 1
             },
             {
@@ -4346,7 +4346,7 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": 391,
+                "x": 393,
                 "y": 515,
                 "z": 1
             },
@@ -4788,7 +4788,7 @@
                 "symbol": ":/symbols/multilayer_switch.svg",
                 "template_id": "b1a302e1-014d-4bec-b099-b28db23d02ea",
                 "width": 51,
-                "x": 401,
+                "x": 403,
                 "y": 378,
                 "z": 1
             }
